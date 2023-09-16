@@ -1,0 +1,126 @@
+@use '../abstracts/' as *;
+
+#banner-container .banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    background-color: #000;
+
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+}
+
+.banner-image-credit {
+    position: absolute;
+    writing-mode: vertical-rl;
+    font-size: var(--fs-200);
+    font-family: var(--ff-sans);
+    color: hsl(var(--clr-neutral-100));
+
+    right: 2px;
+    bottom: 33vh;
+
+    @include mq(medium) {
+        bottom: 2vh;
+    }
+
+    @include mq(large) {
+        right: 15px;
+        font-weight: var(--fw-light);
+    }
+
+    opacity: 0;
+    // Fade-in the credit after the banner image loads
+    animation: fadeIn linear 25ms forwards;
+    animation-delay: 750ms;
+}
+
+.banner-image-credit::after {
+    content: 'Photo Credit: ' attr(data-image-credit-mob);
+
+    @include mq(medium) {
+        content: 'Photo Credit: ' attr(data-image-credit-tab);
+    }
+
+    @include mq(large) {
+        content: 'Photo Credit: ' attr(data-image-credit-desk);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.banner-tagline {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    bottom: 13vh;
+
+    padding: 0.5em 0.15em 0;
+
+    font-size: var(--fs-400);
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-light);
+    color: hsl(var(--clr-neutral-100));
+    text-align: center;
+
+    @include mq(medium) {
+        bottom: 8vh;
+    }
+}
+
+.banner-tagline-credit {
+    font-size: var(--fs-300);
+}
+
+.banner-title {
+    position: absolute;
+    right: 8vw;
+    bottom: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    width: 85vw;
+    text-align: right;
+
+    font-size: var(--fs-900);
+    line-height: 1.1em;
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-light);
+    color: hsl(var(--clr-neutral-100));
+
+    @include mq(medium) {
+        width: 50vw;
+        bottom: 8vh;
+    }
+
+    opacity: 0;
+    // Animation -- fade-in + translateY + ease-out
+    animation: fadeInBannerTitle ease-out 2s forwards;
+    animation-delay: 750ms;
+}
+
+@keyframes fadeInBannerTitle {
+    0% { 
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.banner-subtitle {
+    font-size: var(--fs-550); 
+    line-height: 0.75;
+}

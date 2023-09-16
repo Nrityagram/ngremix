@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+:root {
+	--ff-sans: #{$ff-sans};
+	--ff-serif: #{$ff-serif};
+
+	--fw-normal: #{$fw-normal};
+	--fw-bold: #{$fw-bold};
+	--fw-light: #{$fw-light};
+	--fw-bolder: #{$fw-bolder};
+
+	--spacer: #{$spacer};
+	--flow-spacer: #{$flow-spacer};
+	--flow-spacer-top: #{$flow-spacer-top};
+	--flow-spacer-bottom: #{$flow-spacer-bottom};
+	--flow-spacer-nontitletext: #{$flow-spacer-nontitletext};
+	--column-gap: #{$column-gap};
+
+	--logo-height: #{$logo-height};
+	--logo-height-sticking: #{$logo-height-sticking};
+
+	--icon-height: #{$icon-height};
+
+	--primary-header-topbot-padding: #{$primary-header-topbot-padding};
+
+    --clr-dark-grey: hsl(0 0% 10%);
+    --clr-grey: hsl(0 0% 50%);
+    --clr-light-grey: hsl(0 0% 90%);
+
+	@each $colour, $shade in $colours {
+		@each $property, $value in $shade {
+			--clr-#{$colour}-#{$property}: #{$value};
+		}
+	}
+
+	@each $screen-size, $property in $font-sizes {
+		@if $screen-size ==small {
+			@each $prop, $value in $property {
+				--fs-#{$prop}: #{$value};
+			}
+		} @else {
+			@include mq($screen-size) {
+				@each $prop, $value in $property {
+					--fs-#{$prop}: #{$value};
+				}
+			}
+		}
+	}
+
+	@each $space, $value in $letter-spacing {
+		--ls-#{$space}: #{$value};
+	}
+}

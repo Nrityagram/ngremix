@@ -1,0 +1,12 @@
+.grid {
+	display: grid;
+	// var(--custom-prop, var(--default-value))
+	gap: var(--column-gap, var(--spacer));
+}
+
+// @mixin grid($align: start, $justify: between) {
+//   @extend .grid;
+//   align-items: $align;
+//   justify-content: $justify;
+// }
+

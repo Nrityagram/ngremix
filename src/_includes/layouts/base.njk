@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{ title or metadata.title or "11ty Vodkarani Starter" }}</title>
+		<meta name="description" content="{{ description or metadata.description }}" />
+		<meta name="generator" content="{{ eleventy.generator }}" />
+
+		<!-- openprops -->
+		<!-- <link rel="stylesheet" href="https://unpkg.com/open-props" /> -->
+		<!-- Not using open props normalize. Using Andy Bell's css reset -->
+		<!-- <link rel="stylesheet" href="https://unpkg.com/open-props/fonts.min.css" /> -->
+		<!-- <link rel="stylesheet" href="https://unpkg.com/open-props/sizes.min.css" /> -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+		{% if slider %}
+			<link rel="preload" href="{{ '/css/owl.carousel.min.css' | url }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+			<link rel="preload" href="{{ '/css/owl.theme.default.min.css' | url }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		{% endif %}
+		{# <link rel="preload" href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> #}
+
+		<link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+	</head>
+	<body>
+		<main>
+			<header class="primary-header">
+				<div class="wrapper headwrap">
+					<div class="primary-header__inner">
+						<span class="logo">
+							<img src="https://res.cloudinary.com/achanda/image/upload/v1693802110/temp-logo_magodc.svg" alt="Logo">
+						</span>
+						{% include './navigation.njk' %}
+						{# TODO: Debug the position of search icon on iphone simulator #}
+						{# {% include './search.njk' %} #}
+						{% include './mobileMenuToggle.njk' %}
+					</div>
+				</div>
+			</header>
+			{{ content | safe }}
+		</main>
+		<script src="{{ '/utils/primary-header.js' | url }}"></script>
+		<script src="{{ '/utils/fadein-observer.js' | url }}"></script>
+		{% if slider %}
+			<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+			<script src="{{ '/utils/owl.carousel.min.js' | url }}"></script>
+			<script src="{{ '/utils/owl-custom.js' | url }}"></script>
+		{% endif %}
+		<!-- <script src="{{ '/utils/search.js' | url }}"></script> -->
+	</body>
+</html>

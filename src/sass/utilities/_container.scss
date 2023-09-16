@@ -1,0 +1,53 @@
+@use '../abstracts/' as *;
+
+.container {
+	width: 100%;
+
+	background-color: transparent;
+}
+
+.primary-bg {
+	background-color: hsl(var(--clr-primary-100));
+}
+
+.secondary-bg {
+	background-color: hsl(var(--clr-secondary-100));
+}
+
+.accent-bg {
+	background-color: hsl(var(--clr-accent-550));
+}
+
+.wrapper {
+	margin-inline: auto;
+	--width: 85vw;
+	
+	@include mq(medium) {
+		--width: 65vw;		
+	}
+
+	@include mq(large) {
+		--width: 65vw;
+	}
+
+	max-width: var(--width, 60ch);
+
+    &.headwrap {
+        // width: min(65rem, 100% - 2rem);
+		width: 100%;
+    }
+}
+
+#banner-container {
+	// primary-header top and bottom padding = 0.5rem
+	--_primary-header-ht: calc(var(--logo-height) + 1rem);
+	position: relative;
+
+	// the negative margin pushes the banner
+	// up and behind the primary header and is flush against the top edge
+	margin-top: calc( var(--_primary-header-ht) * (-1) );
+
+	width: 100vw;
+	min-height: 100vh;
+	background-color: #000;
+}

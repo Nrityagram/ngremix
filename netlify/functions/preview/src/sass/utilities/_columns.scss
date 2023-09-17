@@ -27,8 +27,15 @@
 
 .even-columns-unlimited {
     @extend .grid;
+    place-items: center;
 
-    @include mq(medium) {
+    // For ipad mini (portrait) we want slideup cards to appear 2x2,
+    // hence a different medium berakpoint at 720px instead of 800px
+    @include mq(medium2) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(large2) {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
     }

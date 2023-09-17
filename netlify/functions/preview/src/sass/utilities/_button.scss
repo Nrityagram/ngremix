@@ -1,0 +1,44 @@
+@use '../abstracts/' as *;
+
+.button {
+    width: fit-content;
+    height: 45px;
+    padding: 3px 2em;
+    border-radius: 13px;
+    border: 1px solid #ccc;
+    position: relative;
+
+    /* Label */
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-bold);
+    color: hsl(var(--clr-neutral-100));
+    text-shadow: rgba(10, 10, 10, 0.2) 1px 2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.button.stretch {
+    width: 100%;
+}
+
+.button .glare {
+    position: absolute;
+    top: 0;
+    border-radius: 6px;
+    height: 3px;
+    width: 96%;
+    padding: 8px 0;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.12);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0)));
+    /* for FF 3.6 */
+    background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 95%);
+}
+
+.button:hover {
+    cursor: pointer;
+}

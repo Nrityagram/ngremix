@@ -1,7 +1,7 @@
 {
-	"name": "11ty-vodkarani-starter",
+	"name": "ng-11ty-frontend",
 	"version": "1.0.0",
-	"description": "A starter template for building an 11ty static website.",
+	"description": "The final 11ty frontend for Nrityagram.",
 	"scripts": {
 		"watch:sass": "sass --watch src/sass:_site/css",
 		"build:sass": "sass src/sass:_site/css --style compressed",

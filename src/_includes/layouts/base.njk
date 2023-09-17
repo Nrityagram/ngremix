@@ -22,7 +22,9 @@
 			<link rel="preload" href="{{ '/css/owl.carousel.min.css' | url }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 			<link rel="preload" href="{{ '/css/owl.theme.default.min.css' | url }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 		{% endif %}
-		{# <link rel="preload" href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> #}
+		{% if youtube %}
+			<link rel="stylesheet" href="{{ '/css/lite-yt-embed.css' | url }}" />
+		{% endif %}
 
 		<link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
 	</head>
@@ -32,7 +34,7 @@
 				<div class="wrapper headwrap">
 					<div class="primary-header__inner">
 						<span class="logo">
-							<img src="https://res.cloudinary.com/achanda/image/upload/v1693802110/temp-logo_magodc.svg" alt="Logo">
+							<img src="https://res.cloudinary.com/nrityagram/image/upload/v1694865121/ng-logo-ng-red-lite-thick-04_y2yjnu.svg" alt="Nrityagram Logo">
 						</span>
 						{% include './navigation.njk' %}
 						{# TODO: Debug the position of search icon on iphone simulator #}

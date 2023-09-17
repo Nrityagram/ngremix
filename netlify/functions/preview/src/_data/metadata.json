@@ -1,11 +1,11 @@
 {
-	"title": "11ty Vodkarani Starter",
-	"url": "https://example.com/",
+	"title": "Nrityagram",
+	"url": "https://nrityagram.org/",
 	"language": "en",
-	"description": "This is your basic 11ty starter to get things moving!",
+	"description": "Nrityagram is a one-of-a-kind community of artistes, where dance is a way of life.",
 	"author": {
-		"name": "Your Name Here",
-		"email": "youremailaddress@example.com",
-		"url": "https://example.com/about-me/"
+		"name": "Amrita Chanda",
+		"email": "amrita@nrityagram.org",
+		"url": "https://nrityagram.org/sitecredits/"
 	}
 }

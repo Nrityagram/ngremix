@@ -1,132 +1,273 @@
 <div class="nav-deck">
     <ul class="nav-list">
-        <li>
-            <div class="nav-item">
-                <span class="nav-item-name">
-                    <a href="/">Home</a>
-                </span>
+        <li data-dropdown>
+            <div class="nav-item" data-dropdown-link>
+                <label class="nav-item-name item-chevron" for="item-A1">About</label>
+                <input type="checkbox"
+                    id="item-A1"
+                    name="item-A1"
+                    class="m-menu-checkbox" />
+                <ul class="nav-sublist">
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/history">History</a>
+                    </li>
+                    <li data-dropdown-lvl2 >
+                        <div class="nav-item-lvl2" data-dropdown-link>
+                            <label class="nav-item-name-lvl2 item-chevron" for="item-A1-1">
+                                <a href="/space">Space</a>
+                            </label>
+                            <input type="checkbox"
+                                id="item-A1-1"
+                                name="item-A1-1"
+                                class="m-menu-checkbox" />
+                            <ul class="nav-sublist-lvl2">
+                                <li>
+                                    <a href="/space/#temple">Temple</a>
+                                </li>
+                                <li>
+                                    <a href="/space/#yoga">Yoga Centre</a>
+                                </li>
+                                <li>
+                                    <a href="/space/#odissi">Odissi Gurukul</a>
+                                </li>
+                                <li>
+                                    <a href="/space/#dining">Dining Hall</a>
+                                </li>
+                                <li>
+                                    <a href="/space/#cottages">Cottages</a>
+                                </li>
+                                <li>
+                                    <a href="/space/#kula">Kula</a>
+                                </li>
+                                <li>
+                                    <a href="/space/#amphitheatre">Amphitheatre</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </li>
         <li data-dropdown>
             <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name item-chevron" for="item-2">Blog</label>
-                {# <span class="nav-item-name"><a href="/">Blog</a><label class="item-chevron" for="item-2"></label></span> #}
+                <label class="nav-item-name item-chevron" for="item-A2">Visit</label>
                 <input type="checkbox"
-                    id="item-2"
-                    name="item-2"
+                        id="item-A2"
+                        name="item-A2"
+                        class="m-menu-checkbox" />
+                <ul class="nav-sublist">
+                    <li>
+                        <a href="/visit">Visit Us</a>
+                    </li>
+                    <li>
+                        <a href="/findyourway">Find Your Way</a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.co.in/maps/@13.1615025,77.4593968,3a,60y,90t/data=!3m6!1e1!3m4!1s-9UefyZY73ob-pFS-YGTlA!2e0!7i13312!8i6656" target="_blank">Virtual Tour</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li data-dropdown>
+            <div class="nav-item" data-dropdown-link>
+                <label class="nav-item-name item-chevron" for="item-A3">Support</label>
+                <input type="checkbox"
+                        id="item-A3"
+                        name="item-A3"
+                        class="m-menu-checkbox" />
+                <ul class="nav-sublist">
+                    <li>
+                        <a href="/support">Support Us</a>
+                    </li>
+                    <li>
+                        <a href="/donate">Donate</a>
+                    </li>
+                    <li>
+                        <a href="/corpusfund">Support the Corpus Fund</a>
+                    </li>
+                    <li>
+                        <a href="/otherwaystogive">Other Ways to Give</a>
+                    </li>
+                    <li>
+                        <a href="/sponsorship">Sponsorship</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="nav-item">
+                <span class="nav-item-name">
+                    <a href="/">Press</a>
+                </span>
+            </div>
+        </li>
+        {# TODO: Unable to scroll the mobile menu to access more items #}
+    </ul>
+    <ul class="nav-list">
+
+        <li data-dropdown>
+            <div class="nav-item" data-dropdown-link>
+                <label class="nav-item-name item-chevron" for="item-B1">Ensemble</label>
+                <input type="checkbox"
+                    id="item-B1"
+                    name="item-B1"
                     class="m-menu-checkbox" />
                 <ul class="nav-sublist">
                     <li>
-                        <a href="https://nytimes.com">Article 1</a>
-                    </li>
-                    <li>
-                        <a href="https://cnn.com">Article 2</a>
+                        <a href="/ensemble">Nrityagram Ensemble</a>
                     </li>
                     <li data-dropdown-lvl2 >
                         <div class="nav-item-lvl2" data-dropdown-link>
-                            <label class="nav-item-name-lvl2 item-chevron" for="item-2-1">
-                                <a href="https://google.com">Article 3</a>
+                            <label class="nav-item-name-lvl2 item-chevron" for="item-B1-1">
+                                <a href="/repertoire">Répertoire</a>
                             </label>
                             <input type="checkbox"
-                                id="item-2-1"
-                                name="item-2-1"
+                                id="item-B1-1"
+                                name="item-B1-1"
                                 class="m-menu-checkbox" />
                             <ul class="nav-sublist-lvl2">
                                 <li>
-                                    <a href="/">Sub Article 3-1</a>
+                                    <a href="/repertoire/#sri">Śrī: In Search of the Goddess</a>
                                 </li>
                                 <li>
-                                    <a href="/">Sub Article 3-2</a>
+                                    <a href="/repertoire/#ansh">Ansh</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#sspace">Sacred Space</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#pratima">Pratimā: Reflection</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#sriyah">Śriyaḥ</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#samhara">Saṃhāra</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#samyoga">Saṃyoga</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#lovelong">Songs of Love and Longing</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#yadu">Yadunandana</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#ahuti">Āhuti</a>
+                                </li>
+                                <li>
+                                    <a href="/repertoire/#vinati">Vinati: Songs from the Gita Govinda</a>
                                 </li>
                             </ul>
-
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <div class="nav-item">
-                    <span class="nav-item-name">About</span>
-                </div>
-            </li>
-            <li>
-                <div class="nav-item">
-                    <span class="nav-item-name">Contact</span>
-                </div>
-            </li>
-            {# TODO: Unable to scroll the mobile menu to access these items #}
-            {# <li>
-                <div class="nav-item">
-                    <span class="nav-item-name">Donate</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="nav-item">
-                    <span class="nav-item-name">Live</span>
-                </div>
-            </li> #}
-        </ul>
-        <ul class="nav-list">
-            <li>
-                <div class="nav-item">
-                    <span class="nav-item-name">
-                        <a href="/vanilla">Vanilla Slider</a>
-                    </span>
-                </div>
-            </li>
-
-            <li data-dropdown>
-                <div class="nav-item" data-dropdown-link>
-                    <label class="nav-item-name item-chevron" for="item-6">Projects</label>
-                    <input type="checkbox"
-                    id="item-6"
-                    name="item-6"
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/performancemap">Performances</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li data-dropdown>
+            <div class="nav-item" data-dropdown-link>
+                <label class="nav-item-name item-chevron" for="item-B2">School</label>
+                <input type="checkbox"
+                    id="item-B2"
+                    name="item-B2"
                     class="m-menu-checkbox" />
-                    <ul class="nav-sublist">
-                        <li>
-                            <a href="/">Covid Relief</a>
-                        </li>
-                        <li data-dropdown-lvl2 >
-                            <div class="nav-item-lvl2" data-dropdown-link>
-                                <label class="nav-item-name-lvl2 item-chevron" for="item-6-1">
-                                    <a href="/">Forest Farming</a>
-                                </label>
-                                <input type="checkbox"
-                                id="item-6-1"
-                                name="item-6-1"
+                <ul class="nav-sublist">
+                    <li>
+                        <a href="/gurukula">Nrityagram Gurukula</a>
+                    </li>
+                    <li>
+                        <a href="/danceprofessional">Dance Professionals</a>
+                    </li>
+                    <li data-dropdown-lvl2 >
+                        <div class="nav-item-lvl2" data-dropdown-link>
+                            <label class="nav-item-name-lvl2 item-chevron" for="item-B2-1">
+                                <a href="/danceunlimited">Dance Unlimited</a>
+                            </label>
+                            <input type="checkbox"
+                                id="item-B2-1"
+                                name="item-B2-1"
                                 class="m-menu-checkbox" />
-                                <ul class="nav-sublist-lvl2">
-                                    <li>
-                                        <a href="/">Soil Preparation</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Irrigation</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>Collective Commons</li>
-                    </ul>
-                </div>
-            </li>
-
-            <li>
-                <div class="nav-item">
-                    <span class="nav-item-name">Media</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="nav-item">
-                    <span class="nav-item-name">Press</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="nav-item">
-                    <span class="nav-item-name">Blog</span>
-                </div>
-            </li>
-        </ul>
-    </div>
+                            <ul class="nav-sublist-lvl2">
+                                <li>
+                                    <a href="/danceunlimited/#residential">Residential Workshops</a>
+                                </li>
+                                <li>
+                                    <a href="/danceunlimited/#parttime">Non-Residential Training</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li data-dropdown>
+            <div class="nav-item" data-dropdown-link>
+                <label class="nav-item-name item-chevron" for="item-B3">Community</label>
+                <input type="checkbox"
+                    id="item-B3"
+                    name="item-B3"
+                    class="m-menu-checkbox" />
+                <ul class="nav-sublist">
+                    <li data-dropdown-lvl2 >
+                        <div class="nav-item-lvl2" data-dropdown-link>
+                            <label class="nav-item-name-lvl2 item-chevron" for="item-B3-1">
+                                <a href="/community">Nrityagram Community</a>
+                            </label>
+                            <input type="checkbox"
+                                id="item-B3-1"
+                                name="item-B3-1"
+                                class="m-menu-checkbox" />
+                            <ul class="nav-sublist-lvl2">
+                                <li>
+                                    <a href="/community/#villageoutreach">Village Outreach</a>
+                                </li>
+                                <li>
+                                    <a href="/community/#popularisingarts">Popularising the Arts</a>
+                                </li>
+                                <li>
+                                    <a href="/community/#supportingartists">Supporting Artistes</a>
+                                </li>
+                                <li>
+                                    <a href="/community/#danceaware">Dance Awareness</a>
+                                </li>
+                                <li>
+                                    <a href="/community/#quietspace">Quiet Space</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li data-dropdown>
+            <div class="nav-item" data-dropdown-link>
+                <label class="nav-item-name item-chevron" for="item-B4">People</label>
+                <input type="checkbox"
+                        id="item-B4"
+                        name="item-B4"
+                        class="m-menu-checkbox" />
+                <ul class="nav-sublist">
+                    <li>
+                        <a href="/protima">Protima Gauri</a>
+                    </li>
+                    <li>
+                        <a href="/surupa">Surupa Sen</a>
+                    </li>
+                    <li>
+                        <a href="/pavithra">Pavithra Reddy</a>
+                    </li>
+                    <li>
+                        <a href="/lynne">Lynne Fernandez</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

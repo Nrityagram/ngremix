@@ -53,11 +53,9 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-	// max-width: 100%;
 	display: block;
-	// width: 100%;
-	// height: 100%;
 	object-fit: cover;
+	// prevents right-click-save on images
 	pointer-events: none;
 }
 

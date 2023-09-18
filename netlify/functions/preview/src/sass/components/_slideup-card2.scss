@@ -12,15 +12,15 @@
     background-position: top center;
     color: #ffffff;
     background-color: whitesmoke;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1),
-        0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.1),
+        0 10px 10px rgba(0, 0, 0, 0.1), 0 18px 18px rgba(0, 0, 0, 0.1);
 
     // aspect-ratio of card is fixed for all screen sizes
     aspect-ratio: 0.6;
 
     // only for mobile
     @include mqmax(small) {
-        aspect-ratio: 0.65;
+        aspect-ratio: 0.62;
         width: 65vw;
     }
     
@@ -50,8 +50,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        // transition: transform calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
-        transition: transform 500ms ease-in;
         pointer-events: none;
     }
 
@@ -65,8 +63,6 @@
         height: 200%;
         pointer-events: none;
         background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
-        // transform: translateY(-50%);
-        // transition: transform calc(700ms * 2) cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     &.blank:after {
@@ -84,12 +80,13 @@
     width: 100%;
     height: 110%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
-    transition: background-image 500ms ease-in;
+    // TODO: how to give transition effect for background-image
+    transition: all 500ms ease-in;
 }
 
 .slideup-card__content {
     position: absolute;
-    top: 100%;
+    top: 86%;
     left: 0; 
     display: flex;
     flex-direction: column;
@@ -98,13 +95,6 @@
     height: fit-content;
     margin: 0 auto;
     padding: 0 8%;
-
-    // background-color: lime;
-
-    // background-image: linear-gradient(to bottom, 
-    // rgba(0, 0, 0, 0) 0%,
-    // rgba(0, 0, 0, 0.5) 40%,
-    // rgba(0, 0, 0, 0.9) 100%);
 
     transition: top 700ms ease-in-out;
     z-index: 1;
@@ -117,19 +107,9 @@
     font-family: var(--ff-serif);
     font-weight: var(--ff-bold);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.65);
-    padding-bottom: 6rem;
-    // mobile
-    font-size: calc(1.4rem + 1vw);
+    font-size: var(--fs-600);
 
-    // tablet
-    @include mq(medium) {
-        font-size: calc(1.4rem + 1vw);
-    }
-    
-    // desktop
-    @include mq(large) {
-        font-size: calc(1rem + 0.9vw);
-    }
+    padding-bottom: 3.75em;
 }
 
 .slideup-card__content__copy {
@@ -140,25 +120,8 @@
     width: 100%;
     padding-bottom: 1.5em;
 
-    // 800px and above
-    @include mq(medium) {
-        font-size: calc(0.77em + 0.7vw);
-        line-height: calc(0.82em + 0.95vw);
-    
-        &.lower-title {
-            margin-top: calc(3em + 4vw);
-        }
-    }
-
-    // 1230px and above -->> CHECK
-    @include mq(large) {
-        font-size: clamp(18px, calc(0.52em + 0.7vw), 30px);
-        line-height: clamp(19px, calc(0.58em + 0.95vw), 31px);
-    
-        &.lower-title {
-            margin-top: calc(2.5em + 4vw);
-        }
-    }
+    font-size: var(--fs-300);
+    line-height: 1.4;
 }
 
 @media (hover: hover) {

@@ -24,6 +24,17 @@ h2,
 h3,
 h4 {
 	font-family: var(--ff-serif);
+	font-weight: var(--fw-serif-medium);
+}
+
+h1,
+h2 {
+	color: hsl(var(--clr-secondary-550));
+}
+
+h3,
+h4 {
+	color: hsl(var(--clr-neutral-850));
 }
 
 h1 {

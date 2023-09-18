@@ -12,15 +12,15 @@
     background-position: top center;
     color: #ffffff;
     background-color: whitesmoke;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1),
-        0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.1),
+        0 10px 10px rgba(0, 0, 0, 0.1), 0 18px 18px rgba(0, 0, 0, 0.1);
 
     // aspect-ratio of card is fixed for all screen sizes
     aspect-ratio: 0.6;
 
     // only for mobile
     @include mqmax(small) {
-        aspect-ratio: 0.65;
+        aspect-ratio: 0.62;
         width: 65vw;
     }
     
@@ -96,8 +96,6 @@
     margin: 0 auto;
     padding: 0 8%;
 
-    // background-color: lime;
-
     transition: top 700ms ease-in-out;
     z-index: 1;
 }
@@ -109,8 +107,9 @@
     font-family: var(--ff-serif);
     font-weight: var(--ff-bold);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.65);
-    padding-bottom: 3em;
     font-size: var(--fs-600);
+
+    padding-bottom: 3.75em;
 }
 
 .slideup-card__content__copy {
@@ -119,7 +118,7 @@
     font-weight: var(--fw-light);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     width: 100%;
-    padding-bottom: 1.3em;
+    padding-bottom: 1.5em;
 
     font-size: var(--fs-300);
     line-height: 1.4;

@@ -35,7 +35,7 @@ html:focus-within {
 body {
 	min-height: 100vh;
 	text-rendering: optimizeSpeed;
-	line-height: 1.5;
+	line-height: 1.45;
 }
 
 h1,
@@ -57,6 +57,9 @@ picture {
 	object-fit: cover;
 	// prevents right-click-save on images
 	pointer-events: none;
+	&.hot-spot {
+		pointer-events: all;
+	}
 }
 
 /* Inherit fonts for inputs and buttons */

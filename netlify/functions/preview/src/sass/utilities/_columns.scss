@@ -4,23 +4,15 @@
 
 
 .left-column {
-    @extend .flow;
-    @extend .flow-flushbottom;
     grid-area: leftcol;
 }
 .right-column {
-    @extend .flow;
-    @extend .flow-flushbottom;
     grid-area: rightcol;
 }
 .narrow-column {
-    @extend .flow;
-    @extend .flow-flushbottom;
     grid-area: narrowcol;
 }
 .wide-column {
-    @extend .flow;
-    @extend .flow-flushbottom;
     grid-area: widecol;
 }
 
@@ -79,9 +71,17 @@
             grid-template-areas:
                 "narrowcol widecol";
         }
-        &.reverse {
+        &.reverse-mob {
             // mobile
             @include mqmax(medium) {
+                grid-template-areas:
+                    "widecol"
+                    "narrowcol";
+            }
+        }
+        &.reverse-tab {
+            // tablet
+            @include mqmax(large) {
                 grid-template-areas:
                     "widecol"
                     "narrowcol";
@@ -101,9 +101,17 @@
                 "widecol narrowcol";
         }
     
-        &.reverse {
+        &.reverse-mob {
             // mobile
             @include mqmax(medium) {
+                grid-template-areas:
+                    "narrowcol"
+                    "widecol";
+            }
+        }
+        &.reverse-tab {
+            // tablet
+            @include mqmax(large) {
                 grid-template-areas:
                     "narrowcol"
                     "widecol";

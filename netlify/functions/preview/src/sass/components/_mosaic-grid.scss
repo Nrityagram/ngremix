@@ -227,60 +227,85 @@
     a {
         color: hsl(var(--clr-neutral-200));
         text-decoration: none;
-        font-size: var(--fs-serif-medium);
+        font-size: var(--fs-200);
         padding: 5px;
         min-width: 100%;
-        background-image: none;
-        transition: background-image 0.5s;
     }
 
     .grid-item {
-        display: flex;
-        align-items: flex-end;
+        position: relative;
         border-radius: 8px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
-        transition: all ease-in-out 300ms;
         overflow: hidden;
         margin: 0;
 
-        .info {
-            color: #fff;
-            text-decoration: none;
-            font-size: var(--medium-fontsize);
-            padding: 5px;
-            min-width: 100%;
-            background-image: none;
-            transition: background-image 0.5s;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.1),
+                0 6px 6px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
 
-            i {
-                vertical-align: middle;
-                filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
-                display: inline;
+        // TODO: replace background image with img element and use zoom-in on-hover transform
+        // img {
+        //     transform: scale(1);
+        //     transition: transform 500ms ease-in;
+        // }
+
+        .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            text-align: right;
+            padding: 4px 8px;
+            width: 100%;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.5) 100%);
+            opacity: 0;
+            transition: opacity 500ms ease-in;
+
+            .info-label {
+                color: hsl(var(--clr-neutral-100));
+                font-size: var(--fs-400);
+                font-weight: var(--fw-serif-normal);
+                text-shadow: 0 1px hsl(var(--clr-neutral-800));
             }
 
-            .hover-label {
-                font-size: calc(8px + 0.85vw);
-                font-weight: 700;
-                filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
-                display: none;
+            @include mqmax(small) {
+                padding: 2px 8px;
+                .info-label {
+                    font-size: var(--fs-300);
+                }
             }
         }
 
+        .info-icon {
+            position: absolute;
+            bottom: 8px;
+            left: 6px; 
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+            opacity: 1;
+            transition: opacity 500ms ease-in;
+        }
+
         &:hover {
+            // img {
+            //     transform: scale(1.1);
+            // }
+
             cursor: pointer;
-
             .info {
-                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+                opacity: 1;
             }
-
-            i {
-                display: none;
+            .info-icon {
+                opacity: 0;
             }
+        }
 
-            .hover-label {
-                display: inline;
+        // targets only devices that cannot hover -- touch devices
+        @media (hover: none) {
+            .info {
+                opacity: 1;
+            }
+            .info-icon {
+                opacity: 0;
             }
         }
 

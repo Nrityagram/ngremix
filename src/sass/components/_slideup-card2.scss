@@ -38,10 +38,6 @@
         }
     }
 
-    &.blank {
-        background-color: transparent;
-        box-shadow: none;
-    }
 
     &:before {
         content: '';
@@ -64,44 +60,36 @@
         pointer-events: none;
         background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
     }
-
-    &.blank:after {
-        background-image: none;
-    }
-
-    &.blank {
-        @include mqmax(large) {
-            display: none;
-        }
-    }
 }
 
 .slideup-card__screen {
     width: 100%;
     height: 110%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
-    // TODO: how to give transition effect for background-image
-    transition: all 500ms ease-in;
+    background-image: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(0, 0, 0, 1.0) 100%);
+    opacity: 0;
+    transition: opacity 500ms ease-in;
 }
 
 .slideup-card__content {
-    position: absolute;
-    top: 86%;
-    left: 0; 
     display: flex;
     flex-direction: column;
     gap: 0;
-    width: 100%;
-    height: fit-content;
     margin: 0 auto;
-    padding: 0 8%;
+    width: 100%;
 
-    transition: top 700ms ease-in-out;
+    // transition: top 700ms ease-in-out;
     z-index: 1;
 }
 
 .slideup-card__content__title {
-    color: #fff;
+    position: absolute;
+    top: 86%;
+    left: 0;
+    padding-left: 8%;
+    color: hsl(var(--clr-neutral-100));
     width: 100%;
 
     font-family: var(--ff-serif);
@@ -109,18 +97,29 @@
     text-shadow: 1px 1px rgba(0, 0, 0, 0.65);
     font-size: var(--fs-600);
 
-    padding-bottom: 3.75em;
+    transition: top 700ms ease-in-out;
+}
+
+.slideup-card__content__wrapper {
+    position: absolute;
+    bottom: -60%;
+    left: 0;
+    padding-left: 8%;
+    // 100% - 8%
+    width: 92%;
+    transition: bottom 700ms ease-in-out;
 }
 
 .slideup-card__content__copy {
     font-family: var(--ff-serif);
     line-height: 1.2;
     font-weight: var(--fw-light);
+    color: hsl(var(--clr-neutral-100));
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     width: 100%;
     padding-bottom: 1.5em;
 
-    font-size: var(--fs-300);
+    font-size: var(--fs-400);
     line-height: 1.4;
 }
 
@@ -131,14 +130,14 @@
     .slideup-card:focus-within {
 
         .slideup-card__screen {
-            background-image: linear-gradient(to bottom, 
-                rgba(0, 0, 0, 0) 0%,
-                rgba(0, 0, 0, 0.5) 40%,
-                rgba(0, 0, 0, 0.9) 100%);
+            opacity: 1;
         }
 
-        .slideup-card__content {
+        .slideup-card__content__title {
             top: 15%;
+        }
+        .slideup-card__content__wrapper {
+            bottom: 5%;
         }
     }
 }
@@ -191,13 +190,14 @@
     // targets only devices that cannot hover -- touch devices like the *$%*ing iphone
 
     .slideup-card__screen {
-        background-image: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0) 0%,
-                rgba(0, 0, 0, 0.5) 40%,
-                rgba(0, 0, 0, 0.9) 100%);
+        opacity: 1;
     }
 
-    .slideup-card__content {
+    .slideup-card__content__title {
         top: 15%;
+    }
+
+    .slideup-card__content__wrapper {
+        bottom: 5%;
     }
 }

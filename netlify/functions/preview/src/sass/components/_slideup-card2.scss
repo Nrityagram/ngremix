@@ -102,7 +102,7 @@
 
 .slideup-card__content__wrapper {
     position: absolute;
-    bottom: -20%;
+    bottom: -60%;
     left: 0;
     padding-left: 8%;
     // 100% - 8%
@@ -114,6 +114,7 @@
     font-family: var(--ff-serif);
     line-height: 1.2;
     font-weight: var(--fw-light);
+    color: hsl(var(--clr-neutral-100));
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     width: 100%;
     padding-bottom: 1.5em;
@@ -197,6 +198,6 @@
     }
 
     .slideup-card__content__wrapper {
-        bottom: 96%;
+        bottom: 5%;
     }
 }

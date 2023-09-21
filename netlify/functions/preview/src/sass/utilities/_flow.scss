@@ -1,3 +1,5 @@
+@use '../abstracts/' as *;
+
 .flow > :where(:not(:first-child)) {
 	margin-top: var(--flow-spacer, var(--spacer));
 }
@@ -6,8 +8,28 @@
 	padding-top: var(--flow-spacer-top);
 }
 
+// To compensate for the line-height you get with h1
+.flow:has(>h1:first-child) {
+	padding-top: var(--flow-spacer-title);
+	h1 {
+		color: hotpink;
+	}
+}
+
+@include mqmax(small) {
+	.flow>.flow:has(h1:first-child) {
+			background-color: lightblue;
+	}
+}
+
+
 .flow {
 	padding-bottom: var(--flow-spacer-bottom);
+}
+
+// spacing only between elements without top+bottom padding
+.flow-inbetween > :where(:not(:first-child)) {
+	margin-top: var(--flow-spacer, var(--spacer));
 }
 
 // to compensate for line-height of text

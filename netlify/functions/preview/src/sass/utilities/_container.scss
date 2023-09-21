@@ -38,14 +38,14 @@
 
 .wrapper {
 	margin-inline: auto;
-	--width: 85vw;
+	--width: var(--ultra-wide-width);
 	
 	@include mq(medium) {
-		--width: 65vw;		
+		--width: var(--regular-width);		
 	}
 
 	@include mq(large) {
-		--width: 65vw;
+		--width: var(--regular-width);
 	}
 
 	&.headwrap {
@@ -54,10 +54,17 @@
 	}
 
 	&.ultra-wide {
-		--width: 80.5vw;
+		--width: var(--ultra-wide-width);
+		.lrg-screen-shrink {
+			@include mq(large) {
+				--width: var(--regular-width);
+			}
+			max-width: var(--width, var(--max-char-in-line));
+			margin: 0 auto;
+		}
 	}
 
-	max-width: var(--width, 60ch);
+	max-width: var(--width, var(--max-char-in-line));
 }
 
 #banner-container {

@@ -78,6 +78,7 @@
       img {
         height: 3vh;
         width: auto;
+        filter: brightness(90%);
       }
     }
 
@@ -95,13 +96,14 @@
       img {
         height: 3vh;
         width: auto;
+        filter: brightness(90%);
       }
     }
 
     .owl-dots {
       position: absolute;
-      bottom: 0.5%;
-      left: 23%;
+      bottom: 0.1%;
+      left: 18.5%;
 
       @include mqmax(large) {
         left: 0;

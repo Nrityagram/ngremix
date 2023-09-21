@@ -16,8 +16,13 @@
 	--flow-spacer-top: #{$flow-spacer-top};
 	--flow-spacer-bottom: #{$flow-spacer-bottom};
 	--flow-spacer-nontitletext: #{$flow-spacer-nontitletext};
+	--flow-spacer-title: #{$flow-spacer-title};
 	--column-gap: #{$column-gap};
 	--wide-column-gap: #{$wide-column-gap};
+
+	--regular-width: #{$regular-width};
+	--ultra-wide-width: #{$ultra-wide-width};
+	--max-char-in-line: #{$max-char-in-line};
 
 	--logo-height: #{$logo-height};
 	--logo-height-sticking: #{$logo-height-sticking};

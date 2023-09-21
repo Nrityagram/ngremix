@@ -5,11 +5,9 @@
 
 .left-column {
     grid-area: leftcol;
-    min-width: 100%;
 }
 .right-column {
-    grid-area: rightcol;
-    min-width: 100%; 
+    grid-area: rightcol;  
 }
 .narrow-column {
     grid-area: narrowcol;
@@ -32,6 +30,48 @@
     @include mq(large2) {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
+    }
+
+    &.center-column-pair {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        // For mobile, the pair of columns will be stacked
+        .column-1 {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+        }
+    
+        .column-2 {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;            
+        }
+
+        @include mq(medium) {
+            grid-template-columns: repeat(2, 1fr);
+
+            .column-1 {
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+            }
+
+            .column-2 {
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+            }
+        }
+
+        @include mq(large) {
+            grid-template-columns: repeat(4, 1fr);
+            .column-1 {
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+            }
+        
+            .column-2 {
+                grid-row: 1 / 2;
+                grid-column: 3 / 4; 
+            }
+        }
     }
 }
 

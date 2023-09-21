@@ -30,6 +30,11 @@
     width: 100%;
 }
 
+.button.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .button .glare {
     position: absolute;
     top: 0;
@@ -46,4 +51,8 @@
 
 .button:hover {
     cursor: pointer;
+}
+
+.button.inactive:hover {
+    cursor: not-allowed;
 }

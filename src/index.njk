@@ -4,6 +4,8 @@ eleventyNavigation:
   key: Vanilla
   order: 1
 tags: page
+slider: true
+youtube: true
 date: Last Modified
 ---
 <div id="banner-container">
@@ -327,7 +329,7 @@ date: Last Modified
             <div class="button stretch red-plastic"  onclick="location.href='/ensemble';">
               <div class="glare"></div>
                 Learn More
-              </div>
+            </div>
           </div>
         </div>
 
@@ -384,7 +386,7 @@ date: Last Modified
             <div class="slideup-card__content__copy">
                 Meld art and<br />technology to<br />create immersive<br />experiences through<br />our Virtual Avatar<br />Nrityagram Rasa
             </div>
-            <div class="button stretch red-plastic"  onclick="location.href='/gurukula';">
+            <div class="button stretch red-plastic inactive">
               <div class="glare"></div>
                 Coming Soon
             </div>
@@ -467,45 +469,360 @@ date: Last Modified
   </div>
 </div>
 <div class="container">
-  <div class="wrapper flow">
-    <div class="flow-nontitletext">
-      <div class="image-plus">
-        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1620734207/school-card_m5avwv.jpg",
-      "NG Utsarga",
-      ["425", "768", "1046"] %}
+  <div class="wrapper ultra-wide flow">
+    <h1>Performances</h1>
+    <p>
+      The Nrityagram Dance Ensemble has performed at some of the most notable theatres in 25 countries across 5 continents
+    </p>
+    {# <div class="marquee">
+      <div class="marquee-content">
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656256693/adf-logo_ygogal.png", "American Dance Festival logo", ["250"] %}
+          <div class="marquee-item-caption">
+            American Dance Festival<br />Durham NC USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656232551/annenberg-logo_k0foa1.png", "Annenberg Center for Performing Arts logo", ["250"] %}
+          <div class="marquee-item-caption">
+            Annenberg Center for Performing Arts<br />Philadelphia PA USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652196074/Baryshnikov_Arts_Center_logo_uxweli.jpg",
+          "Baryshnikov Arts Center logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Baryshnikov Arts Center<br />New York NY USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652179816/Bhoomija-logo_t54qoe.jpg", "Bhoomija logo", ["250"] %}
+          <div class="marquee-item-caption">
+            Bhoomija<br />Bangalore INDIA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652197752/Broadway_Center_for_the_Arts_logo_d2fgsg.png",
+          "Broadway Center for the Arts logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Broadway Center for the Arts<br />Tacoma WA USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652185589/Cairo_Opera_House_logo_ffkwtb.png",
+          "Cairo Opera House logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Cairo Opera House<br />Cairo EGYPT
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656257333/cali-theatre-logo_sdnuhg.png",
+          "California Theater logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            California Theater<br />San Jose CA USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652194421/summerstage-logo_zvstmv.jpg",
+          "Central Park SummerStage logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Central Park SummerStage<br />New York NY USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652179816/Chinmaya-Nada-Bindu-logo_vkaxf2.jpg",
+          "Chinmaya Nada Bindu logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Chinmaya Nada Bindu<br />Pune INDIA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1628320980/chowdaiah-logo_cqfgjt.png",
+          "chowdaiah memorial hall logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Chowdaiah Memorial Hall<br />Bangalore INDIA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652198335/Cleveland_Museum_of_Art_logo_u8umuq.png",
+          "Cleveland Museum of Art logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Cleveland Museum of Art<br />Cleveland OH USA
+          </div>
+        </div>
+
+      </div>
+
+      <div class="marquee-content" aria-hidden="true">
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656256693/adf-logo_ygogal.png", "American Dance Festival logo", ["250"] %}
+          <div class="marquee-item-caption">
+            American Dance Festival<br />Durham NC USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656232551/annenberg-logo_k0foa1.png", "Annenberg Center for Performing Arts logo", ["250"] %}
+          <div class="marquee-item-caption">
+            Annenberg Center for Performing Arts<br />Philadelphia PA USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652196074/Baryshnikov_Arts_Center_logo_uxweli.jpg",
+          "Baryshnikov Arts Center logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Baryshnikov Arts Center<br />New York NY USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652179816/Bhoomija-logo_t54qoe.jpg", "Bhoomija logo", ["250"] %}
+          <div class="marquee-item-caption">
+            Bhoomija<br />Bangalore INDIA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652197752/Broadway_Center_for_the_Arts_logo_d2fgsg.png",
+          "Broadway Center for the Arts logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Broadway Center for the Arts<br />Tacoma WA USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652185589/Cairo_Opera_House_logo_ffkwtb.png",
+          "Cairo Opera House logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Cairo Opera House<br />Cairo EGYPT
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656257333/cali-theatre-logo_sdnuhg.png",
+          "California Theater logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            California Theater<br />San Jose CA USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652194421/summerstage-logo_zvstmv.jpg",
+          "Central Park SummerStage logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Central Park SummerStage<br />New York NY USA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652179816/Chinmaya-Nada-Bindu-logo_vkaxf2.jpg",
+          "Chinmaya Nada Bindu logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Chinmaya Nada Bindu<br />Pune INDIA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1628320980/chowdaiah-logo_cqfgjt.png",
+          "chowdaiah memorial hall logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Chowdaiah Memorial Hall<br />Bangalore INDIA
+          </div>
+        </div>
+
+        <div class="marquee-item">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652198335/Cleveland_Museum_of_Art_logo_u8umuq.png",
+          "Cleveland Museum of Art logo",
+          ["250"] %}
+          <div class="marquee-item-caption">
+            Cleveland Museum of Art<br />Cleveland OH USA
+          </div>
+        </div>
+      </div>
+    </div> #}
+    <div class="button red-plastic center"  onclick="location.href='/performancemap';">
+      <div class="glare"></div>
+        Global Map of Performances
+      </div>
+  </div>
+</div>
+
+<div class="container accent-bg">
+  <div class="wrapper ultra-wide flow">
+    <h1>Reviews</h1>
+    <div class="owl-carousel owl-theme standard review-slider">
+      <div class="item">
+        <div class="even-columns reverse-tab no-gap">
+          <div class="left-column flow">
+            <p>
+              “The dancers from Nrityagram stormed the bastion of dance in Chennai, wowing the knowledgeable audience into a standing ovation!”
+            </p>
+            <p>
+              <b>
+              The Hindu
+              </b>
+            </p>
+          </div>
+          <div class="right-column">
+            <div class="image-plus">
+              {% image "https://res.cloudinary.com/nrityagram/image/upload/v1642805189/review-slider-pic1_bkvdur.jpg", "Still image from a performance", ["1046", "768", "560"] %}
+              <div class="credit" data-image-credit="Pavithra Reddy" ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="even-columns reverse-tab no-gap">
+          <div class="left-column flow">
+            <p>
+              “This was dance that never seemed to stop, even in those curvilinear poses. Should we dare compare it to
+							George Balanchine's work with the New York City Ballet, where ballerinas seemed to float while seemingly encased in a simple fifth position? Like NYCB, Sen's dancers would erupt into movement that surged across the stage with remarkable speed and agility!”
+            </p>
+            <p>
+              <b>
+              Pittsburgh Post-Gazette
+              </b>
+            </p>
+          </div>
+          <div class="right-column">
+            <div class="image-plus">
+              {% image "https://res.cloudinary.com/nrityagram/image/upload/v1642805189/review-slider-pic5_zfohfs.jpg", "Still image from a performance", ["1046", "768", "560"] %}
+              <div class="credit" data-image-credit="Pavithra Reddy" ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="even-columns reverse-tab no-gap">
+          <div class="left-column flow">
+            <p>
+              “The ensemble mesmerized a sold-out audience with its artistry, energy, technique and beauty.”
+            </p>
+            <p>
+              <b>
+              Dance Magazine
+              </b>
+            </p>
+          </div>
+          <div class="right-column">
+            <div class="image-plus">
+              {% image "https://res.cloudinary.com/nrityagram/image/upload/v1642805189/review-slider-pic3_xreyty.jpg", "Still image from a performance", ["1046", "768", "560"] %}
+              <div class="credit" data-image-credit="Pavithra Reddy" ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="even-columns reverse-tab no-gap">
+          <div class="left-column flow">
+            <p>
+              “Watching Sen’s choreography is like encountering a chef with a perfect palate or a singer with perfect
+							pitch. The sense of proportion and balance is immaculate. A line of dancers will shift, stamp and swirl in unison and imperceptibly one of them will glide back from the group to pose and watch. Sen has an unerring sense of when to keep dancers in formation and when to vary the picture as if she could
+							anticipate the audience’s desires. Her use of space is similar. The patterns aren’t complex; they’re
+							simply right.”
+            </p>
+            <p>
+              <b>
+              Danceview Times
+              </b>
+            </p>
+          </div>
+          <div class="right-column">
+            <div class="image-plus">
+              {% image "https://res.cloudinary.com/nrityagram/image/upload/v1643344723/1_Pratima_review4_tvgxjz.jpg",
+              "Still image from a performance",
+              ["1046", "768", "560"] %}
+              <div class="credit" data-image-credit="Pavithra Reddy" ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="even-columns reverse-tab no-gap">
+          <div class="left-column flow">
+            <p>
+              “Nrityagram is the best Indian classical company to come to this area in a long time. It’s confident. It’s cutting edge. It’s a winner!”
+            </p>
+            <p>
+              <b>
+              The Washington Post
+              </b>
+            </p>
+          </div>
+          <div class="right-column">
+            <div class="image-plus">
+              {% image "https://res.cloudinary.com/nrityagram/image/upload/v1649026891/review5_cfltor.jpg",
+              "Still image from a performance",
+              ["1046", "768", "560"] %}
+              <div class="credit" data-image-credit="Pavithra Reddy" ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="even-columns reverse-tab no-gap">
+          <div class="left-column flow">
+            <p>
+              “Surupa Sen seems to be literally tearing open the lexicon of the Odissi movement vocabulary, looking
+							deeper at the etymology and histories of its movements and stringing together more powerful phrases of
+							the dance. But this ability to hold Odissi in her body is at par with her skill at speaking it through
+							her face with her finesse in abhinaya.”
+            </p>
+            <p>
+              <b>
+              news9live.com
+              </b>
+            </p>
+          </div>
+          <div class="right-column">
+            <div class="image-plus">
+              {% image "https://res.cloudinary.com/nrityagram/image/upload/v1642805191/review-slider-pic7_f1g3a2.jpg",
+              "Still image from a performance",
+              ["1046", "768", "560"] %}
+              <div class="credit" data-image-credit="Karthik Venkataraman" ></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <h1>Section 3</h1>
-    <p>
-		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis consequuntur, iste voluptatem natus dolorem
-		veritatis sapiente hic, rerum molestias dolore, delectus praesentium illum ea beatae? Expedita exercitationem
-		deleniti voluptatibus obcaecati?
-	</p>
+    <div class="button red-plastic center"  onclick="location.href='/press';">
+      <div class="glare"></div>
+      Read More Reviews
+    </div>
   </div>
 </div>
-<div class="container primary-bg">
-  <div class="wrapper flow">
-    <p>
-		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis consequuntur, iste voluptatem natus dolorem
-		veritatis sapiente hic, rerum molestias dolore, delectus praesentium illum ea beatae? Expedita exercitationem
-		deleniti voluptatibus obcaecati?
-	  </p>
-    <h1>Section 4</h1>
-    <p>
-		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis consequuntur, iste voluptatem natus dolorem
-		veritatis sapiente hic, rerum molestias dolore, delectus praesentium illum ea beatae? Expedita exercitationem
-		deleniti voluptatibus obcaecati?
-	  </p>
-    <h2>Section 5</h2>
-    <p>
-		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi optio facere sint quaerat earum, accusantium impedit quas dolor voluptates reprehenderit harum obcaecati mollitia incidunt. Numquam possimus dolor aspernatur natus aliquid!
-	  </p>
-    <h3>Section 5</h3>
-    <p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis hic, aliquid obcaecati deleniti dolore dolorem quaerat ipsam error aperiam porro placeat distinctio perspiciatis eos aspernatur voluptates cumque expedita. Dicta, deserunt?
-	  </p>
-  </div>
-</div>
+
 <script src="{{ '/utils/vanilla-slideshow.js' | url }}"></script>
 <script>
   vanillaSlideshow.init({

@@ -5,9 +5,11 @@
 
 .left-column {
     grid-area: leftcol;
+    min-width: 100%;
 }
 .right-column {
     grid-area: rightcol;
+    min-width: 100%; 
 }
 .narrow-column {
     grid-area: narrowcol;
@@ -45,13 +47,21 @@
             "leftcol rightcol";
     }
 
-    &.reverse {
+    &.reverse-mob {
         // mobile
         @include mqmax(medium) {
             grid-template-areas:
                 "rightcol"
                 "leftcol";
         }
+    }
+    &.reverse-tab {
+      // tablet
+      @include mqmax(large) {
+        grid-template-areas:
+          "rightcol"
+          "leftcol";
+      }
     }
 }
 

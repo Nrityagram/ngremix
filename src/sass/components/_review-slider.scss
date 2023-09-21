@@ -1,0 +1,114 @@
+@use '../abstracts/' as *;
+
+.review-slider {
+    .left-column,
+    .right-column {
+        background-color: hsl(var(--clr-neutral-100));
+        overflow: hidden;    
+    }
+    .left-column {
+        overflow: hidden;
+        padding: 0 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: var(--fs-300);
+        @include mqmax(large) {
+            padding: 3vh 8vw;
+            align-items: center;
+            justify-content:end;
+        }
+        @include mqmax(medium) {
+            padding: 5vh 8vw; 
+            align-items: flex-start;
+        }
+    }
+    .right-column {  
+        display: block;
+        overflow: hidden;
+        .image-plus {
+          @include mq(medium) {
+            border-radius: 12px 12px 0 0;
+          }
+          @include mq(large) {
+            border-radius: 0 12px 12px 0;
+          }
+        }
+        @include mqmax(medium) {
+            display: none;
+        }
+    }
+    // This is to make all owl slides equal height
+    // no matter the length of the review
+    .owl-stage {
+        display: flex;
+        flex: 1;
+    }
+
+    .owl-item {
+        display: flex;
+        flex: 1; 
+        min-height: 100%;
+        background-color: hsl(var(--clr-neutral-100));
+    }
+
+    .owl-item,
+    .item {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .item {
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 1.64; 
+      }
+    }
+
+    .owl-prev {
+      left: 10px; 
+      @include mqmax(large) {
+        bottom: -55%;
+      }
+      @include mqmax(small) {
+        bottom: 0;
+      }
+      img {
+        height: 3vh;
+        width: auto;
+        filter: brightness(90%);
+      }
+    }
+
+    .owl-next {
+      right: 10px;
+      @include mqmax(large) {
+        bottom: -55%;
+      }
+      @include mqmax(small) {
+        bottom: 0;
+      }
+      @include mq(large) {
+        right: calc(50% + 10px);
+      }
+      img {
+        height: 3vh;
+        width: auto;
+        filter: brightness(90%);
+      }
+    }
+
+    .owl-dots {
+      position: absolute;
+      bottom: 0.1%;
+      left: 18.5%;
+
+      @include mqmax(large) {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+}

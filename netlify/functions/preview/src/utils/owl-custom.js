@@ -84,94 +84,41 @@ $(document).ready(function () {
   });
 });
 
-// Synced Owl Carousels
-// Example: https://codepen.io/achanda007/pen/QWzMwae
-$(document).ready(function() {
-
-  var sync1 = $("#sync1");
-  var sync2 = $("#sync2");
-  var syncedSecondary = true;
-
-  sync1.owlCarousel({
-    items : 1,
-    slideSpeed : 2000,
-    nav: true,
-    autoplay: false,
-    dots: true,
+// Review Carousel
+$(document).ready(function () {
+  $(".owl-carousel.review-slider").owlCarousel({
     loop: true,
-    responsiveRefreshRate: 200,
+    nav: true,
+    dots: true,
+    mouseDrag: true,
+    touchDrag: true,
+    lazyLoadEager: 1,
+    animateOut: 'fadeOut',
     onInitialized: function (event) {
       // apply aria-label info to next and previous buttons and make them focusable
-        $('.owl-carousel.ultra-wide').find('.owl-prev').attr('aria-label','Previous Slide');
-        $('.owl-carousel.ultra-wide').find('.owl-next').attr('aria-label','Next Slide');
-        $('.owl-carousel.ultra-wide, .owl-prev, .owl-next').attr('tabindex','0');
+        $('.owl-carousel.review-slider').find('.owl-prev').attr('aria-label','Previous Slide');
+        $('.owl-carousel.review-slider').find('.owl-next').attr('aria-label','Next Slide');
+        $('.owl-carousel.review-slider, .owl-prev, .owl-next').attr('tabindex','0');
     },
-
-  }).on('changed.owl.carousel', syncPosition);
-
-  sync2
-    .on('initialized.owl.carousel', function () {
-      sync2.find(".owl-item").eq(0).addClass("current");
-    })
-    .owlCarousel({
-    items : 1,
-    dots: false,
-    nav: false,
-    smartSpeed: 200,
-    slideSpeed : 500,
-    responsiveRefreshRate: 100,
-    onInitialized: function (event) {
-      // apply aria-label info to next and previous buttons and make them focusable
-        $('.owl-carousel.ultra-wide').find('.owl-prev').attr('aria-label','Previous Slide');
-        $('.owl-carousel.ultra-wide').find('.owl-next').attr('aria-label','Next Slide');
-        $('.owl-carousel.ultra-wide, .owl-prev, .owl-next').attr('tabindex','0');
-    },
-  }).on('changed.owl.carousel', syncPosition2);
-
-  function syncPosition(el) {
-    //if you set loop to false, you have to restore this next line
-    //var current = el.item.index;
-    
-    //if you disable loop you have to comment this block
-    var count = el.item.count-1;
-    var current = Math.round(el.item.index - (el.item.count/2) - .5);
-    
-    if(current < 0) {
-      current = count;
+    navText: [
+      '<img src="https://res.cloudinary.com/nrityagram/image/upload/v1646318418/chevron-left-2_bta3sl.png" alt="left arrow">',
+      '<img src="https://res.cloudinary.com/nrityagram/image/upload/v1646318418/chevron-right-2_dped9m.png" alt="right arrow">',
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
+      },
+      768: {
+        items: 1,
+        nav: true
+      },
+      1399: {
+        items: 1,
+        touchDrag: false,
+        mouseDrag: false
+      }
     }
-    if(current > count) {
-      current = 0;
-    }
-    
-    //end block
-
-    sync2
-      .find(".owl-item")
-      .removeClass("current")
-      .eq(current)
-      .addClass("current");
-    var onscreen = sync2.find('.owl-item.active').length - 1;
-    var start = sync2.find('.owl-item.active').first().index();
-    var end = sync2.find('.owl-item.active').last().index();
-    
-    if (current > end) {
-      sync2.data('owl.carousel').to(current, 100, true);
-    }
-    if (current < start) {
-      sync2.data('owl.carousel').to(current - onscreen, 100, true);
-    }
-  }
-  
-  function syncPosition2(el) {
-    if(syncedSecondary) {
-      var number = el.item.index;
-      sync1.data('owl.carousel').to(number, 100, true);
-    }
-  }
-  
-  sync2.on("click", ".owl-item", function(e){
-    e.preventDefault();
-    var number = $(this).index();
-    sync1.data('owl.carousel').to(number, 300, true);
   });
-});
+
+})

@@ -17,6 +17,10 @@
 	}
 }
 
+.no-gap {
+	gap: 0;
+}
+
 // @mixin grid($align: start, $justify: between) {
 //   @extend .grid;
 //   align-items: $align;

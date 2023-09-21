@@ -77,29 +77,7 @@
     }
 }
 
-.owl-theme .owl-nav {
-    margin-top: 0;
-}
-
-button.owl-next,
-button.owl-prev {
-    background: transparent !important;
-    width: -moz-fit-content !important;
-    width: -webkit-fit-content !important;
-}
-
-button.owl-dot span {
-    // width: 6px;
-    // height: 6px;
-    background-color: transparent !important;
-    border: 1px solid hsl(var(--clr-neutral-250));
-}
-button.owl-dot.active span {
-    border: none;
-    background: hsl(var(--clr-neutral-250)) !important;
-}
-
-//  Desktop
+//  Laptop
 @include mq(medium) {
     .owl-carousel.ultra-wide {
         .item {
@@ -112,21 +90,25 @@ button.owl-dot.active span {
         }
     }
 
-    .owl-next,
-    .owl-prev {
-        top: 45%;
+    .owl-carousel.ultra-wide {
+        .owl-next,
+        .owl-prev {
+            top: 45%;
+        }
+    
+        .owl-prev {
+            left: 2vw;
+        }
+    
+        .owl-next {
+            right: 2vw;
+        }
     }
-
-    .owl-prev {
-        left: 2vw;
-    }
-
-    .owl-next {
-        right: 2vw;
-    }
+    
 }
-
+// Large Desktop
 @include mq(large) {
+  .owl-carousel.ultra-wide {
     .owl-prev {
         left: 4vw;
     }
@@ -134,4 +116,5 @@ button.owl-dot.active span {
     .owl-next {
         right: 4vw;
     }
+  }
 }

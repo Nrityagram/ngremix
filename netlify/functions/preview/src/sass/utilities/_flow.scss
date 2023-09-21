@@ -10,18 +10,8 @@
 
 // To compensate for the line-height you get with h1
 .flow:has(>h1:first-child) {
-	padding-top: var(--flow-spacer-title);
-	h1 {
-		color: hotpink;
-	}
+	padding-top: var(--flow-spacer-h1);
 }
-
-@include mqmax(small) {
-	.flow>.flow:has(h1:first-child) {
-			background-color: lightblue;
-	}
-}
-
 
 .flow {
 	padding-bottom: var(--flow-spacer-bottom);

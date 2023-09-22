@@ -73,6 +73,50 @@
             }
         }
     }
+
+    &.textbox-card-pair {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        // For mobile, the pair of columns will be stacked
+        .textbox-column {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+        }
+        .card-column {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+        }
+
+        // tablet
+        @include mq(medium) {
+            grid-template-columns: repeat(2, 1fr);
+            // textbox will be first column
+            .textbox-column {
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+            }
+            .card-column {
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+            }
+        }
+        // desktop (large screens)
+        @include mq(large) {
+            // keep 1/2 column width on either side and 
+            // 3 full columns in the middle
+            grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+            // textbox will be 2nd and 3rd columns
+            .textbox-column {
+                grid-row: 1 / 2;
+                grid-column: 2 / 4;
+            }
+            // card column will be 4th column
+            .card-column {
+                grid-row: 1 / 2;
+                grid-column: 4 / 5;
+            }
+        }
+    }
 }
 
 .even-columns {

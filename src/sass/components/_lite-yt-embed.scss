@@ -99,7 +99,9 @@ lite-youtube.lyt-activated>.lty-playbtn {
     width: 100%; 
     text-align: center;
     color: hsl(var(--clr-neutral-100));
-    font-size: var(--fs-450);
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-sans-light);
+    font-size: var(--fs-450); 
     line-height: 1.2;
     @include mqmax(small) {
         font-size: var(--fs-300);

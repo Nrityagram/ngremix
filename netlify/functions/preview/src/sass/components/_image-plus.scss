@@ -17,14 +17,21 @@
     
     // mobile
     @include mqmax(medium) {
-        //TODO: To make the image stretch edge-to-edge
-        margin-left: -7.5vw;
+        //make the image stretch edge-to-edge 
+        margin-left: var(--full-bleed-margin-ultra);
         width: 100vw;
         height: auto;
         border-radius: 0;
         img {
             width: 100%;
             height: auto;
+        }
+    }
+
+    &.link {
+        &:hover, 
+        &:active {
+            cursor: pointer;
         }
     }
 

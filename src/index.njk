@@ -1,7 +1,7 @@
 ---
 layout: layouts/home.njk
 eleventyNavigation:
-  key: Vanilla
+  key: home
   order: 1
 tags: page
 slider: true
@@ -793,6 +793,29 @@ date: Last Modified
         <div class="even-columns reverse-tab no-gap">
           <div class="left-column flow">
             <p>
+              “Dazzling Āhuti!”
+            </p>
+            <p>
+              <b>
+              Narthaki
+              </b>
+            </p>
+          </div>
+          <div class="right-column">
+            <div class="image-plus">
+              {% image "https://res.cloudinary.com/nrityagram/image/upload/v1642805190/review-slider-pic6_dyttws.jpg",
+              "Still image from a performance",
+              ["1046", "768", "560"] %}
+              <div class="credit" data-image-credit="Pavithra Reddy" ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="even-columns reverse-tab no-gap">
+          <div class="left-column flow">
+            <p>
               “Surupa Sen seems to be literally tearing open the lexicon of the Odissi movement vocabulary, looking
 							deeper at the etymology and histories of its movements and stringing together more powerful phrases of
 							the dance. But this ability to hold Odissi in her body is at par with her skill at speaking it through
@@ -949,6 +972,35 @@ date: Last Modified
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="wrapper flow">
+    <h1>Visit Nrityagram</h1>
+    <div class="even-columns no-gap hide-right-mob">
+      <div class="left-column">
+        <iframe
+						src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1192.5589560826568!2d77.45979436871723!3d13.163328428545444!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1643316702354!5m2!1sen!2sin"
+            id="ng-map"
+						width="100%"
+						height="100%"
+						frameborder="0"
+						style="border:0;border-radius: 12px 0 0 12px; overflow: hidden; width: 100%; height: 100%; aspect-ratio: 4/3;"
+						allowfullscreen="" loading="lazy"
+					></iframe>
+      </div>
+      <div class="right-column">
+        <div class="image-plus flush-left">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1695642368/illustration-collage-V10_vxb8cd.png", "Collage of sketches of places inside Nrityagram", ["auto", "768", "560"] %}
+        </div>
+      </div>
+    </div>
+    <div class="button red-plastic center"  onclick="location.href='/findyourway';">
+      <div class="glare"></div>
+      More Ways to Reach Us
+    </div>
+  </div>
+</div>
+
 <script src="{{ '/utils/vanilla-slideshow.js' | url }}"></script>
 <script>
   vanillaSlideshow.init({
@@ -967,3 +1019,13 @@ date: Last Modified
   });
 </script>
 <script src="{{ '/utils/lite-yt-embed.js' | url }}"></script>
+<script type="text/javascript">
+  const gmap = document.querySelector('#ng-map')
+
+  // For mobile screens make the map full-bleed
+  if (window.matchMedia("(max-width: 50em)").matches) {
+    gmap.style.marginLeft = "-9.75vw"
+    gmap.style.width = "100vw"
+    gmap.style.borderRadius = "0"
+  }
+</script>

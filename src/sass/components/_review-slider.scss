@@ -3,7 +3,7 @@
 .review-slider {
     .left-column,
     .right-column {
-        background-color: hsl(var(--clr-neutral-100));
+        // background-color: hsl(var(--clr-neutral-100));
         overflow: hidden;    
     }
     .left-column {
@@ -12,13 +12,15 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: var(--fs-300);
+        font-size: var(--fs-350);
         @include mqmax(large) {
-            padding: 3vh 8vw;
-            align-items: center;
-            justify-content:end;
+          font-size: var(--fs-400);
+          padding: 3vh 8vw;
+          align-items: center;
+          // justify-content:end;
         }
         @include mqmax(medium) {
+            font-size: var(--fs-450);
             padding: 5vh 8vw; 
             align-items: flex-start;
         }
@@ -43,13 +45,16 @@
     .owl-stage {
         display: flex;
         flex: 1;
+        overflow: hidden;
     }
 
     .owl-item {
-        display: flex;
-        flex: 1; 
-        min-height: 100%;
         background-color: hsl(var(--clr-neutral-100));
+        // To make the review text vertically centered on mobile
+        @include mqmax(small) {
+          display: flex;
+          align-items: center;
+        }
     }
 
     .owl-item,

@@ -4,10 +4,10 @@
 
 
 .left-column {
-    grid-area: leftcol;
+    grid-area: leftcol;  
 }
 .right-column {
-    grid-area: rightcol;  
+    grid-area: rightcol; 
 }
 .narrow-column {
     grid-area: narrowcol;
@@ -121,12 +121,13 @@
 
 .even-columns {
     @extend .grid;
-    grid-auto-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-areas:
             "leftcol"
             "rightcol";
 
     @include mq(medium) {
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "leftcol rightcol";
     }
@@ -134,6 +135,7 @@
     &.reverse-mob {
         // mobile
         @include mqmax(medium) {
+            grid-template-columns: 100%;
             grid-template-areas:
                 "rightcol"
                 "leftcol";
@@ -142,10 +144,27 @@
     &.reverse-tab {
       // tablet
       @include mqmax(large) {
+        grid-template-columns: 100%;
         grid-template-areas:
           "rightcol"
           "leftcol";
       }
+    }
+    &.hide-right-mob {
+        // mobile
+        @include mqmax(medium) {  
+            .right-column {
+                display: none;
+            }
+        }
+    }
+    &.hide-left-mob {
+        // mobile
+        @include mqmax(medium) {
+            .left-column {
+                display: none;
+            }
+        }
     }
 }
 

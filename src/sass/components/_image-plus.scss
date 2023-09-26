@@ -71,4 +71,21 @@
         color: hsl(var(--clr-neutral-100));
         text-align: center;
     }
+
+    &.flush-left {
+        // make the left edge straight
+        border-radius: 0 12px 12px 0;
+    }
+    &.flush-right {
+        // make the right edge straight
+        border-radius: 12px 0 0 12px; 
+    }
+    &.flush-top {
+        // make the top edge straight
+        border-radius: 0 0 12px 12px;
+    }
+    &.flush-bottom {
+        // make the bottom edge straight
+        border-radius: 12px 12px 0 0;
+    }
 }

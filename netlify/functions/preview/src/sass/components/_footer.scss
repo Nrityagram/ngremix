@@ -1,0 +1,68 @@
+@use '../abstracts/' as *;
+
+footer {
+    display: grid;
+    grid-auto-flow: row;
+    place-items: center;
+    gap: 1.5em;
+    width: 100vw;
+    padding-bottom: 8px;
+
+    background-color: hsl(var(--clr-primary-550));
+
+    font-family: var(--ff-sans);
+    color: hsl(var(--clr-neutral-200));
+    font-size: var(--fs-200);
+    font-weight: var(--fw-sans-light);
+    letter-spacing: var(--ls-wide);
+
+    a {
+        text-decoration: none;
+        color: hsl(var(--clr-neutral-200));
+    }
+}
+
+footer .tagline {
+    width: 100vw;
+    text-align: center;
+    background-color: hsl(var(--clr-primary-450));
+    font-size: var(--fs-350);
+    line-height: 1.2;
+    padding: 8px 0;
+    @include mq(medium) {
+        font-size: var(--fs-400);
+        padding: 10px 0;
+    }
+}
+
+footer .columnstack {
+    display: flex;
+    justify-content: center;
+    gap: 8em; 
+    padding: 0 50px 8px 50px;
+    @include mqmax(small) {
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: center;
+    }
+}
+
+footer .bottom-border {
+    border-bottom: 1px solid hsl(var(--clr-neutral-200));
+}
+
+footer .rowstack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    align-items: center;
+    padding: 0 10px;
+
+    &.close {
+        gap: 0.05em;
+    }
+
+    @include mq(small) {
+        padding: 0;
+    }
+}

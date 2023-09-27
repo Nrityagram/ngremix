@@ -1,12 +1,5 @@
 @use '../abstracts/' as *;
 
-img.icon {
-	height: var(--icon-height);
-	width: auto;
-	object-fit: contain;
-	cursor: pointer;
-}
-
 .primary-header {
     // cannot use linear-gradient because transition does not work with this
     // --_bg: linear-gradient(

@@ -6,15 +6,19 @@ footer {
     place-items: center;
     gap: 1.5em;
     width: 100vw;
-    padding-bottom: 8px;
+    padding-bottom: 2em;
 
     background-color: hsl(var(--clr-primary-550));
 
     font-family: var(--ff-sans);
     color: hsl(var(--clr-neutral-200));
-    font-size: var(--fs-200);
+    font-size: var(--fs-150);
     font-weight: var(--fw-sans-light);
     letter-spacing: var(--ls-wide);
+
+    @include mqmax(small) {
+        font-size: var(--fs-200);
+    }
 
     a {
         text-decoration: none;
@@ -28,6 +32,7 @@ footer .tagline {
     background-color: hsl(var(--clr-primary-450));
     font-size: var(--fs-350);
     line-height: 1.2;
+    letter-spacing: var(--ls-normal);
     padding: 8px 0;
     @include mq(medium) {
         font-size: var(--fs-400);
@@ -56,13 +61,18 @@ footer .rowstack {
     flex-direction: column;
     gap: 0.3em;
     align-items: center;
-    padding: 0 10px;
-
-    &.close {
-        gap: 0.05em;
-    }
+    text-align: center;
+    padding: 0 1.2em;
 
     @include mq(small) {
-        padding: 0;
+        padding: 0 0.6em;
     }
+}
+
+footer .smalltext {
+    font-size: var(--fs-100);
+}
+
+footer .close {
+    gap: 0.05em;
 }

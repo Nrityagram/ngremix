@@ -64,15 +64,15 @@ footer .rowstack {
     text-align: center;
     padding: 0 1.2em;
 
-    &.close {
-        gap: 0.05em;
-    }
-
-    &.smalltext {
-        font-size: var(--fs-100);
-    }
-
     @include mq(small) {
         padding: 0 0.6em;
     }
+}
+
+footer .smalltext {
+    font-size: var(--fs-100);
+}
+
+footer .close {
+    gap: 0.05em;
 }

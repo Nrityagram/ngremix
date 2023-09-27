@@ -11,6 +11,9 @@
             width: auto;
             object-fit: contain;
             transition: height 500ms;
+            @include mqmax(small) {
+                height: var(--logo-height-mob);
+            }
         }
 }
 

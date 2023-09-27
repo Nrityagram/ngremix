@@ -4,12 +4,14 @@
 	--ff-sans: #{$ff-sans};
 	--ff-serif: #{$ff-serif};
 
+	// --fw-serif-light: #{$fw-serif-light}; 
 	--fw-serif-normal: #{$fw-serif-normal}; 
 	--fw-serif-medium: #{$fw-serif-medium};
 	--fw-sans-normal: #{$fw-sans-normal};
 	--fw-sans-light: #{$fw-sans-light};
 	--fw-bold: #{$fw-bold};
 	--fw-bolder: #{$fw-bolder};
+	--fw-light: #{$fw-light};
 
 	--spacer: #{$spacer};
 	--flow-spacer: #{$flow-spacer};
@@ -27,9 +29,12 @@
 	--full-bleed-margin-ultra: #{$full-bleed-margin-ultra};
 
 	--logo-height: #{$logo-height};
+	--logo-height-mob: #{$logo-height-mob};
 	--logo-height-sticking: #{$logo-height-sticking};
 
 	--icon-height: #{$icon-height};
+	--icon-height-sml: #{$icon-height-sml};
+	--icon-height-vsml: #{$icon-height-vsml};
 
 	--primary-header-topbot-padding: #{$primary-header-topbot-padding};
 

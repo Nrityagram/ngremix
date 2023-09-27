@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+
+sidebar {
+    position: fixed;
+    bottom: 5vh;
+    left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    align-items: center;
+
+    @include mqmax(small) {
+        position: static;
+        flex-direction: row;
+        img {
+            mix-blend-mode:lighten;
+        }
+    }
+}

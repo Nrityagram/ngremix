@@ -1,30 +1,22 @@
 @use '../abstracts/' as *;
 
 .primary-header {
-    // cannot use linear-gradient because transition does not work with this
-    // --_bg: linear-gradient(
-	// 	var(--bg-deg, -45deg),
-	// 	hsl(var(--clr-primary-400)),
-	// 	hsl(var(--clr-secondary-500)),
-	// 	hsl(var(--clr-accent-500))
-	// ); 
-
-    // --_bg: hsl(var(--clr-secondary-600));
-	--_bg: transparent;
+	// --_bg: transparent;
+	--_bg: linear-gradient(0deg,transparent,rgba(0,0,0,.35));
 	--_logo-color: hsl(var(--clr-secondary-550));
 	--_nav-link-color: hsl(var(--clr-neutral-100));
 
-	padding: var(--primary-header-topbot-padding) 1rem;
+	padding: var(--primary-header-topbot-padding) 1rem 0;
+	padding-left: 0.5rem;
 	color: hsl(var(--clr-neutral-100));
-	background-color: var(--_bg);
-
+	background: var(--_bg);
 	height: fit-content;
 
 	z-index: 5;
 	position: sticky;
 	top: 0;
 
-    transition: background-color 500ms ease-in-out;
+    transition: background 500ms ease-in-out;
 }
 .primary-header.showMobile {
 	--_bg: hsl(var(--clr-neutral-850));
@@ -37,10 +29,13 @@
 	--_nav-link-color: hsl(var(--clr-neutral-200));
 	--_nav-link-color-lite: rgba(255, 255, 255, 0.3);
 	--_logo-color: hsl(var(--clr-secondary-550));
-	padding: 0 1rem;
+	// padding: 0 1rem; orig
+	// padding: var(--primary-header-topbot-padding) 1rem 0;
+	// padding-left: 0.5rem;
 
 	&.showMobile {
-		padding: var(--primary-header-topbot-padding) 1rem 0;
+		padding: calc(var(--primary-header-topbot-padding) + 0.3rem) 1rem 0.5rem;
+		padding-left: 0.5rem;
 	}
 }
 

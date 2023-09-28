@@ -69,7 +69,7 @@
 
 #banner-container {
 	// primary-header ht + top and bottom padding
-	--_primary-header-ht: calc(var(--logo-height) + 2*var(--primary-header-topbot-padding));
+	--_primary-header-ht: calc(var(--logo-height) + var(--primary-header-topbot-padding));
 	position: relative;
 
 	// the negative margin pushes the banner

@@ -18,9 +18,11 @@
 }
 
 .logo.sticking {
-    // height: var(--logo-height-sticking);
     img {
         height: var(--logo-height-sticking);
+        @include mqmax(small) {
+            height: var(--logo-height-sticking-mob);
+        }
     }
 }
 

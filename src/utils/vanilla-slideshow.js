@@ -10,7 +10,7 @@ var vanillaSlideshow = (function () {
   // default properties
   var defaults = {
     delay: 4000,
-    arrows: true,
+    arrows: false,
     indicators: true,
     random: false,
     slideshow: true,

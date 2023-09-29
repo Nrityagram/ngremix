@@ -90,8 +90,8 @@ $(document).ready(function () {
     loop: true,
     nav: true,
     dots: true,
-    mouseDrag: true,
-    touchDrag: true,
+    mouseDrag: false,
+    touchDrag: false,
     lazyLoadEager: 1,
     animateOut: 'fadeOut',
     onInitialized: function (event) {
@@ -107,10 +107,14 @@ $(document).ready(function () {
     responsive: {
       0: {
         items: 1,
+        mouseDrag: true,
+        touchDrag: true,
         nav: false,
       },
       768: {
         items: 1,
+        mouseDrag: false,
+        touchDrag: false,
         nav: true
       },
       1399: {

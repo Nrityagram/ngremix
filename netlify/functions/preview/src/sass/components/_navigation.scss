@@ -37,7 +37,6 @@
     display: flex;
     // This will vertically center 'SUPPORT' item which has larger font size
     align-items: center;
-    // gap: clamp(0.5rem, 4vw, 2rem);
     gap: 1em;
     @include mqmax(medium) {
         gap: 0.25em;
@@ -65,7 +64,7 @@
             font-weight: var(--fw-sans-normal);
         }
 
-        .large-font {
+        &.large-font {
             font-size: var(--_nav-item-fontsize-lrg) !important;
         }
     }
@@ -92,20 +91,22 @@
 .nav-list:first-child {
     li .nav-item-name,
     li .nav-item-name a {
-        color: hsl(var(--clr-secondary-500));
+        color: var(--_nav-item-red);
         font-size: var(--_nav-item-fontsize-sml); 
     }
     li .nav-item-name::before {
-        background-color: hsl(var(--clr-secondary-500));
+        background-color: var(--_nav-item-red);
     }
 }
 .nav-deck.showMobile .nav-list {
     flex-direction: column;
+    align-items: flex-start;
+    width: 92vw;
 
     @include mqmax(medium) {
-        width: 100%;
         li {
-            padding: 0.5em 0;
+            width: 100%;
+            padding-block: 0.5em;
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
         .nav-item-name  {
@@ -123,6 +124,10 @@
             :not(:first-child) {
                 flex: 1;
             }
+        }
+        .large-font {
+            // Remove the large font size for Support in mobile menu
+            font-size: var(--_nav-item-fontsize-sml) !important;
         }
         label.item-chevron::after {
             content: '';
@@ -147,6 +152,13 @@
     // removing animated underline
     li .nav-item-name::before {
         content: none;
+    }
+}
+.nav-deck.showMobile .nav-sublist:not(:has([data-dropdown-lvl2])) {
+    @include mqmax(medium) {
+       li {
+        border-bottom: none;
+       } 
     }
 }
 .nav-deck.showMobile .nav-list:first-child {
@@ -247,6 +259,12 @@
 .nav-list:first-child .nav-sublist {
     top: var(--_nav-sublist-top2);
 }
+// Make the last 2 nav-sublist dropdowns right-aligned to fit into the screen
+.nav-list > li:nth-last-child(1) .nav-sublist,
+.nav-list > li:nth-last-child(2) .nav-sublist {
+    right: 0;
+    left:auto;
+}
 .nav-sublist-lvl2 {
     display: block;
     list-style: none;
@@ -272,6 +290,14 @@ li[data-link-active] {
             background-color: var(--_bg);
             padding-left: 0;
 
+            .nav-item-name {
+                font-weight: bold;
+                color: var(--_nav-item-red) !important;
+                &.item-chevron::after {
+                    content: none !important;
+                }
+            }
+
             .nav-sublist {
                 left: 0;
                 gap: 2rem;
@@ -295,11 +321,12 @@ li[data-link-active] {
 }
 li[data-link-active-lvl2] {
     li {
+        width: 100%;
         border: none !important;
     }
     // for mobile only
     @include mqmax(medium) {
-        .nav-item-lvl2 {
+        .nav-item-lvl2 { 
             z-index: 25;
             position: fixed;
             top: 0;
@@ -311,9 +338,14 @@ li[data-link-active-lvl2] {
 
             .nav-item-name-lvl2 a {
                 text-transform: uppercase;
+                font-weight: bold !important;
                 font-size: var(--_nav-item-fontsize-sml);
-                font-weight: var(--fw-normal);
+                color: var(--_nav-item-red);                
                 letter-spacing: var(--ls-wide);
+            }
+
+            .nav-item-name-lvl2.item-chevron::after {
+                content: none !important;
             }
 
             .nav-sublist-lvl2 {

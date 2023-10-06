@@ -6,6 +6,7 @@ eleventyNavigation:
 tags: page
 slider: true
 youtube: true
+marquee: true
 date: Last Modified
 ---
 <div id="banner-container">
@@ -474,7 +475,7 @@ date: Last Modified
     <p>
       The Nrityagram Dance Ensemble has performed at some of the most notable theatres in 25 countries across 5 continents
     </p>
-    {# <div class="marquee">
+    <div class="marquee">
       <div class="marquee-content">
         <div class="marquee-item">
           {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656256693/adf-logo_ygogal.png", "American Dance Festival logo", ["250"] %}
@@ -570,102 +571,7 @@ date: Last Modified
         </div>
 
       </div>
-
-      <div class="marquee-content" aria-hidden="true">
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656256693/adf-logo_ygogal.png", "American Dance Festival logo", ["250"] %}
-          <div class="marquee-item-caption">
-            American Dance Festival<br />Durham NC USA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656232551/annenberg-logo_k0foa1.png", "Annenberg Center for Performing Arts logo", ["250"] %}
-          <div class="marquee-item-caption">
-            Annenberg Center for Performing Arts<br />Philadelphia PA USA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652196074/Baryshnikov_Arts_Center_logo_uxweli.jpg",
-          "Baryshnikov Arts Center logo",
-          ["250"] %}
-          <div class="marquee-item-caption">
-            Baryshnikov Arts Center<br />New York NY USA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652179816/Bhoomija-logo_t54qoe.jpg", "Bhoomija logo", ["250"] %}
-          <div class="marquee-item-caption">
-            Bhoomija<br />Bangalore INDIA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652197752/Broadway_Center_for_the_Arts_logo_d2fgsg.png",
-          "Broadway Center for the Arts logo",
-          ["250"] %}
-          <div class="marquee-item-caption">
-            Broadway Center for the Arts<br />Tacoma WA USA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652185589/Cairo_Opera_House_logo_ffkwtb.png",
-          "Cairo Opera House logo",
-          ["250"] %}
-          <div class="marquee-item-caption">
-            Cairo Opera House<br />Cairo EGYPT
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656257333/cali-theatre-logo_sdnuhg.png",
-          "California Theater logo",
-          ["250"] %}
-          <div class="marquee-item-caption">
-            California Theater<br />San Jose CA USA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652194421/summerstage-logo_zvstmv.jpg",
-          "Central Park SummerStage logo",
-          ["250"] %}
-          <div class="marquee-item-caption">
-            Central Park SummerStage<br />New York NY USA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652179816/Chinmaya-Nada-Bindu-logo_vkaxf2.jpg",
-          "Chinmaya Nada Bindu logo",
-          ["250"] %}
-          <div class="marquee-item-caption">
-            Chinmaya Nada Bindu<br />Pune INDIA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1628320980/chowdaiah-logo_cqfgjt.png",
-          "chowdaiah memorial hall logo",
-          ["250"] %}
-          <div class="marquee-item-caption">
-            Chowdaiah Memorial Hall<br />Bangalore INDIA
-          </div>
-        </div>
-
-        <div class="marquee-item">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1652198335/Cleveland_Museum_of_Art_logo_u8umuq.png",
-          "Cleveland Museum of Art logo",
-          ["250"] %}
-          <div class="marquee-item-caption">
-            Cleveland Museum of Art<br />Cleveland OH USA
-          </div>
-        </div>
-      </div>
-    </div> #}
+    </div>
     <div class="button red-plastic center"  onclick="location.href='/performancemap';">
       <div class="glare"></div>
         Global Map of Performances
@@ -1018,7 +924,7 @@ date: Last Modified
     animationSpeed: '1.75s'
   });
 </script>
-<script src="{{ '/utils/lite-yt-embed.js' | url }}"></script>
+
 <script type="text/javascript">
   const gmap = document.querySelector('#ng-map')
 

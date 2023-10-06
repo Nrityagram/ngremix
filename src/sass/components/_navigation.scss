@@ -293,6 +293,9 @@ li[data-link-active] {
             .nav-item-name {
                 font-weight: bold;
                 color: var(--_nav-item-red) !important;
+                &.item-chevron::after {
+                    content: none !important;
+                }
             }
 
             .nav-sublist {
@@ -339,6 +342,10 @@ li[data-link-active-lvl2] {
                 font-size: var(--_nav-item-fontsize-sml);
                 color: var(--_nav-item-red);                
                 letter-spacing: var(--ls-wide);
+            }
+
+            .nav-item-name-lvl2.item-chevron::after {
+                content: none !important;
             }
 
             .nav-sublist-lvl2 {

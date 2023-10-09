@@ -3,7 +3,7 @@
 .fade-in {
     opacity: 0;
     transform: translateY(30%);
-    transition: all 500ms ease-out;
+    transition: all 700ms ease-in-out;
 
     @include mq(medium) {
         &.stickybit {

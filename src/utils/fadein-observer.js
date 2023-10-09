@@ -13,7 +13,7 @@ fadeinTriggers.forEach(trigger => {
 // fadeinObserver.observe(fadeinWatcher)
 
 const appearOptions = {
-    threshold: 0.25
+    threshold: 0.3
 }
 
 // NOTE: If you are using the trigger method there must be matching fade-in

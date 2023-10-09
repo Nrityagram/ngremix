@@ -28,10 +28,10 @@
 .marquee[data-animated="true"] .marquee-content {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll 60s linear infinite;
+  animation: scroll 90s linear infinite;
   // slow down scrolling for mobile screens
   @include mqmax(small) {
-    animation: scroll 80s linear infinite;
+    animation: scroll 120s linear infinite;
   }
 }
 

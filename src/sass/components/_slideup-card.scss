@@ -11,7 +11,7 @@
     background-position: top center;
     color: #ffffff;
     background-color: whitesmoke;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1), 0 18px 18px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4.0px 4.0px 1px hsl(0deg 0% 0% / 0.44);   
 
     // aspect-ratio of card is fixed for all screen sizes
     aspect-ratio: 0.58;
@@ -39,28 +39,6 @@
         @include mq(large) {
             height: 29vw;
         }
-    }
-
-
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 200%;
-        pointer-events: none;
     }
 }
 
@@ -92,9 +70,7 @@
     gap: 0;
     margin: 0 auto;
     width: 100%;
-
-    // transition: top 700ms ease-in-out;
-    z-index: 1;
+    // z-index: 1;
 }
 
 .slideup-card__content__title {
@@ -144,7 +120,8 @@
     // targets only devices that can hover
 
     .slideup-card:hover,
-    .slideup-card:focus-within {
+    .slideup-card:focus-within { 
+        box-shadow: 0px 16.0px 16.0px 4px hsl(0deg 0% 0% / 0.25);        
 
         .slideup-card__screen {
             opacity: 1;
@@ -165,49 +142,6 @@
     }
 }
 
-// @media (pointer: coarse) {
-//     .slideup-card:after {
-//         transform: translateY(0);
-//     }
-
-//     .slideup-card__content {
-//         transform: translateY(calc(100% - 1.5rem));
-
-//         >*:not(.slideup-card__content__title) {
-//             opacity: 0;
-//             transform: translateY(1rem);
-//             transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1);
-//         }
-//     }
-
-//     .slideup-card:hover,
-//     .slideup-card:focus-within {
-
-//         .slideup-card__content {
-//             // this formula seems to be working! 
-//             // bottom of card content lines up with title of next card
-//             // transform: translateY(calc(1rem + 0.42vw + 2.2em * -1)); //works but title is high
-//             transform: translateY(calc(1rem + 0.42vw + 1.1em * -1));
-
-//             >*:not(.slideup-card__content__title) {
-//                 opacity: 1;
-//                 transform: translateY(0);
-//                 transition-delay: calc(700ms / 8);
-//             }
-//         }
-//     }
-
-//     .slideup-card:focus,
-//     .slideup-card:focus-within {
-
-//         &:before,
-//         &:after,
-//         .slideup-card__content,
-//         .slideup-card__content>*:not(.slideup-card__content__title) {
-//             transition-duration: 0s;
-//         }
-//     }
-// }
 
 @media (hover: none) {
     // targets only devices that cannot hover -- touch devices like the *$%*ing iphone
@@ -227,5 +161,27 @@
 
     .slideup-card__content__wrapper {
         bottom: 5%;
+    }
+}
+
+// STAGGERED fade-in for deck of cards
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// For ipad mini the card layout is 2x2
+// The second card should appear after a delay
+@include mq(medium2) {
+    .slideup-card:nth-child(2n) {
+        transition-delay: 200ms;
+    }
+}
+// For card layout of 4 in a row
+@include mq(large2) {
+    .slideup-card:nth-child(2) {
+        transition-delay: 200ms;
+    }
+    .slideup-card:nth-child(3) {
+        transition-delay: 400ms;
+    }
+    .slideup-card:nth-child(4) {
+        transition-delay: 600ms;
     }
 }

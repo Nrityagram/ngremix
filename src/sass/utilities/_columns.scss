@@ -11,9 +11,17 @@
 }
 .narrow-column {
     grid-area: narrowcol;
+    @include mqmax(medium) {
+        align-self: center;
+        text-align: center;
+    }
 }
 .wide-column {
     grid-area: widecol;
+    @include mqmax(medium) {
+        align-self: center;
+        text-align: center;
+    }
 }
 
 
@@ -88,7 +96,9 @@
         }
 
         // tablet
-        @include mq(medium) {
+        // Using medium2 breakpoint to have 
+        // two equal columns for ipad mini
+        @include mq(medium2) {
             grid-template-columns: repeat(2, 1fr);
             // textbox will be first column
             .textbox-column {

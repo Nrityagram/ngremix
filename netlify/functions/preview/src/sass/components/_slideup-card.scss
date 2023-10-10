@@ -1,5 +1,25 @@
 @use '../abstracts/' as *;
 
+@keyframes dropshadow {
+    0% {
+        box-shadow: 0px 4.0px 4.0px 1px hsl(0deg 0% 0% / 0.44); 
+    }
+  
+    100% {
+        box-shadow: 0px 16.0px 16.0px 4px hsl(0deg 0% 0% / 0.25); 
+    }
+  }
+
+  @keyframes dropshadow-off {
+    0% {
+        box-shadow: 0px 16.0px 16.0px 4px hsl(0deg 0% 0% / 0.25); 
+    }
+
+    100% {
+        box-shadow: 0px 4.0px 4.0px 1px hsl(0deg 0% 0% / 0.44); 
+    }
+  }
+
 .slideup-card {
     position: relative;
     overflow: hidden;
@@ -11,9 +31,8 @@
     background-position: top center;
     color: #ffffff;
     background-color: whitesmoke;
-    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1), 0 18px 18px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 4.2px 4.2px 1px hsl(0deg 0% 0% / 0.44);
-    // transition: box-shadow 250ms ease-in-out; 
+    box-shadow: 0px 4.0px 4.0px 1px hsl(0deg 0% 0% / 0.44); 
+    animation: 400ms dropshadow-off forwards; 
 
     // aspect-ratio of card is fixed for all screen sizes
     aspect-ratio: 0.58;
@@ -123,7 +142,7 @@
 
     .slideup-card:hover,
     .slideup-card:focus-within { 
-        box-shadow: 0px 11.5px 11.5px 3px hsl(0deg 0% 0% / 0.32);
+        animation: 400ms dropshadow forwards;      
 
         .slideup-card__screen {
             opacity: 1;

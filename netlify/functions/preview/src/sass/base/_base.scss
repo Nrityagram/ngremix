@@ -70,3 +70,9 @@ h4 {
 		font-size: var(--fs-550);
 	}
 }
+
+p {
+	&.center {
+		text-align: center;
+	}
+}

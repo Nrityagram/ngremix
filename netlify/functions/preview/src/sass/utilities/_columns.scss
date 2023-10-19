@@ -13,14 +13,12 @@
     grid-area: narrowcol;
     @include mqmax(medium) {
         align-self: center;
-        text-align: center;
     }
 }
 .wide-column {
     grid-area: widecol;
     @include mqmax(medium) {
         align-self: center;
-        text-align: center;
     }
 }
 
@@ -244,10 +242,20 @@
 
 .left-align-column {
     text-align: left;
+    @include mqmax(medium) {
+        // align-self: center;
+        // margin: 0 auto;
+        text-align: left;
+    }
 }
 
 .right-align-column {
     text-align: right;
+    @include mqmax(medium) {
+        // align-self: center;
+        // margin: 0 auto;
+        text-align: left;
+    }
 }
 
 .bottom-align-column {

@@ -16,6 +16,11 @@
 .flow:has(>p.large:first-child) {
 	padding-top: var(--flow-spacer-large);
 }
+// To compensate for the line-height of pull-quote <p>
+.flow:has(div.pullquote:first-child) {
+	padding-top: var(--flow-spacer-large);
+}
+
 // To compensate for line-height of h1 for 2-columns on mobile
 .flow.flow-titletext-mob {
 	@include mqmax(small) {

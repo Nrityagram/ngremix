@@ -6,7 +6,7 @@ sidebar {
     left: 8px;
     display: flex;
     flex-direction: column;
-    gap: 0.8em;
+    gap: 0.95em;
     align-items: center;
 
     @include mqmax(small) {

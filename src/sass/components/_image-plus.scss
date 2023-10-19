@@ -59,7 +59,7 @@
         }
     }
     .credit::after {
-        content: 'Photo Credit: ' attr(data-image-credit);
+        content: 'Photo: ' attr(data-image-credit);
     }
 
     .caption {

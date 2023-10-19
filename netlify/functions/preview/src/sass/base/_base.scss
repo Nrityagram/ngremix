@@ -3,12 +3,13 @@ body {
 	/* Need to explicitly specify this because of the searchBox that slides in and out */
 	/* Comment this out during development and debugging */
 	overflow-x: hidden;
+	--_body-text-color: hsl(var(--clr-neutral-775));
 }
 body {
 	position: relative;
 	font-family: var(--ff-serif);
 	font-size: var(--fs-450);
-	color: hsl(var(--clr-neutral-775));
+	color: var(--_body-text-color);
 
 	@include mqmax(medium) {
 		font-size: var(--fs-500);
@@ -74,19 +75,25 @@ h4 {
 }
 
 p {
-	&.center {
-		text-align: center;
-	}
-
 	&.large {
 		font-size: var(--fs-530);
 	}
-
-	&.red {
-		color: hsl(var(--clr-secondary-550));
-	}
-
 	&.close-fit {
 		line-height: 1.25;
 	}
+}
+
+a {
+	&.bodylink {
+		color: var(--_body-text-color);
+		text-decoration: dotted;
+		text-underline-offset: 2px;
+	}
+}
+
+.center {
+	text-align: center;
+}
+.redtext {
+	color: hsl(var(--clr-secondary-550));
 }

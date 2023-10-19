@@ -5,6 +5,7 @@
     top: 0;
     left: 0;    
     background-color: #000;
+    width: 100%;
 
     img {
         width: 100%;
@@ -22,7 +23,11 @@
     color: hsl(var(--clr-neutral-100));
 
     right: 2px;
-    bottom: 30vh;
+    bottom: 28vh;
+    &.homepage {
+        bottom: 35vh;
+    }
+    
 
     @include mq(medium) {
         bottom: 20vh;
@@ -31,8 +36,9 @@
     @include mq(large) {
         bottom: 2vh;
         right: 15px;
+        color: hsl(var(--clr-neutral-200));
         font-weight: var(--fw-light);
-        letter-spacing: var(--ls-normal);
+        // letter-spacing: var(--ls-normal);
     }
 
     opacity: 0;
@@ -42,14 +48,14 @@
 }
 
 .banner-image-credit::after {
-    content: 'Photo Credit: ' attr(data-image-credit-mob);
+    content: 'Photo: ' attr(data-image-credit-mob);
 
     @include mq(medium) {
-        content: 'Photo Credit: ' attr(data-image-credit-tab);
+        content: 'Photo: ' attr(data-image-credit-tab);
     }
 
     @include mq(large) {
-        content: 'Photo Credit: ' attr(data-image-credit-desk);
+        content: 'Photo: ' attr(data-image-credit-desk);
     }
 }
 
@@ -106,7 +112,7 @@
 
 .banner-title {
     position: absolute;
-    right: 8vw;
+    right: 5vw;
     bottom: 13vh;
     display: flex;
     flex-direction: column;
@@ -114,15 +120,16 @@
     width: 85vw;
     text-align: right;
 
-    font-size: var(--fs-900);
+    font-size: var(--fs-1000);
     line-height: 1.1em;
     font-family: var(--ff-serif);
     font-weight: var(--fw-light);
     color: hsl(var(--clr-neutral-100));
+    text-shadow: 0 2px hsl(var(--clr-neutral-700));
 
     @include mq(medium) {
         width: 50vw;
-        bottom: 8vh;
+        bottom: 11vh;
     }
 
     opacity: 0;

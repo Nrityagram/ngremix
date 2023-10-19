@@ -13,7 +13,7 @@ fadeinTriggers.forEach(trigger => {
 // fadeinObserver.observe(fadeinWatcher)
 
 const appearOptions = {
-    threshold: 0.3
+    threshold: 0.25
 }
 
 // NOTE: If you are using the trigger method there must be matching fade-in
@@ -38,7 +38,7 @@ if (window.matchMedia("(max-width: 50em)").matches || fadeinTriggers.length == 0
 } else {
     const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
+            if (!entry.isIntersecting) { 
                 return
             } else {
                 // TODO: uncomment after you get multiple stickybits working

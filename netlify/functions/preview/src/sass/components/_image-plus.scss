@@ -7,7 +7,14 @@
     // width: fit-content;
     width: 100%;
     height: auto;
+    // zero margin top and bottom
     margin: 0 auto;
+
+    &.top-flow {
+        // small margin top
+        margin-top: var(--flow-spacer, var(--spacer));
+        margin-bottom: 0;
+    }
 
     img {
         width: 100%;
@@ -78,19 +85,19 @@
         text-align: center;
     }
 
-    &.flush-left {
+    &.sharp-left {
         // make the left edge straight
         border-radius: 0 12px 12px 0;
     }
-    &.flush-right {
+    &.sharp-right {
         // make the right edge straight
         border-radius: 12px 0 0 12px; 
     }
-    &.flush-top {
+    &.sharp-top {
         // make the top edge straight
         border-radius: 0 0 12px 12px;
     }
-    &.flush-bottom {
+    &.sharp-bottom {
         // make the bottom edge straight
         border-radius: 12px 12px 0 0;
     }

@@ -47,10 +47,25 @@ button.owl-dot span {
     // width: 6px;
     // height: 6px;
     background-color: transparent !important;
-    border: 1px solid hsl(var(--clr-neutral-250));
+    border: 1px solid hsl(var(--clr-neutral-275));
 }
 
 button.owl-dot.active span {
     border: none;
     background: hsl(var(--clr-neutral-250)) !important;
+}
+
+.owl-carousel.ultra-wide {
+    button.owl-prev, 
+    button.owl-next {
+        bottom: 45%;
+    }
+    .owl-dots {
+        margin-top: 0 !important;
+    }
+    button.owl-dot {
+        margin-left: -2px;
+        margin-right: -2px;
+    }
+
 }

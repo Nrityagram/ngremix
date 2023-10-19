@@ -20,6 +20,10 @@ body.lockScroll {
 	overflow: hidden;
 }
 
+* {
+	scroll-margin-top: var(--logo-height-sticking);
+}
+
 header {
 	font-family: var(--ff-serif);
 }
@@ -37,11 +41,11 @@ h4 {
 }
 
 h1,
-h2 {
+h2, h3 {
 	color: hsl(var(--clr-secondary-550));
 }
 
-h3,
+
 h4 {
 	color: hsl(var(--clr-neutral-850));
 }
@@ -62,6 +66,7 @@ h2 {
 
 h3 {
 	font-size: var(--fs-550);
+	font-weight: var(--fw-serif-light);
 	@include mqmax(medium) {
 		font-size: var(--fs-600);
 	}
@@ -69,6 +74,7 @@ h3 {
 
 h4 {
 	font-size: var(--fs-500);
+	font-weight: var(--fw-serif-light);
 	@include mqmax(medium) {
 		font-size: var(--fs-500);
 	}
@@ -86,8 +92,13 @@ p {
 a {
 	&.bodylink {
 		color: var(--_body-text-color);
-		text-decoration: dotted;
-		text-underline-offset: 2px;
+		-moz-text-decoration-style: dotted;
+		text-decoration-style: dotted;
+		-moz-text-decoration-line: underline;
+		text-decoration-line: underline;
+		-moz-text-decoration-color: inherit;
+		text-decoration-color: inherit;
+		text-underline-offset: 0.2em;
 	}
 }
 
@@ -95,5 +106,5 @@ a {
 	text-align: center;
 }
 .redtext {
-	color: hsl(var(--clr-secondary-550));
+	color: hsl(var(--clr-secondary-550)) !important;
 }

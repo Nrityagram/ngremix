@@ -191,6 +191,21 @@
             grid-template-areas:
                 "narrowcol widecol";
         }
+    }
+    &.narrow-wide-40-60 {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "narrowcol"
+            "widecol";
+
+        @include mq(medium) { 
+            grid-template-columns: 40% 60%;
+            grid-template-areas:
+                "narrowcol widecol";
+        }
+    }
+    &.narrow-wide,
+    &.narrow-wide-40-60 {
         &.reverse-mob {
             // mobile
             @include mqmax(medium) {
@@ -208,6 +223,8 @@
             }
         }
     }
+
+
     // wide | narrow columns
     &.wide-narrow {
         grid-auto-columns: 100%;

@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+ul.basic {
+    // bullets flush to the left
+	list-style: disc outside;
+	margin-left: -1em;
+
+    margin-top: 0.25em;
+}
+
+ol.basic {
+    list-style-position: outside;
+    margin-left: -1em;
+    margin-block: 0;
+    li:not(:first-child) {
+        margin-top: 0.5em;
+    }
+}

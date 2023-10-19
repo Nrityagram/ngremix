@@ -101,4 +101,7 @@
         // make the bottom edge straight
         border-radius: 12px 12px 0 0;
     }
+    &.sharp {
+        border-radius: 0;
+    }
 }

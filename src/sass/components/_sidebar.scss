@@ -8,6 +8,8 @@ sidebar {
     flex-direction: column;
     gap: 0.95em;
     align-items: center;
+    // make it sit above the owl carousel items
+    z-index: 20;
 
     @include mqmax(small) {
         position: static;

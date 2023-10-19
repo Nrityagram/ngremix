@@ -86,6 +86,11 @@
         transform: scaleX(1);
         transform-origin: left;
     }
+
+    li .nav-item-name.active {
+        text-underline-offset: 0.25rem !important;
+        text-decoration: 2px underline hsl(var(--clr-secondary-550)) !important;
+    }
 }
 // set the first row of menu items to red on desktop
 .nav-list:first-child {

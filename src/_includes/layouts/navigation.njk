@@ -2,7 +2,11 @@
     <ul class="nav-list">
         <li data-dropdown>
             <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name item-chevron" for="item-A1">About</label>
+                {% if parentMenuItem and parentMenuItem == "About" %}
+                    <label class="nav-item-name active item-chevron" for="item-A1">About</label>
+                {% else %}
+                    <label class="nav-item-name item-chevron" for="item-A1">About</label>
+                {% endif %}
                 <input type="checkbox"
                     id="item-A1"
                     name="item-A1"
@@ -75,7 +79,11 @@
         </li>
         <li data-dropdown>
             <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name item-chevron" for="item-A2">Visit</label>
+                {% if parentMenuItem and parentMenuItem == "Visit" %}
+                    <label class="nav-item-name active item-chevron" for="item-A2">Visit</label>
+                {% else %}
+                    <label class="nav-item-name item-chevron" for="item-A2">Visit</label>
+                {% endif %}
                 <input type="checkbox"
                         id="item-A2"
                         name="item-A2"
@@ -95,9 +103,13 @@
         </li>
         <li data-dropdown>
             <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name large-font item-chevron" for="item-A3">
-                    Support
+                {% if parentMenuItem and parentMenuItem == "Support" %}
+                    <label class="nav-item-name active large-font item-chevron" for="item-A3">Support
                 </label>
+                {% else %}
+                    <label class="nav-item-name large-font item-chevron" for="item-A3">Support
+                </label>
+                {% endif %}
                 <input type="checkbox"
                         id="item-A3"
                         name="item-A3"
@@ -123,9 +135,15 @@
         </li>
         <li>
             <div class="nav-item">
-                <span class="nav-item-name">
-                    <a href="/">Press</a>
-                </span>
+                {% if parentMenuItem and parentMenuItem == "Press" %}
+                    <span class="nav-item-name active">
+                        <a href="/press">Press</a>
+                    </span>
+                {% else %}
+                    <span class="nav-item-name">
+                        <a href="/press">Press</a>
+                    </span>
+                {% endif %}
             </div>
         </li>
         {# TODO: Unable to scroll the mobile menu to access more items #}
@@ -134,7 +152,11 @@
 
         <li data-dropdown>
             <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name item-chevron" for="item-B1">Ensemble</label>
+                {% if parentMenuItem and parentMenuItem == "Ensemble" %}
+                    <label class="nav-item-name active item-chevron" for="item-B1">Ensemble</label>
+                {% else %}
+                    <label class="nav-item-name item-chevron" for="item-B1">Ensemble</label>
+                {% endif %}
                 <input type="checkbox"
                     id="item-B1"
                     name="item-B1"
@@ -197,7 +219,11 @@
         </li>
         <li data-dropdown>
             <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name item-chevron" for="item-B2">School</label>
+                {% if parentMenuItem and parentMenuItem == "School" %}
+                    <label class="nav-item-name active item-chevron" for="item-B2">School</label>
+                {% else %}
+                    <label class="nav-item-name item-chevron" for="item-B2">School</label>
+                {% endif %}
                 <input type="checkbox"
                     id="item-B2"
                     name="item-B2"
@@ -233,7 +259,11 @@
         </li>
         <li data-dropdown>
             <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name item-chevron" for="item-B3">Community</label>
+                {% if parentMenuItem and parentMenuItem == "Community" %}
+                    <label class="nav-item-name active item-chevron" for="item-B3">Community</label>
+                {% else %}
+                    <label class="nav-item-name item-chevron" for="item-B3">Community</label>
+                {% endif %}
                 <input type="checkbox"
                     id="item-B3"
                     name="item-B3"
@@ -272,7 +302,11 @@
         </li>
         <li data-dropdown>
             <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name item-chevron" for="item-B4">People</label>
+                {% if parentMenuItem and parentMenuItem == "People" %}
+                    <label class="nav-item-name active item-chevron" for="item-B4">People</label>
+                {% else %}
+                    <label class="nav-item-name item-chevron" for="item-B4">People</label>
+                {% endif %}
                 <input type="checkbox"
                         id="item-B4"
                         name="item-B4"

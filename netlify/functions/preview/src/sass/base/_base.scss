@@ -108,3 +108,9 @@ a {
 .redtext {
 	color: hsl(var(--clr-secondary-550)) !important;
 }
+.infotext {
+	color: hsl(var(--clr-neutral-500));
+	a {
+		color: hsl(var(--clr-neutral-500)) !important;
+	}
+}

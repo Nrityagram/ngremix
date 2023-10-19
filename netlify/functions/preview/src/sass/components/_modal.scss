@@ -3,6 +3,7 @@
 dialog {
     padding: 0;
     position: fixed;
+    outline: none;
     
     // vertically align in middle of screen
     top: 50%;
@@ -51,11 +52,14 @@ dialog {
 
     .modal-content {
         padding: 0 2em;
+        h2 {
+            text-align: left;
+        }
     }
 }
 
 dialog::backdrop {
-    background: rgb(0 0 0 / 0.8);
+    background: rgb(0 0 0 / 0.7);
 }
 
 .open-modal {

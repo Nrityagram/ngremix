@@ -33,6 +33,12 @@
         &:active {
             cursor: pointer;
         }
+        // mobile
+        @include mqmax(medium) {
+            margin:0 auto;
+            width: 100%;
+            border-radius: 12px;
+        }
     }
 
     .credit {

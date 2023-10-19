@@ -12,6 +12,17 @@
 .flow:has(>h1:first-child) {
 	padding-top: var(--flow-spacer-h1);
 }
+// To compensate for the line-height of large font <p>
+.flow:has(>p.large:first-child) {
+	padding-top: var(--flow-spacer-large);
+}
+// To compensate for line-height of h1 for 2-columns on mobile
+.flow.flow-titletext-mob {
+	@include mqmax(small) {
+		padding-top: var(--flow-spacer-h1);
+	}
+}
+
 
 .flow {
 	padding-bottom: var(--flow-spacer-bottom);

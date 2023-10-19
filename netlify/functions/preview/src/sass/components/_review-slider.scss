@@ -11,14 +11,19 @@
         padding: 0 5vw;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center;        
         font-size: var(--fs-350);
+        // desktop
+        @include mq(large) {
+          font-size: var(--fs-400);
+        }
+        // ipad
         @include mqmax(large) {
           font-size: var(--fs-400);
-          padding: 3vh 8vw;
+          padding: 3vh 7vw;
           align-items: center;
-          // justify-content:end;
         }
+        // mobile
         @include mqmax(medium) {
             font-size: var(--fs-450);
             padding: 5vh 8vw; 

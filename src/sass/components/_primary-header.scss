@@ -42,9 +42,14 @@
 	// padding: var(--primary-header-topbot-padding) 1rem 0.5rem;
 	// padding-left: 0.5rem;
 
+	@include mqmax(small) {
+		padding: 0 0.5rem;
+		// padding-left: 0.5rem;
+	}
+
 	&.showMobile {
-		padding: calc(var(--primary-header-topbot-padding) + 0.3rem) 1rem 0.2rem;
-		padding-left: 0.5rem;
+		// padding: calc(var(--primary-header-topbot-padding) + 0.3rem) 1rem 0.2rem;
+		padding: 0.45rem 0.5rem 0;
 	}
 }
 

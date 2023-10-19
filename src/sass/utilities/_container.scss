@@ -55,7 +55,7 @@
 
 	&.ultra-wide {
 		--width: var(--ultra-wide-width);
-		.lrg-screen-shrink {
+		.lrg-screen-shrink-width {
 			@include mq(large) {
 				--width: var(--regular-width);
 			}

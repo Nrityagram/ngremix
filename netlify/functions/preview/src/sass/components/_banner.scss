@@ -89,7 +89,7 @@
     @include mq(large) {
         padding-bottom: 4vh;
         background-color: transparent;
-        font-size: var(--fs-500); 
+        font-size: var(--fs-525); 
     }
 }
 
@@ -100,8 +100,7 @@
         line-height: 1.2;
     }
     @include mq(large) {
-        font-size: var(--fs-450);
-        text-shadow: 0 2px hsl(var(--clr-neutral-700));
+        font-size: var(--fs-525);
     }
 }
 

@@ -6,6 +6,11 @@ ul.basic {
 	margin-left: -1em;
 
     margin-top: 0.25em;
+
+    &.no-bullets {
+        list-style-type: none;
+        margin-left: -2em;
+    }
 }
 
 ol.basic {
@@ -16,3 +21,4 @@ ol.basic {
         margin-top: 0.5em;
     }
 }
+

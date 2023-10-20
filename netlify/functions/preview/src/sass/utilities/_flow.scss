@@ -21,6 +21,10 @@
 	padding-top: var(--flow-spacer-large);
 }
 
+.flow-extra > :where(:not(:first-child)) {
+	margin-top: var(--flow-spacer-extra, var(--spacer));
+}
+
 // To compensate for line-height of h1 for 2-columns on mobile
 .flow.flow-titletext-mob {
 	@include mqmax(small) {

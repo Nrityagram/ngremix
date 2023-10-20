@@ -3,7 +3,7 @@ body {
 	/* Need to explicitly specify this because of the searchBox that slides in and out */
 	/* Comment this out during development and debugging */
 	overflow-x: hidden;
-	--_body-text-color: hsl(var(--clr-neutral-775));
+	--_body-text-color: hsl(var(--clr-neutral-850));
 }
 body {
 	position: relative;
@@ -109,8 +109,8 @@ a {
 	color: hsl(var(--clr-secondary-550)) !important;
 }
 .infotext {
-	color: hsl(var(--clr-neutral-500));
+	color: hsl(var(--clr-neutral-600));
 	a {
-		color: hsl(var(--clr-neutral-500)) !important;
+		color: hsl(var(--clr-neutral-600)) !important;
 	}
 }

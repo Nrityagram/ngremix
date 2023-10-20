@@ -4,8 +4,8 @@
 	"description": "The final 11ty frontend for Nrityagram.",
 	"main": "index.html",
 	"scripts": {
-		"watch:sass": "sass --no-source-map --watch src/sass:_site/css",
-		"build:sass": "sass --no-source-map  src/sass:_site/css",
+		"watch:sass": "sass --watch src/sass:_site/css",
+		"build:sass": "sass src/sass:_site/css",
 		"watch:eleventy": "npx @11ty/eleventy --serve",
 		"build:eleventy": "npx @11ty/eleventy",
 		"debug:eleventy": "DEBUG=* npx @11ty/eleventy",

@@ -24,10 +24,6 @@
 
     right: 2px;
     bottom: 28vh;
-    &.homepage {
-        bottom: 35vh;
-    }
-    
 
     @include mq(medium) {
         bottom: 20vh;

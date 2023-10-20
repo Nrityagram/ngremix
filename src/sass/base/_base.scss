@@ -35,7 +35,7 @@ h4 {
 	font-family: var(--ff-serif);
 	font-weight: var(--fw-serif-medium);
 	line-height: 1.2;
-	@include mqmax(small) {
+	@include mqmax(medium) {
 		text-align: center;
 	}
 }
@@ -105,6 +105,12 @@ a {
 .center {
 	text-align: center;
 }
+.center-on-mob {
+	@include mqmax(medium) {
+		text-align: center;
+	}
+}
+
 .redtext {
 	color: hsl(var(--clr-secondary-550)) !important;
 }

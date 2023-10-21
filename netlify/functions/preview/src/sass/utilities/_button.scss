@@ -2,6 +2,10 @@
 
 .button {
     width: fit-content;
+    min-width: 12vw;
+    @include mqmax(small) {
+        min-width: 40vw;
+    }
     height: 42px;
     padding: 3px 2em;
     border-radius: 10px;

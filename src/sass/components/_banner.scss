@@ -108,7 +108,7 @@
 
 .banner-title {
     position: absolute;
-    right: 5vw;
+    right: 7vw;
     bottom: 13vh;
     display: flex;
     flex-direction: column;
@@ -124,6 +124,7 @@
     text-shadow: 0 2px hsl(var(--clr-neutral-700));
 
     @include mq(medium) {
+        right: 5vw;
         width: 50vw;
         bottom: 11vh;
     }

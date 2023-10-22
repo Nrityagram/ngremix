@@ -33,7 +33,7 @@ h2,
 h3,
 h4 {
 	font-family: var(--ff-serif);
-	font-weight: var(--fw-serif-medium);
+	font-weight: var(--fw-serif-normal);
 	line-height: 1.2;
 	@include mqmax(medium) {
 		text-align: center;
@@ -54,6 +54,9 @@ h1 {
 	font-size: var(--fs-700);
 	@include mqmax(medium) {
 		font-size: var(--fs-750);
+	}
+	&.medium-wt {
+		font-weight: var(--fw-serif-medium);
 	}
 }
 

@@ -16,6 +16,7 @@
         // desktop
         @include mq(large) {
           font-size: var(--fs-400);
+          padding: 3vh 5vw;
         }
         // ipad
         @include mqmax(large) {
@@ -73,7 +74,8 @@
         width: 100%;
         height: auto;
         object-fit: cover;
-        aspect-ratio: 1.64; 
+        // aspect-ratio: 1.64;
+        aspect-ratio: 1.15; 
       }
     }
 
@@ -113,7 +115,7 @@
     .owl-dots {
       position: absolute;
       bottom: 0.1%;
-      left: 18.5%;
+      left: 15.9%;
 
       @include mqmax(large) {
         left: 0;

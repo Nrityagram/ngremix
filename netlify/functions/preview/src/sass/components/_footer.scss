@@ -8,10 +8,11 @@ footer {
     width: 100vw;
     padding-bottom: 2em;
 
-    background-color: hsl(var(--clr-primary-550));
+    // background-color: hsl(var(--clr-primary-550));
+    background-color: hsl(var(--clr-secondary-525));
 
     font-family: var(--ff-sans);
-    color: hsl(var(--clr-neutral-200));
+    color: hsl(var(--clr-neutral-100));
     font-size: var(--fs-150);
     font-weight: var(--fw-sans-light);
     letter-spacing: var(--ls-wide);
@@ -22,14 +23,15 @@ footer {
 
     a {
         text-decoration: none;
-        color: hsl(var(--clr-neutral-200));
+        color: hsl(var(--clr-neutral-100));
     }
 }
 
 footer .tagline {
     width: 100vw;
     text-align: center;
-    background-color: hsl(var(--clr-primary-450));
+    // background-color: hsl(var(--clr-primary-450));
+    background-color: hsl(var(--clr-secondary-450));
     font-size: var(--fs-350);
     line-height: 1.2;
     letter-spacing: var(--ls-normal);
@@ -71,6 +73,7 @@ footer .rowstack {
 
 footer .smalltext {
     font-size: var(--fs-100);
+    color: hsl(var(--clr-neutral-200));
 }
 
 footer .close {

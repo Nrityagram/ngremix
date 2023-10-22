@@ -21,6 +21,9 @@
         align-self: center;
     }
 }
+.spacer-column {
+    grid-area: spacercol;
+}
 
 
 .even-columns-unlimited {
@@ -190,6 +193,19 @@
             grid-template-columns: 34% 63%;
             grid-template-areas:
                 "narrowcol widecol";
+        }
+    }
+    // narrow | wide columns with pullquote in narrow
+    &.pullquote-column {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "narrowcol"
+            "widecol";
+
+        @include mq(medium) { 
+            grid-template-columns: 24% 67% 6%;
+            grid-template-areas:
+                "narrowcol widecol spacercol";
         }
     }
     &.narrow-wide-40-60 {

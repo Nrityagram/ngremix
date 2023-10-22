@@ -297,14 +297,16 @@ date: Last Modified
   </div>
 
   <!-- slideshow arrows -->
-  <!-- <div id="vanilla-slideshow-previous">
+  <div id="vanilla-slideshow-previous">
     <img src="{{ '/img/left-chevron.svg' | url }}" alt="slider arrow" />
   </div>
   <div id="vanilla-slideshow-next">
     <img src="{{ '/img/right-chevron.svg' | url }}" alt="slider arrow" />
-  </div> -->
+  </div>
 
-  {# close vanilla-slideshow-container #}
+  <div class="banner-chevron"></div>
+
+  <!-- close vanilla-slideshow-container -->
 </div>
 <div class="container">
   <div class="wrapper flow">
@@ -1179,20 +1181,20 @@ date: Last Modified
   <div class="wrapper flow">
     <div class="even-columns">
       <div class="left-column flow-inbetween">
-        <div class="image-plus link" onclick="location.href='https://www.instagram.com/nrityagram/';">
+        <div class="image-plus link" onclick="window.open('https://www.instagram.com/nrityagram/','_blank');">
           <img src="https://res.cloudinary.com/nrityagram/image/upload/v1697822810/insta_latest_feed_oct20_ndugl3.webp" alt="Nrityagram Instagram Feed">
         </div>
-        <div class="button red-plastic center"  onclick="location.href='https://www.instagram.com/nrityagram/';">
+        <div class="button red-plastic center"  onclick="window.open('https://www.instagram.com/nrityagram/','_blank');">
           <div class="glare"></div>
           Follow on Instagram
         </div>
       </div>
 
       <div class="right-column flow-inbetween">
-        <div class="image-plus link" onclick="location.href='https://www.facebook.com/nrityagram';">
+        <div class="image-plus link" onclick="window.open('https://www.facebook.com/nrityagram/','_blank');">
           <img src="https://res.cloudinary.com/nrityagram/image/upload/v1697822810/fb_latest_post_oct20_qsvdgw.webp" alt="Nrityagram Facebook Post">
         </div>
-        <div class="button red-plastic center"  onclick="location.href='https://www.facebook.com/nrityagram';">
+        <div class="button red-plastic center"  onclick="window.open('https://www.facebook.com/nrityagram/','_blank');">
           <div class="glare"></div>
           Like on Facebook
         </div>
@@ -1237,7 +1239,7 @@ date: Last Modified
     // slideshow delay
     delay: 3500,
     // display arrows, options: true or false
-    arrows: false,
+    arrows: true,
     // display indicators, options: true or false
     indicators: false,
     // start slideshow randomly, options: true or false

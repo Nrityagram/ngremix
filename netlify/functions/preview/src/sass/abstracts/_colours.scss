@@ -1,13 +1,15 @@
-// primary: mud red (used for footer, section bg colour)
-// secondary: bright red (used for text emphasis, menu item text, menu item underline, icons, buttons, etc.)
+// primary: mud red
+// secondary: bright red
 // accent: salmon
 // --------
-// primary-550: 0 86% 32%; mud red -- replaced by brighter red
-// primary-450: 0 86% 36%; brighter mud red
+// primary-450: primary-bg
 // --------
-// secondary-550: 357 75% 45%; bright red
+// secondary-450: footer tagline bg
+// secondary-500: nav item in the top menu
+// secondary-525: footer bg
+// secondary-550: h1, h2, active nav item, underline nav item, red body text
 // --------
-// accent-200: 0 75% 97%: salmon
+// accent-200: salmon
 
 $colours: (
 	neutral: (

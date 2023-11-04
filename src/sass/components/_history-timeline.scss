@@ -1,0 +1,147 @@
+.timeline--wrapper {
+    margin: 1vh 0;
+    position: relative;
+    background: #fff;
+
+    // outline: 1px solid lime;
+
+    &>.timelinebar {
+        /* the timeline bar */
+        // position: absolute;
+        // left: 6vw;
+        width: 6px;
+        height: 100%;
+        background: hsl(var(--clr-neutral-300));
+        margin-inline: auto;
+    }
+
+    .timeline {
+        min-height: fit-content;
+        
+        .timeline--item {
+            position: absolute;
+            top: 0;
+            // puts the red dot in the center of the timelinebar
+            // left: 49.75%;
+            left: 6vw;
+            list-style-type: none;
+            transition: 0.5s;
+
+            visibility: hidden;
+
+            /* Box containing details */
+            div {
+                position: relative;
+                border-radius: 5px;
+                /* border: 0.5px solid #ebebeb; */
+                /* width: 400px; */
+                margin-top: 8px; 
+                width: 78vw;
+                /* background: #f1ede6; */
+                background: #f7f7f7;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+                /*   outline: 2px dashed orange; */
+
+                img {
+                    width: 100%;
+                    // max-height: 100%;
+                    object-fit: cover;
+                    margin: 0;
+                    border-radius: 0 0 5px 5px;
+                }
+
+                p {
+                    padding: 1px 18px 5px;
+                    margin: 0;
+                    /* min-height: 70px; */
+                    font-size: 19px;
+                }
+                /* draws the dot on the timeline */
+                &.dot {
+                    content: "";
+                    position: absolute;
+                    top: 12px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background: hsl(var(--clr-secondary-550));
+                    box-shadow: none;
+                }
+                /* draws the arrow */
+                &.tooltip {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    top: 11px;
+                    background: transparent;
+                    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0);
+                }
+                /* draws the shadow of arrow */
+                &.tooltip-shadow {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    top: 13px;
+                    background: transparent;
+                    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0);
+                }
+                /* Gap btw rt-side box and timeline */
+                /* Only right-side boxes on mobile */
+                left: 38px;
+            }
+        }
+    }
+}
+
+time {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin: 5px 15px 3px;
+    color: hsl(var(--clr-secondary-550));
+}
+
+/* Desktop Media Query */
+@media screen and (min-width: 769px) {
+    
+    .timeline--wrapper > .timelinebar{
+        /* the timeline bar */
+        width: 6px;
+        height: 100%;
+        background: hsl(var(--clr-neutral-300));
+        margin-inline: auto;
+    }
+    
+    .timeline--wrapper .timeline .timeline--item {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        list-style-type: none;
+        transition: 0.5s;
+
+        div {
+             max-width: 400px;
+             img {
+                width: 100%;
+             }
+        }
+    }
+
+    /* Gap btw rt-side box and timeline */
+    .timeline--wrapper .timeline .timeline--item:nth-child(odd) div {
+        left: 38px;
+    }
+
+    /* Gap btw lft-side box and timeline */
+    .timeline--wrapper .timeline .timeline--item:nth-child(even) div {
+        left: -425px;
+    }
+
+}

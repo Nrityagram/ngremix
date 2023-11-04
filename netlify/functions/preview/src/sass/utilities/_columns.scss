@@ -25,6 +25,7 @@
     grid-area: spacercol;
 }
 
+// TODO: make a sass/layouts folder to implement specific layout designs such pullquote-column, narrow-wide-40-60, etc.
 
 .even-columns-unlimited {
     @extend .grid;
@@ -239,7 +240,6 @@
             }
         }
     }
-
 
     // wide | narrow columns
     &.wide-narrow {

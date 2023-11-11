@@ -34,6 +34,7 @@
         overflow: hidden;
 
         .info {
+            font-family: var(--ff-serif);
             color: #fff;
             text-decoration: none;
             font-size: var(--fs-serif-medium);
@@ -249,6 +250,7 @@
         }
 
         .info {
+            font-family: var(--ff-serif);
             position: absolute;
             bottom: 0;
             left: 0;

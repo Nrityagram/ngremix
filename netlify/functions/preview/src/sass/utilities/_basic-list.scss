@@ -1,6 +1,7 @@
 @use '../abstracts/' as *;
 
 ul.basic {
+    font-family: var(--ff-serif);
     // bullets flush to the left
 	list-style: disc outside;
 	margin-left: -1em;
@@ -14,6 +15,7 @@ ul.basic {
 }
 
 ol.basic {
+    font-family: var(--ff-serif);
     list-style-position: outside;
     margin-left: -1em;
     margin-block: 0;

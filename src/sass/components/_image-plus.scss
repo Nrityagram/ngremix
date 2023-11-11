@@ -106,6 +106,7 @@
     }
 
     &.card {
+        font-family: var(--ff-serif);
         box-shadow: 0px 4.0px 6.0px 1px hsl(0deg 0% 0% / 0.4);
         &:hover, 
         &:active {

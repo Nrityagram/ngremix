@@ -11,7 +11,7 @@ footer {
     // background-color: hsl(var(--clr-primary-550));
     background-color: hsl(var(--clr-secondary-525));
 
-    font-family: var(--ff-sans);
+    font-family: var(--ff-sans) !important;
     color: hsl(var(--clr-neutral-100));
     font-size: var(--fs-150);
     font-weight: var(--fw-sans-light);

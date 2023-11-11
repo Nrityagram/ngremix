@@ -3,16 +3,15 @@
     position: relative;
     background: #fff;
 
-    outline: 1px solid lime;
+    // outline: 1px solid lime;
 
     &>.timelinebar {
         /* the timeline bar */
-        // position: absolute;
-        // left: 6vw;
+        position: absolute;
+        left: 6vw;
         width: 6px;
         height: 100%;
         background: hsl(var(--clr-neutral-300));
-        margin-inline: auto;
     }
 
     .timeline {
@@ -32,12 +31,10 @@
             /* Box containing details */
             div {
                 position: relative;
-                border-radius: 5px;
-                /* border: 0.5px solid #ebebeb; */
-                /* width: 400px; */
-                margin-top: 8px; 
-                width: 78vw;
-                /* background: #f1ede6; */
+                border-radius: 8px;
+                margin-top: 8px;
+                width: fit-content; 
+                max-width: 80%;
                 background: #f7f7f7;
                 display: flex;
                 flex-direction: column;
@@ -46,11 +43,11 @@
                 /*   outline: 2px dashed orange; */
 
                 img {
-                    width: 100%;
-                    // max-height: 100%;
-                    object-fit: cover;
+                    width: 100%; 
+                    height: auto;
+                    // object-fit: cover;
                     margin: 0;
-                    border-radius: 0 0 5px 5px;
+                    border-radius: 0 0 8px 8px;
                 }
 
                 p {
@@ -113,6 +110,7 @@ time {
     
     .timeline--wrapper > .timelinebar{
         /* the timeline bar */
+        position: static;
         width: 6px;
         height: 100%;
         background: hsl(var(--clr-neutral-300));

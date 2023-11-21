@@ -5,6 +5,8 @@
     var width = window.innerWidth;
     var content = document.querySelector(".timeline--wrapper");
     var items = document.querySelectorAll(".timeline--item");
+    // var content = document.querySelector(".timeline--wrapper");
+    // var items = document.querySelectorAll("ul.timeline li");
     var items_topvals = new Array(items.length).fill(0);
     var lowest_pt, prev_lowestpt;
     var pad;
@@ -40,11 +42,11 @@
       } else {
         //   For mobile
         if (idx == 0) {
-          lowest_pt = items[idx].clientHeight;
+          lowest_pt = items[idx].clientHeight + pad;
           topval = 0;
-        } else {
+        } else {          
           topval = lowest_pt;
-          lowest_pt = topval + items[idx].clientHeight;
+          lowest_pt = topval + items[ idx ].clientHeight + pad;
         }
       }
   
@@ -57,49 +59,56 @@
       var tooltip = div.getElementsByClassName("tooltip")[0];
       var tooltipShadow = div.getElementsByClassName("tooltip-shadow")[0];
       // set the margin-top of div to 10px
-      div.style.width = "fit-content";
+      // div.style.width = "400px";
+      // if(width < 768) {
+        // div.style.width = "70vw";
+      // }
       div.style.marginTop = "10px";
       if (side) {
+        // right side of timeline
         // set dot on timeline
-        dot.style.left = "-45px";
+        dot.style.left = "-44px";
+        if (width < 768) {
+          dot.style.left = "-45px";
+        }
         // arrow pointing to timeline from rt-side
-        tooltip.style.left = "-24px";
+        tooltip.style.left = "-22px";
         tooltip.style.borderWidth = "12px 24px 12px 0";
         tooltip.style.borderColor = "transparent #f7f7f3 transparent transparent";
         // arrow shadow pointing to timeline from rt-side
-        tooltipShadow.style.left = "-24px";
+        tooltipShadow.style.left = "-22px";
         tooltipShadow.style.borderWidth = "12px 24px 12px 0";
         tooltipShadow.style.borderColor = "transparent #cbcbcb transparent transparent";
         // set box on right of timeline
         div.style.left = "38px";
       } else {
+        // left side of timeline
         // set dot on timeline
-        dot.style.left = "424px";
+        dot.style.left = "422px";
         // arrow pointing to timeline from lft-side
-        tooltip.style.left = "400px";
+        tooltip.style.left = "398px";
         tooltip.style.borderWidth = "12px 0 12px 24px";
         tooltip.style.borderColor = "transparent transparent transparent #f7f7f3";
         // arrow shadow pointing to timeline from lft-side
-        tooltipShadow.style.left = "400px";
+        tooltipShadow.style.left = "398px";
         tooltipShadow.style.borderWidth = "12px 0 12px 24px";
         tooltipShadow.style.borderColor = "transparent transparent transparent #a7a7a3";
         // set box on left of timeline
-        div.style.left = "-431px";
+        div.style.left = "-430px";
       }
     }
   
     function callbackFunc() {
-      // set pad to 5 for mobile + ipad (portrait) screens
+      // set pad to 10 for mobile + ipad (portrait) screens
       if (width > 768) {
         pad = 70;
       } else {
-        pad = 0;
+        pad = 10;
       }
 
       for (var i = 0; i < items.length; i++) {
         items_topvals[i] = setTopPosition(i);
         items[ i ].style.top = items_topvals[ i ] + "px";
-        console.log("side=" + side);
         setSideOfTimeline(side, i);
       }
   

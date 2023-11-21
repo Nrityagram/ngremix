@@ -15,6 +15,8 @@ module.exports = eleventyConfig => {
     //   "Children's Dance Class",
     //   ["425", "768", "1600"], "eager" %}
 
+	// TODO: Need to modify return statement to add class names
+
 	eleventyConfig.addAsyncShortcode("image", async function (url, alt, widths, sizes = "(max-width: 800px) 200px, 50vw", loadingOption = "lazy") {
 
 		// loadingOption = lazy / eager

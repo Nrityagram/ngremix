@@ -216,7 +216,8 @@
             "widecol";
 
         @include mq(medium) { 
-            grid-template-columns: 40% 60%;
+            // auto takes care of wide-grid-gap and does not overflow from the grid
+            grid-template-columns: 40% auto;
             grid-template-areas:
                 "narrowcol widecol";
         }
@@ -254,6 +255,37 @@
                 "widecol narrowcol";
         }
     
+        &.reverse-mob {
+            // mobile
+            @include mqmax(medium) {
+                grid-template-areas:
+                    "narrowcol"
+                    "widecol";
+            }
+        }
+        &.reverse-tab {
+            // tablet
+            @include mqmax(large) {
+                grid-template-areas:
+                    "narrowcol"
+                    "widecol";
+            }
+        }
+    }
+    &.wide-narrow-60-40 {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "widecol"
+            "narrowcol";
+
+        @include mq(medium) { 
+            grid-template-columns: auto 40%;
+            grid-template-areas:
+                "widecol narrowcol";
+        }
+    }
+    &.wide-narrow,
+    &.wide-narrow-60-40 {
         &.reverse-mob {
             // mobile
             @include mqmax(medium) {

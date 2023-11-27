@@ -64,6 +64,9 @@
 		}
 	}
 
+	&.border-bottom {
+		border-bottom: 1px solid hsl(var(--clr-neutral-200));
+	}
 	max-width: var(--width, var(--max-char-in-line));
 }
 

@@ -37,9 +37,11 @@ title: "Donate"
     </p>
     <p>Thank you for making a Donation to Nrityagram today!</p>
     <br />
-    <div class="button red-plastic center">
-      <div class="glare"></div>
-        Make a Donation
+    <div class="open-modal modal-button">
+      <div class="button red-plastic center">
+        <div class="glare"></div>
+          Make a Donation
+      </div>
     </div>
     <br />
     <p class="infotext center">
@@ -49,3 +51,91 @@ title: "Donate"
     </p>
   </div>
 </div>
+
+<dialog id="donate-options" class="modal">
+  <div class="wrapper flow flow-flushtop flow-flushbottom">
+    <div class="modal-header">
+      <h4>Select one</h4>
+      <div class="close-button" aria-label="close">&#215;</div>
+    </div>
+    <div id="passport">
+      <div class="modal-content flow-inbetween">
+        <div class="payment-choice">
+          <label for="india" class="radio">
+            <input type="radio" value="india" name="nationality" class="citizen-type" id="india" />
+					Citizen of India (Tax Deductible)
+				</label>
+        </div>
+        <div class="payment-choice">
+          <label for="nri" class="radio">
+            <input type="radio" value="nri" name="nationality" class="citizen-type" id="nri" />
+					Non-Resident Indian (Tax Deductible)
+				</label>
+        </div>
+        <div class="payment-choice">
+          <label for="usa" class="radio">
+            <input type="radio" value="usa" name="nationality" class="citizen-type" id="usa" />
+					Citizen of USA (Tax Deductible)
+				</label>
+        </div>
+        <div class="payment-choice">
+          <label for="othercountry" class="radio">
+            <input type="radio"
+						value="othercountry"
+						name="nationality"
+						class="citizen-type"
+						id="othercountry" />
+					Citizen of another country
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script type="text/javascript">
+  const modal = document.querySelector('#donate-options');
+  const openModal = document.querySelector('.open-modal');
+  const closeModal = document.querySelector('.close-button');
+
+  function clearOptions() {
+    // Clear any previous selection
+    const allOptions = document.querySelectorAll('.citizen-type');
+    allOptions.forEach((option) => {
+      option.checked = false;
+    });
+  }
+
+  openModal.addEventListener('click', () => {
+    clearOptions();
+    modal.showModal();
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.close();
+  });
+
+  const allCitizenOptions = document.querySelectorAll('.citizen-type');
+  allCitizenOptions.forEach((targetOption) => {
+    targetOption.addEventListener('click', () => {
+      // Load appropriate donation page based
+      // on the citizenship choice made
+      switch (targetOption.id) {
+        case 'india':
+          location.href = "/makeadonation";
+          break;
+        case 'nri':
+          location.href = "/makeadonation";
+          break;
+        case 'usa':
+          location.href = "/makeadonation-usa";
+          break;
+        case 'othercountry':
+          location.href = "/makeadonation-other";
+          break;
+        default:
+          break;
+      }
+    });
+  });
+</script>

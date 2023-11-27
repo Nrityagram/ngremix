@@ -1,20 +1,7 @@
-const primaryHeader = document.querySelector('.primary-header')
-const logo = document.querySelector('.logo')
-const scrollWatcher = document.createElement('div')
 const mobileToggle = document.querySelector('.mobileToggle')
 const mobileCloseBtn = document.querySelector('.closeMobileBtn')
 const body = document.querySelector('body')
 const navDeck = document.querySelector('.nav-deck')
-
-scrollWatcher.setAttribute('data-scroll-watcher', '')
-primaryHeader.before(scrollWatcher)
-
-const navObserver = new IntersectionObserver((entries) => {
-    primaryHeader.classList.toggle('sticking', !entries[ 0 ].isIntersecting)
-    logo.classList.toggle('sticking', !entries[0].isIntersecting)
-}, {rootMargin: "5px 0px 0px 0px"})
-
-navObserver.observe(scrollWatcher)
 
 mobileToggle.onclick = function () {
     primaryHeader.classList.toggle('showMobile')
@@ -68,8 +55,8 @@ var hideDropDownMenuFunc = function (e) {
 document.querySelectorAll('[data-dropdown]').forEach(dropdown => {
     // if not a mobile device, add the event listeners to the dropdown elements in the menu
     if (!window.matchMedia("(max-width: 50em)").matches) {
-        dropdown.addEventListener('mouseover', dropDownMenuFunc, false)
-        dropdown.addEventListener('mouseleave', hideDropDownMenuFunc, false)
+        dropdown.addEventListener('mouseover', dropDownMenuFunc)
+        dropdown.addEventListener('mouseleave', hideDropDownMenuFunc)
     }
 })
 

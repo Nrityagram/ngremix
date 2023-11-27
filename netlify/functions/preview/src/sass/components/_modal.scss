@@ -2,6 +2,7 @@
 
 dialog {
     padding: 0;
+    padding-bottom: 1em;
     position: fixed;
     outline: none;
     
@@ -23,9 +24,9 @@ dialog {
         color: hsl(var(--clr-neutral-200));
         background-color: hsl(var(--clr-secondary-550));
         min-height: 20px;
-        padding: 0.5em 2em;
+        padding: 0.2em 1em;
         @include mqmax(small) {
-            padding: 0.5em 0.3em;
+            padding: 0.5em 0.75em;
         }
         border-radius: 12px 12px 0 0;
         // position: relative;
@@ -65,5 +66,10 @@ dialog::backdrop {
 .open-modal {
     &:hover {
         cursor: pointer;
+    }
+
+    &.modal-button {
+        width: fit-content;
+        margin: 0 auto;
     }
 }

@@ -7,6 +7,7 @@ tags: page
 date: Last Modified
 parentMenuItem: "Ensemble"
 title: "Performances"
+gismap: true
 ---
 <div id="banner-container">
   <div class="banner-image">
@@ -36,3 +37,23 @@ title: "Performances"
         Performances
   </div>
 </div>
+<div class="container">
+  <div class="wrapper flow">
+    <p class="center">Performances by the Ensemble around the world (click on markers for more details)</p>
+
+    <div class="image-plus">
+      <a href="#perfmap-overlay" class="mobile-only">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1594912581/mobile/performancemap-esri-tap_nlgzr9.jpg",
+        "A global map showing locations of performances by the Nrityagram ensemble",
+        ["560", "768", "1046"] %}
+      </a>
+    </div>
+    <div id="perfmap-overlay" class="overlay">
+      <div id="mobmapid"></div>
+      <a class="close" href="#">&times;</a>
+    </div>
+    <div id="deskmapid" class="desk-only"></div>
+  </div>
+</div>
+
+<script src="{{ '/utils/performancemap.js' | url }}" defer="defer"></script>

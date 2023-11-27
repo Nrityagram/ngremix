@@ -22,11 +22,24 @@
 	background: var(--_bg);
 	height: fit-content;
 
-	z-index: 5;
+	// Make z-index 999 so the performance map leaflet component sits under the header
+	// z-index: 5;
+	z-index: 999;
 	position: sticky;
 	top: 0;
 
     transition: background 500ms ease-in-out;
+}
+// For pages that load danamojo script,
+// make the primary header solidblack and logo height as mobile size
+.primary-header.solidbg {
+	background-color: #000 !important;
+
+	.logo {
+		img {
+			height: var(--logo-height-mob) !important;
+		}
+	}
 }
 .primary-header.showMobile {
 	--_bg: hsl(var(--clr-neutral-850));

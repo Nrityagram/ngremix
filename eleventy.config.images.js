@@ -15,7 +15,7 @@ module.exports = eleventyConfig => {
     //   "Children's Dance Class",
     //   ["425", "768", "1600"], "eager" %}
 
-	// TODO: Need to modify return statement to add class names
+	// TODO: Need to modify return statement to add class names https://www.11ty.dev/docs/plugins/image/#make-your-own-markup
 
 	eleventyConfig.addAsyncShortcode("image", async function (url, alt, widths, sizes = "(max-width: 800px) 200px, 50vw", loadingOption = "lazy") {
 

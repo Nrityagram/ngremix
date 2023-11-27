@@ -109,6 +109,9 @@ a {
 .center {
 	text-align: center;
 }
+.right {
+	text-align: right;
+}
 .center-on-mob {
 	@include mqmax(medium) {
 		text-align: center;
@@ -117,6 +120,9 @@ a {
 
 .redtext {
 	color: hsl(var(--clr-secondary-550)) !important;
+}
+.whitetext {
+	color: #fff !important;
 }
 .infotext {
 	color: hsl(var(--clr-neutral-600));

@@ -1,4 +1,3 @@
-const primaryHeader = document.querySelector('.primary-header')
 const mobileToggle = document.querySelector('.mobileToggle')
 const mobileCloseBtn = document.querySelector('.closeMobileBtn')
 const body = document.querySelector('body')
@@ -56,8 +55,7 @@ var hideDropDownMenuFunc = function (e) {
 document.querySelectorAll('[data-dropdown]').forEach(dropdown => {
     // if not a mobile device, add the event listeners to the dropdown elements in the menu
     if (!window.matchMedia("(max-width: 50em)").matches) {
-        // dropdown.addEventListener('mouseover', dropDownMenuFunc)
-        dropdown.addEventListener('click', dropDownMenuFunc)
+        dropdown.addEventListener('mouseover', dropDownMenuFunc)
         dropdown.addEventListener('mouseleave', hideDropDownMenuFunc)
     }
 })

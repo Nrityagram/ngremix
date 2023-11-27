@@ -56,6 +56,11 @@ dialog {
         h2 {
             text-align: left;
         }
+        &.focus-none {
+            *:focus {
+                outline: none;
+            }
+        }
     }
 }
 
@@ -70,6 +75,6 @@ dialog::backdrop {
 
     &.modal-button {
         width: fit-content;
-        margin: 0 auto;
+        margin-inline: auto;
     }
 }

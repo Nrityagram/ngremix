@@ -39,11 +39,12 @@ title: "Support the Corpus Fund"
 			of the foremost dance schools and companies of India.
 		</p>
     <br />
-    <div class="button red-plastic center">
-      <div class="glare"></div>
-        Give to Our Corpus Fund
+    <div class="open-modal modal-button">
+      <div class="button red-plastic center">
+        <div class="glare"></div>
+          Give to Our Corpus Fund
+      </div>
     </div>
-    <br />
     <p class="infotext center">
       We are happy to work with you on additional ideas that appeal to your funding interests and giving priorities.
       <br />
@@ -51,3 +52,33 @@ title: "Support the Corpus Fund"
     </p>
   </div>
 </div>
+
+<dialog id="corpus-options" class="modal">
+  <div class="wrapper flow flow-flushtop flow-flushbottom">
+    <div class="modal-header">
+      <h4>Contact us</h4>
+      <div class="close-button" aria-label="close">&#215;</div>
+    </div>
+    <div class="modal-content flow-inbetween focus-none">
+      <p>
+        Please talk to Lynne about supporting our Corpus Fund
+        <br />
+        E <a href="mailto:lynne@nrityagram.org" class="bodylink focus-none">lynne@nrityagram.org</a> | M <a href="tel:+919845073325" class="bodylink focus-none">+919845073325</a>
+      </p>
+    </div>
+  </div>
+</dialog>
+
+<script type="text/javascript">
+  const modal = document.querySelector('#corpus-options');
+  const openModal = document.querySelector('.open-modal');
+  const closeModal = document.querySelector('.close-button');
+
+  openModal.addEventListener('click', () => {
+    modal.showModal();
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.close();
+  });
+</script>

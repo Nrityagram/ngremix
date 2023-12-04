@@ -21,7 +21,7 @@ body.lockScroll {
 }
 
 * {
-	scroll-margin-top: var(--logo-height-sticking);
+	scroll-margin-top: calc(var(--logo-height-sticking) + 1.2rem);
 }
 
 header {

@@ -8,6 +8,11 @@
 	padding-top: var(--flow-spacer-top);
 }
 
+.flow {
+	padding-bottom: var(--flow-spacer-bottom);
+}
+
+
 // To compensate for the line-height you get with h1
 .flow:has(>h1:first-child) {
 	padding-top: var(--flow-spacer-h1);
@@ -30,11 +35,6 @@
 	@include mqmax(small) {
 		padding-top: var(--flow-spacer-h1);
 	}
-}
-
-
-.flow {
-	padding-bottom: var(--flow-spacer-bottom);
 }
 
 // spacing only between elements without top+bottom padding

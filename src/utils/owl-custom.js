@@ -7,7 +7,7 @@ $(document).ready(function () {
     center: true,
     dots: false,
     smartSpeed: 500,
-    lazyLoadEager: 1,
+    lazyLoadEager: 2,
     onInitialized: function (event) {
       // apply aria-label info to next and previous buttons and make them focusable
         $('.owl-carousel.ultra-wide').find('.owl-prev').attr('aria-label','Previous Slide');
@@ -92,7 +92,7 @@ $(document).ready(function () {
     dots: true,
     mouseDrag: false,
     touchDrag: false,
-    lazyLoadEager: 1,
+    lazyLoadEager: 2,
     animateOut: 'fadeOut',
     onInitialized: function (event) {
       // apply aria-label info to next and previous buttons and make them focusable

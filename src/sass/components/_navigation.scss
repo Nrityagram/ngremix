@@ -24,9 +24,9 @@
     scale: 1;
     position: absolute;
     top: calc(var(--logo-height) + 1.5rem);
-    left: 0;
-    align-items: start;
-    width: 100%;
+    left: 3vw;
+    width: 88vw;
+    // align-items: start;
 }
 
 .nav-list {
@@ -105,21 +105,23 @@
 }
 .nav-deck.showMobile .nav-list {
     flex-direction: column;
-    align-items: flex-start;
-    width: 92vw;
+    width: 100%;
 
     @include mqmax(medium) {
         li {
             width: 100%;
             padding-block: 0.5em;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
         .nav-item-name  {
             display: flex;
             justify-content: space-between;
-            font-size: var(--_nav-item-fontsize-sml);
+            font-size: var(--_nav-item-fontsize-sml) !important;
+            &.active {
+                text-decoration: none !important;
+            }
             a {
-                font-size: var(--_nav-item-fontsize-sml);
+                font-size: var(--_nav-item-fontsize-sml) !important;
             }
             // menu item name takes up 75% of width
             :first-child {
@@ -166,11 +168,19 @@
        } 
     }
 }
+.nav-deck.showMobile .nav-sublist {
+    li {
+        padding-right: 1.9rem !important;
+    }
+    li, li a {
+        font-size: var(--_nav-item-fontsize-sml) !important;
+    }
+}
 .nav-deck.showMobile .nav-list:first-child {
     li .nav-item-name,
     li .nav-item-name a {
         color: var(--_nav-link-color);
-        font-size: var(--_nav-item-fontsize-sml);
+        font-size: var(--_nav-item-fontsize-sml) !important;
     }
 }
 
@@ -251,6 +261,9 @@
     }
 
     @include mqmax(medium) {
+        li {
+            padding-left: 0;
+        }
         li, li a {
             font-weight: var(--fw-normal) !important;
         }
@@ -310,7 +323,7 @@ li[data-link-active] {
             padding-left: 0;
 
             &.active {
-                text-decoration: none;
+                text-decoration: none !important;
             }
 
             .nav-item-name {
@@ -323,9 +336,9 @@ li[data-link-active] {
 
             .nav-sublist {
                 left: 0;
-                gap: 2rem;
+                gap: 0.25em;
                 padding-left: 0;
-                padding-top: 2rem;
+                padding-top: 0.8rem;
                 background-color: transparent;
                 border: none;
 
@@ -369,6 +382,7 @@ li[data-link-active-lvl2] {
             padding-left: 0;
 
             .nav-item-name-lvl2 a {
+                // pointer-events: none !important;
                 text-transform: uppercase;
                 font-weight: bold !important;
                 font-size: var(--_nav-item-fontsize-sml);
@@ -382,11 +396,14 @@ li[data-link-active-lvl2] {
 
             .nav-sublist-lvl2 {
                 left: 0;
-                gap: 2rem;
+                gap: 0.25em;
                 padding-left: 0;
-                padding-top: 2rem;
+                padding-top: 0.8rem;
                 background-color: transparent;
                 border: none;
+                li a {
+                    font-size: var(--_nav-item-fontsize-sml);
+                }
             }
         }
     }

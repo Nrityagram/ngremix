@@ -28,23 +28,7 @@ nobanner: true
       }
     }, 20000);
 
-    var observer = new MutationObserver(function (mutations, me) {
-      var gridView = document.getElementById('grid_view');
-      if (gridView) {      
-        let colSm12 = gridView.firstElementChild;
-        let productItem = colSm12.firstElementChild;
-        var newItem = document.createElement('div');
-        newItem.setAttribute('class', 'item widget-item-dm col-sm-3 product-row');
-        colSm12.insertBefore(newItem, productItem);
-
-        me.disconnect(); // stop observing
-        return;
-      }
-      observer.observe(document, {
-        childList: true,
-        subtree: true
-      });
-    });
+    
 
   </script>
     <div id='dmScriptContainer' style='display: none;'>
@@ -56,6 +40,7 @@ nobanner: true
           oDisplay='product'
           oDisplayTab='once,monthly'
           iProductId='4975'
+          oLayout='LIST'
         >
       <center>
         <img
@@ -69,79 +54,3 @@ nobanner: true
     <!-- END danamojo code -->
   </div>
 </div>
-
-<script type="text/javascript">
-  // Overriding Danamojo style with NG style
-  // Using a more efficient method than setTimeout -- MutationObserver
-  var observer = new MutationObserver(function (mutations, me) {
-    // `mutations` is an array of mutations that occurred
-    // `me` is the MutationObserver instance
-    var gridView = document.getElementById("grid_view");
-    if (gridView) {
-      // pushing the single item in product view to the centre
-      let colSm12 = gridView.firstElementChild;
-      let productItem = colSm12.firstElementChild;
-      var newItem = document.createElement("div");
-      newItem.setAttribute("class", "item widget-item-dm col-sm-3 product-row");
-      colSm12.insertBefore(newItem, productItem);
-
-      if (document.getElementById("donat_now_link")) {
-        let active_donate_link = document.getElementById("donat_now_link");
-        let active_donate_img = active_donate_link.firstElementChild;
-        // active_donate_img.src = "/img/social/ng-donate-button-active.png";
-        active_donate_img.src = "/img/social/ng-donate-glass-active.png";
-      }
-
-      if (document.getElementById("donat_now_link_basic")) {
-        let off_donate_link = document.getElementById("donat_now_link_basic");
-        let off_donate_img = off_donate_link.firstElementChild;
-        // off_donate_img.src = "/img/social/ng-donate-button-off.png";
-        off_donate_img.src = "/img/social/ng-donate-glass-off.png";
-      }
-
-      if (document.querySelector(".donateNowbtn")) {
-        let pay_now_button = document.querySelector(".donateNowbtn");
-        let pay_now_img = pay_now_button.firstElementChild;
-        // pay_now_img.src = "/img/social/ng-pay-now-button.png";
-        pay_now_img.src = "/img/social/ng-pay-now-glass.png";
-      }
-
-      me.disconnect(); // stop observing
-      return;
-    }
-
-    var mobileData = document.getElementById("loadProductMobileData");
-    if (mobileData) {
-      if (document.getElementById("donat_now_link")) {
-        let active_donate_link = document.getElementById("donat_now_link");
-        let active_donate_img = active_donate_link.firstElementChild;
-        // active_donate_img.src = "/img/social/ng-donate-button-active-sml.png";
-        active_donate_img.src = "/img/social/ng-donate-glass-active-sml.png";
-      }
-
-      if (document.getElementById("donat_now_link_basic")) {
-        let off_donate_link = document.getElementById("donat_now_link_basic");
-        let off_donate_img = off_donate_link.firstElementChild;
-        // off_donate_img.src = "/img/social/ng-donate-button-off-sml.png";
-        off_donate_img.src = "/img/social/ng-donate-glass-off-sml.png";
-      }
-
-      if (document.querySelector(".donateNowbtn")) {
-        let pay_now_button = document.querySelector(".donateNowbtn");
-        let pay_now_img = pay_now_button.firstElementChild;
-        // pay_now_img.src = "/img/social/ng-pay-now-button.png";
-        pay_now_img.src = "/img/social/ng-pay-now-glass.png";
-      }
-
-      me.disconnect(); // stop observing
-      return;
-    }
-  });
-
-  // Setting the target to ngoContentContainer to observe does not BLOODY work!!
-  // const danamojoContent = document.querySelector("#ngoContentContainer");
-  observer.observe(document, {
-    childList: true,
-    subtree: true
-  });
-</script>

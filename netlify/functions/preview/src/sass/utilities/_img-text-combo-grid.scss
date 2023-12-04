@@ -2,8 +2,6 @@
 @use '../abstracts/' as *;
 
 .image-card {
-  display: flex;
-  flex-direction: column;
   margin: 0;
 
   .image-wrapper {
@@ -22,6 +20,17 @@
     }
   }
 
+  .image-caption {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--ff-sans);
+    font-size: var(--fs-400);
+    text-align: center;
+    .caption-uppercase {
+      text-transform: uppercase;
+    }
+  }
+
   &:hover {
     img {
         transform: scale(1.08);
@@ -34,28 +43,14 @@
       -webkit-filter: grayscale(0);
       filter: grayscale(0);
     }
+    .image-caption {
+      color: hsl(var(--clr-secondary-550))
+    }
     &:hover {
       img {
         transform: scale(1);
     } 
     }
-  }
-}
-
-.image-caption {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--ff-sans);
-  font-size: var(--fs-400);
-  text-align: center;
-  .caption-uppercase {
-    text-transform: uppercase;
-  }
-}
-
-.image-card.active {
-  .image-caption {
-    color: hsl(var(--clr-secondary-550))
   }
 }
 
@@ -147,6 +142,7 @@
     grid-area: trustee-common-bio;
   }
   #trustees.img-text-combo-grid { 
+    grid-gap: 0.5rem;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:
       "trustee-one trustee-two trustee-three trustee-four trustee-five"

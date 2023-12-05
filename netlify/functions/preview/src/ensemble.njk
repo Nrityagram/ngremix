@@ -37,7 +37,7 @@ title: "Ensemble"
   </div>
 </div>
 <div class="container">
-	<div class="wrapper ultra-wide flow">
+	<div class="wrapper ultra-wide flow flow-flushbottom">
 		<div class="uneven-columns pullquote-column wide-grid-gap">
 			<div class="narrow-column right-align-column">
 				<div class="fade-in stickybit pullquote">
@@ -73,6 +73,28 @@ title: "Ensemble"
 				</p>
 			</div>
 			<div class="spacer-column"></div>
+		</div>
+	</div>
+	<div class="wrapper ultra-wide flow">
+		<div class="even-columns">
+			<div class="left-column">
+				<div class="image-plus card" onclick="location.href='/repertoire';">
+					{% image "https://res.cloudinary.com/nrityagram/image/upload/v1569697663/repertory_xcac1z.jpg",
+					"Répertoire Card",
+					["560", "768"] %}
+					<div class="credit" data-image-credit="Uma Dhanwatey" ></div>
+					<div class="card-title">Répertoire</div>
+				</div>
+			</div>
+			<div class="right-column">
+				<div class="image-plus card" onclick="location.href='/performancemap';">
+					{% image "https://res.cloudinary.com/nrityagram/image/upload/v1580617717/performances-desk_hcwn9s.jpg",
+					"Performances Card",
+					["560", "768"] %}
+					<div class="credit" data-image-credit="Courtesy Serendipity Arts Festival" ></div>
+					<div class="card-title">Performances</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

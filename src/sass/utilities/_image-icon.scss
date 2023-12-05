@@ -14,6 +14,22 @@ img.icon {
         height: var(--icon-height-sml); 
     }
 
+    &.mob {
+        display: none;
+    }
+    &.desk {
+        display: inline-block;
+    }
+
+    @include mqmax(small) {
+        &.mob {
+            display: inline-block;
+        }
+        &.desk {
+            display: none;
+        }
+    }
+    
     &.sml-vsml {
         height: var(--icon-height-sml);
         // make the email + phone icons in the footer smaller for mobile

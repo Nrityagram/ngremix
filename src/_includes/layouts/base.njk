@@ -7,6 +7,24 @@
 		<title>{{ title or metadata.title }} | Nrityagram Dance Village, India</title>
 		<meta name="description" content="{{ description or metadata.description }}" />
 		<meta name="generator" content="{{ eleventy.generator }}" />
+		<!-- Open Graph -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://nrityagram.org">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="{{ title or metadata.title }} | Nrityagram Dance Village, India">
+		<meta property="og:description" content="{{ description or metadata.description }}">
+		<meta property="og:image" content="{{ OGImage or metadata.OGImage }}">
+		<meta property="og:image:alt" content="Nrityagram OpenGraph Image">
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@nrityagram">
+		<meta name="twitter:creator" content="@nrityagram">
+		<meta name="twitter:url" content="https://nrityagram.org">
+		<meta name="twitter:title" content="{{ title or metadata.title }} | Nrityagram Dance Village, India">
+		<meta name="twitter:description" content="{{ description or metadata.description }}">
+		<meta name="twitter:image" content="{{ OGImage or metadata.OGImage }}">
+		<meta name="twitter:image:alt" content="Nrityagram OpenGraph Image">
+		<link rel="canonical" href="https://nrityagram.org">
 
 		<!-- openprops -->
 		<!-- <link rel="stylesheet" href="https://unpkg.com/open-props" /> -->

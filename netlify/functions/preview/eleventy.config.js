@@ -28,14 +28,14 @@ module.exports = function (eleventyConfig) {
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget('content/**/*.{svg,webp,png,jpeg}');
 
-	// App plugins
+	// Add plugins
 	eleventyConfig.addPlugin(pluginImages);
 	eleventyConfig.addPlugin(pluginPictures);
 	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
 		name: 'preview', // serverless function name from your permalink object
 		functionsDir: './netlify/functions/',
 		copy: ['img/'],
-    });
+	});
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {

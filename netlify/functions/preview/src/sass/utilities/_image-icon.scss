@@ -15,18 +15,18 @@ img.icon {
     }
 
     &.mob {
-        display: inline-block;
-    }
-    &.desk {
         display: none;
     }
+    &.desk {
+        display: inline-block;
+    }
 
-    @include mq(medium) {
+    @include mqmax(small) {
         &.mob {
-            display: none;
+            display: inline-block;
         }
         &.desk {
-            display: inline-block;
+            display: none;
         }
     }
     

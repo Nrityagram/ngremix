@@ -64,6 +64,13 @@
 		}
 	}
 
+	&.ultra-narrow {
+		--width: var(--ultra-narrow-width);
+		@include mqmax(small) {
+			--width: var(--ultra-wide-width);
+		}
+	}
+
 	&.border-bottom {
 		border-bottom: 1px solid hsl(var(--clr-neutral-200));
 	}

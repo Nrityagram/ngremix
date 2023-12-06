@@ -142,7 +142,7 @@
     grid-area: trustee-common-bio;
   }
   #trustees.img-text-combo-grid { 
-    grid-gap: 0.5rem;
+    grid-gap: 0.75rem;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:
       "trustee-one trustee-two trustee-three trustee-four trustee-five"

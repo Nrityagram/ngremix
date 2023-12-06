@@ -22,15 +22,20 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--_gap);
+
+  &.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+  }
 }
 
 .marquee[data-animated="true"] .marquee-content {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll 300s linear infinite;
+  animation: scroll 300s forwards linear infinite;
   // slow down scrolling for mobile screens
   @include mqmax(small) {
-    animation: scroll 280s linear infinite;
+    animation: scroll 280s forwards linear infinite;
   }
 }
 

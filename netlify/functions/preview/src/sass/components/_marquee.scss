@@ -27,6 +27,10 @@
     cursor: grabbing;
     cursor: -webkit-grabbing;
   }
+  :hover {
+    cursor: grab;
+    cursor: -webkit-grab;
+  }
 }
 
 .marquee[data-animated="true"] .marquee-content {

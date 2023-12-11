@@ -18,4 +18,19 @@ sidebar {
             mix-blend-mode:lighten;
         }
     }
+
+    .hovertext.[data-hovertext] {
+        &:hover::after {
+            content: attr(data-hovertext);
+            font-family: var(--ff-sans);
+            font-size: var(--fs-150);
+            color: hsl(var(--clr-neutral-100));
+            padding: 3px;
+            background-color: hsl(var(--clr-neutral-500));
+            border-radius: 4px;
+            position: absolute;
+            top: 0.2rem;
+            left: calc(var(--icon-height) + 5px);
+        }
+    }
 }

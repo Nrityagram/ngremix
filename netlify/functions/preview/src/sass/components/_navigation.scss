@@ -18,6 +18,10 @@
         visibility: visible;
         scale: 1;
     }
+
+    .sticky-bottom-nav {
+        display: none;
+    }
 }
 .nav-deck.showMobile {
     visibility: visible;
@@ -26,7 +30,14 @@
     top: calc(var(--logo-height) + 1.5rem);
     left: 3vw;
     width: 88vw;
-    // align-items: start;
+
+    .sticky-bottom-nav {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+        margin-top: 50px;
+    }
 }
 
 .nav-list {

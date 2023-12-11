@@ -26,7 +26,8 @@
         .photo-credit {
             font-size: var(--fs-200);
             font-family: var(--ff-sans);
-            color: #fff;
+            color: hsl(var(--clr-neutral-200));
+            text-shadow: 0 1px hsl(var(--clr-neutral-500));
             writing-mode: vertical-rl;
             position: absolute;
             bottom: 30px;

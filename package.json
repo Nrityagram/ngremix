@@ -16,7 +16,7 @@
 	"keywords": [],
 	"author": {
 		"name": "Amrita Chanda",
-		"email": "amrita@vodkarani.codes",
+		"email": "amrita@nrityagram.org",
 		"url": "https://vodkarani.codes/"
 	},
 	"license": "MIT",
@@ -36,5 +36,9 @@
 	"engines": {
 		"node": ">=0.10.3 <21",
 		"npm": ">=1.0.20"
+	},
+	"dependencies": {
+		"@sanity/image-url": "^1.0.2",
+		"get-youtube-id": "^1.0.1"
 	}
 }

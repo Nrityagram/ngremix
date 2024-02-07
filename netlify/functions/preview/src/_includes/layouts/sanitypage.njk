@@ -1,32 +1,34 @@
 ---
 layout: layouts/base.njk
 ---
-<div id="banner-container">
-    <div class="banner-image">
-        {% pictures {
-            "desk" : ngpage.mastheadImages.desktop,
-            "tab" : ngpage.mastheadImages.tablet,
-            "mob" : ngpage.mastheadImages.mobile
-        },
-        "Get the Alt", {
-            "mob": ["425"],
-            "tab": ["768"],
-            "desk": ["1600"]
-        }, {
-            "desk": "65em",
-            "tab": "50em",
-            "mob": "35em"
-        },
-        "eager",
-        "high"
+{% if ngpage.mastheadImageDesk %}
+    <div id="banner-container">
+        <div class="banner-image">
+            {% pictures {
+                "desk" : ngpage.mastheadImageDesk.imgSource,
+                "tab" : ngpage.mastheadImagesSources.tablet,
+                "mob" : ngpage.mastheadImagesSources.mobile
+            },
+            ngpage.mastheadImageDesk.alt, {
+                "mob": ["425"],
+                "tab": ["768"],
+                "desk": ["1600"]
+            }, {
+                "desk": "65em",
+                "tab": "50em",
+                "mob": "35em"
+            },
+            "eager",
+            "high"
  %}
+        </div>
+        <div class="banner-image-credit"
+        data-image-credit-desk= "{{ ngpage.mastheadImageDesk.credit }}"
+        data-image-credit-tab= "{{ ngpage.mastheadImagesCredits.tablet }}"
+        data-image-credit-mob= "{{ ngpage.mastheadImagesCredits.mobile }}"
+        ></div>
+        <div class="banner-title">
+            {{ngpage.title}}
+        </div>
     </div>
-    <div class="banner-image-credit"
-        data-image-credit-desk= {{ngpage.mastheadImagesCredits.desktop}}
-        data-image-credit-tab= {{ngpage.mastheadImagesCredits.tablet}}
-        data-image-credit-mob= {{ngpage.mastheadImagesCredits.mobile}}
-    ></div>
-    <div class="banner-title">
-        {{ngpage.title}}
-    </div>
-</div>
+{% endif %}

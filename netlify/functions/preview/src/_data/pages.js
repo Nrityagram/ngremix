@@ -5,51 +5,72 @@ const urlFor = require("../utils/imageUrl")
 
 
 function generateMarkdownPage(ngPage) {
-    let mastheadImagesResized = new Array(ngPage.mastheadImages.screentype.length)
-
-    for (let index = 0; index < ngPage.mastheadImages.screentype.length; index++) {
-        switch (ngPage.mastheadImages.screentype[ index ]) {
-            case 'desktop':
-                mastheadImagesResized[ index ] = urlFor(ngPage.mastheadImages.imgSource[ index ]).width(1600).height(876).url()
-                break;
-            case 'tablet':
-                mastheadImagesResized[ index ] = urlFor(ngPage.mastheadImages.imgSource[ index ]).width(768).height(1024).url()
-                break;
-            case 'mobile':
-                mastheadImagesResized[ index ] = urlFor(ngPage.mastheadImages.imgSource[ index ]).width(425).height(768).url()
-                break;
-            default:
-                break;
+    if (ngPage.mastheadImageDesk) {
+        const mastheadImageDesk = new Object()
+        mastheadImageDesk.imgSource = urlFor(ngPage.mastheadImageDesk).width(1600).height(876).url()
+        if (ngPage.mastheadImageDeskCredit) {
+            mastheadImageDesk.credit = ngPage.mastheadImageDeskCredit
+        }
+        if (ngPage.mastheadImageDeskAlt) {
+            mastheadImageDesk.alt = ngPage.mastheadImageDeskAlt
         }
 
+        let mastheadImagesCredits, mastheadImageSources
+
+        // check for tablet and mobile images
+        if (ngPage.mastheadImagesScreenTypes?.length > 0) {
+            const keys = ngPage.mastheadImagesScreenTypes
+            const credits = ngPage.mastheadImagesCredit
+            const keyCreditPairs = keys.map((key, index) => [ key, credits[ index ] ])
+            // {"tablet": "credit for tablet", "mobile": "credit for mobile"}
+            mastheadImagesCredits = Object.fromEntries(keyCreditPairs)
+            const imgSources = ngPage.mastheadImageSources
+            const keyImagePairs = keys.map((key, index) => [ key, imgSources[ index ] ])
+            // {"tablet": "asset + props of tablet img", "mobile": "asset + props of mobile img"}
+            mastheadImageSources = Object.fromEntries(keyImagePairs)
+
+            if (!keys.includes("tablet")) {
+                mastheadImagesCredits.tablet = mastheadImagesCredits.mobile
+                mastheadImageSources.tablet = mastheadImageSources.mobile
+            }
+            if (!keys.includes("mobile")) {
+                mastheadImagesCredits.mobile = mastheadImagesCredits.tablet
+                mastheadImageSources.mobile = mastheadImageSources.tablet
+            }
+            // crop the images for tablet and mobile and get the URL of final image
+            mastheadImageSources.tablet = urlFor(mastheadImageSources.tablet).width(768).height(1024).url()
+            mastheadImageSources.mobile = urlFor(mastheadImageSources.mobile).width(425).height(768).url()
+        } else {
+            // No images for tablet and mobile specified
+            // Use the Desk Image and resize for tablet and mobile
+            mastheadImagesCredits = new Object()
+            mastheadImagesCredits.tablet = mastheadImageDesk.credit
+            mastheadImagesCredits.mobile = mastheadImageDesk.credit
+
+            mastheadImageSources = new Object()
+            mastheadImageSources.tablet = urlFor(ngPage.mastheadImageDesk).width(768).height(1024).url()
+            mastheadImageSources.mobile = urlFor(ngPage.mastheadImageDesk).width(425).height(768).url()
+        }
+
+        return {
+            title: ngPage.title,
+            slug: ngPage.slug,
+            mastheadImageDesk: mastheadImageDesk,
+            mastheadImagesSources: mastheadImageSources,
+            mastheadImagesCredits: mastheadImagesCredits
+        }
+    } else {
+        return {
+            title: ngPage.title,
+            slug: ngPage.slug,
+        }
     }
 
-    // Mash the two arrays and create one object --
-    // {"desktop": "url for desktop", "tablet": "url for tablet", "mobile": "url for mobile"}
-    const keys = ngPage.mastheadImages.screentype;
-    const imgs = mastheadImagesResized;
-    const keyImagePairs = keys.map((key, index) => [ key, imgs[ index ] ]);
-    const mastheadImages = Object.fromEntries(keyImagePairs);
-    const credits = ngPage.mastheadImageCredit
-    const keyCreditPairs = keys.map((key, index) => [ key, credits[ index ] ]);
-    const mastheadImagesCredits = Object.fromEntries(keyCreditPairs);
-
-    console.dir(mastheadImages)
-    console.dir(mastheadImagesCredits)
-
-    return {
-        title: ngPage.title,
-        slug: ngPage.slug,
-        mastheadImages: mastheadImages,
-        mastheadImagesCredits: mastheadImagesCredits
-    }
 }
-
-
 
 async function loadPages() {
     const pages = await client.fetch(
-        '*[_type=="page"]{title, "slug":slug.current,"mastheadImages":{"screentype":mastheadImage[].screensize, "imgSource":mastheadImage[]}, "mastheadImageCredit": mastheadImage[].credit}'
+        '*[_type=="page"]{ title, "slug":slug.current, "mastheadImageDeskCredit":mastheadImageDesk.credit, "mastheadImageDeskAlt":mastheadImageDesk.alt, mastheadImageDesk, "mastheadImagesCredit": mastheadImages[].credit, "mastheadImagesScreenTypes": mastheadImages[].screensize, "mastheadImageSources": mastheadImages[]}'
     ).catch((err) => console.error(err));
 
     const markdownResult = pages.map(generateMarkdownPage)

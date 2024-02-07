@@ -5,6 +5,7 @@ const urlFor = require("../utils/imageUrl")
 
 
 function generateMarkdownPage(ngPage) {
+
     if (ngPage.mastheadImageDesk) {
         const mastheadImageDesk = new Object()
         mastheadImageDesk.imgSource = urlFor(ngPage.mastheadImageDesk).width(1600).height(876).url()

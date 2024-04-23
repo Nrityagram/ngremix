@@ -1,10 +1,11 @@
-// const BlocksToMarkdown = require("@sanity/block-content-to-markdown");
+const BlocksToMarkdown = require("@sanity/block-content-to-markdown");
 const client = require("../utils/sanityClient")
-const urlFor = require("../utils/imageUrl")
-// const serializers = require("../utils/serializers");
+const urlFor = require("../utils/imageUrl");
+const serializers = require("../utils/serializers");
 
 
 function generateMarkdownPage(ngPage) {
+    let markdownPage = {}
 
     if (ngPage.mastheadImageDesk) {
         const mastheadImageDesk = new Object()
@@ -53,25 +54,46 @@ function generateMarkdownPage(ngPage) {
             mastheadImageSources.mobile = urlFor(ngPage.mastheadImageDesk).width(425).height(768).url()
         }
 
-        return {
+        markdownPage = {
             title: ngPage.title,
             slug: ngPage.slug,
             mastheadImageDesk: mastheadImageDesk,
             mastheadImagesSources: mastheadImageSources,
             mastheadImagesCredits: mastheadImagesCredits
         }
+
     } else {
-        return {
+        markdownPage = {
             title: ngPage.title,
             slug: ngPage.slug,
         }
     }
 
+    if (ngPage.contentBlocks) {
+        let contentBlocks = []
+
+        ngPage.contentBlocks.forEach((block) => {
+            const singleBlock = {
+                content: BlocksToMarkdown(block.content, {
+                    serializers,
+                    ...client.config(),
+                })
+            }
+            contentBlocks.push(singleBlock)
+        })
+
+        markdownPage.contentBlocks = contentBlocks
+    }
+
+    // console.dir(markdownPage)
+
+    return markdownPage
+
 }
 
 async function loadPages() {
     const pages = await client.fetch(
-        '*[_type=="page"]{ title, "slug":slug.current, "mastheadImageDeskCredit":mastheadImageDesk.credit, "mastheadImageDeskAlt":mastheadImageDesk.alt, mastheadImageDesk, "mastheadImagesCredit": mastheadImages[].credit, "mastheadImagesScreenTypes": mastheadImages[].screensize, "mastheadImageSources": mastheadImages[]}'
+        '*[_type=="page"]{ title, "slug":slug.current, "mastheadImageDeskCredit":mastheadImageDesk.credit, "mastheadImageDeskAlt":mastheadImageDesk.alt, mastheadImageDesk, "mastheadImagesCredit": mastheadImages[].credit, "mastheadImagesScreenTypes": mastheadImages[].screensize, "mastheadImageSources": mastheadImages[], contentBlocks[]{content[]{..., markDefs[]{...}, children[]{...}}}}'
     ).catch((err) => console.error(err));
 
     const markdownResult = pages.map(generateMarkdownPage)

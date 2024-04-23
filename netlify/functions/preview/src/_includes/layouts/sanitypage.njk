@@ -32,3 +32,13 @@ layout: layouts/base.njk
         </div>
     </div>
 {% endif %}
+
+{% if ngpage.contentBlocks %}
+    {% for block in ngpage.contentBlocks %}
+        <div class="container">
+            <div class="wrapper flow">
+                {{ block.content | markdownify | safe }}
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

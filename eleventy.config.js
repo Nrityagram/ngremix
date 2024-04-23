@@ -34,45 +34,54 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
 		name: 'preview', // serverless function name from your permalink object
 		functionsDir: './netlify/functions/',
-		copy: ['img/'],
+		copy: [ 'img/' ],
 	});
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		preAttributes: { tabindex: 0 },
-    });
-    eleventyConfig.addPlugin(pluginNavigation);
+	});
+	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
-    // Shortcodes
-    // Usage: {% year %}
-    eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+	// Shortcodes
+	// Usage: {% year %}
+	eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
 	// Filters
 	// {{ page.date | readableDate }}
 	// output as shown will be Nov 23, 2020
 	eleventyConfig.addFilter('readableDate', (dateObj) => {
 		return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
-    });
-    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+	});
+	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
 		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+		return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
 	});
 
+	// ************ MARKDOWN SETTINGS ****************
 	// Customize Markdown library and settings:
-	let markdownLibrary = markdownIt({
+	let markdownIt_options = {
 		html: true,
+		// breaks: true, // newlines in paragraphs are rendered as <br>
 		linkify: true,
-	}).use(markdownItAnchor, {
+		typographer: true // (c) will show up as copyright symbol, etc.
+	}
+	let markdownLibrary = markdownIt(markdownIt_options).use(markdownItAnchor, {
 		permalink: markdownItAnchor.permalink.ariaHidden({
 			placement: 'after',
 			class: 'direct-link',
 			symbol: '#',
 		}),
-		level: [1, 2, 3, 4],
+		level: [ 1, 2, 3, 4 ],
 		slugify: eleventyConfig.getFilter('slugify'),
 	});
 	eleventyConfig.setLibrary('md', markdownLibrary);
+	eleventyConfig.addFilter('markdownify', function (value) {
+		const md = new markdownIt(markdownIt_options);
+		return md.render(value);
+	});
+	// **************
 
 	// Override Browsersync defaults (used only with --serve)
 	eleventyConfig.setBrowserSyncConfig({
@@ -95,7 +104,7 @@ module.exports = function (eleventyConfig) {
 	return {
 		// Control which files Eleventy will process
 		// e.g.: *.md, *.njk, *.html, *.liquid
-		templateFormats: ['md', 'njk', 'html', 'liquid'],
+		templateFormats: [ 'md', 'njk', 'html', 'liquid' ],
 
 		// Pre-process *.md files with: (default: `liquid`)
 		markdownTemplateEngine: 'njk',

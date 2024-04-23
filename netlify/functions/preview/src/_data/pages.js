@@ -77,7 +77,8 @@ function generateMarkdownPage(ngPage) {
                 content: BlocksToMarkdown(block.content, {
                     serializers,
                     ...client.config(),
-                })
+                }),
+                bgcolour: block.bgColour ? block.bgColour : ""
             }
             contentBlocks.push(singleBlock)
         })
@@ -85,7 +86,7 @@ function generateMarkdownPage(ngPage) {
         markdownPage.contentBlocks = contentBlocks
     }
 
-    // console.dir(markdownPage)
+    // console.dir(markdownPage.contentBlocks)
 
     return markdownPage
 
@@ -93,7 +94,7 @@ function generateMarkdownPage(ngPage) {
 
 async function loadPages() {
     const pages = await client.fetch(
-        '*[_type=="page"]{ title, "slug":slug.current, "mastheadImageDeskCredit":mastheadImageDesk.credit, "mastheadImageDeskAlt":mastheadImageDesk.alt, mastheadImageDesk, "mastheadImagesCredit": mastheadImages[].credit, "mastheadImagesScreenTypes": mastheadImages[].screensize, "mastheadImageSources": mastheadImages[], contentBlocks[]{content[]{..., markDefs[]{...}, children[]{...}}}}'
+        '*[_type=="page"]{ title, "slug":slug.current, "mastheadImageDeskCredit":mastheadImageDesk.credit, "mastheadImageDeskAlt":mastheadImageDesk.alt, mastheadImageDesk, "mastheadImagesCredit": mastheadImages[].credit, "mastheadImagesScreenTypes": mastheadImages[].screensize, "mastheadImageSources": mastheadImages[], contentBlocks[]{"bgColour":bgColour.label, content[]{..., markDefs[]{...}, children[]{...}}}}'
     ).catch((err) => console.error(err));
 
     const markdownResult = pages.map(generateMarkdownPage)

@@ -35,7 +35,17 @@ layout: layouts/base.njk
 
 {% if ngpage.contentBlocks %}
     {% for block in ngpage.contentBlocks %}
-        <div class="container">
+        {{ bgcolour }}
+        {% if block.bgcolour == 'Brick Red' %}
+            {% set bgcolour = "primary-bg" %}
+        {% elif block.bgcolour == 'NG Red' %}
+            {% set bgcolour = "secondary-bg" %}
+        {% elif block.bgcolour == 'Salmon Pink' %}
+            {% set bgcolour = "accent-bg" %}
+        {% else %}
+            {% set bgcolour = "" %}
+        {% endif %}
+        <div class="container {{bgcolour}}">
             <div class="wrapper flow">
                 {{ block.content | markdownify | safe }}
             </div>

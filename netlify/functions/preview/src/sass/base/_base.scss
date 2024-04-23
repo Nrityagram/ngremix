@@ -134,11 +134,12 @@ a {
 	text-underline-offset: 0.2em;
 }
 
+// strikethrough
 s {
 	text-decoration: line-through;
 	text-decoration-color: hsl(var(--clr-primary-450));
+	text-decoration-thickness: 3px;
 	color: var(--_body-text-color);
-	text-decoration-thickness: 2px;
 }
 
 .center {

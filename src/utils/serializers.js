@@ -16,6 +16,12 @@ module.exports = {
         underline: ({ mark, children }) => {
             return `<span class="underline">${children}</span>`
         },
+        redtext: ({ mark, children }) => {
+            return `<span class="redtext">${children}</span>`
+        },
+        greytext: ({ mark, children }) => {
+            return `<span class="infotext">${children}</span>`
+        }
     },
     list: ({ type, children }) => {
         // console.dir(type) //-- gives the type of list style, bullet, nobullet,number, etc

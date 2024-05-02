@@ -3,6 +3,25 @@ const BlocksToMarkdown = require("@sanity/block-content-to-markdown");
 const client = require("../utils/sanityClient")
 const serializers = require("../utils/serializersSimpleContent");
 
+function formatPopupContent(str) {
+    // Order is important - first h4 then h3 then h2 and last h1
+
+    //  Replace substrings that begin with #### and end with a newline
+    str = str.replace(/####(.*)\n/g, '<h4>$1</h4>')
+
+    // Replace substrings that begin with ### and end with a newline
+    str = str.replace(/###(.*)\n/g, '<h3>$1</h3>')
+
+    // Replace substrings that begin with ## and end with a newline
+    str = str.replace(/##(.*)\n/g, '<h2>$1</h2>')
+
+    // Replace substrings that begin with a single # and end with a newline
+    str = str.replace(/#(.*)\n/g, '<h1>$1</h1>')
+
+    return str
+}
+
+
 module.exports = {
     types: {
     },
@@ -44,10 +63,10 @@ module.exports = {
                 ...client.config()
             })
 
-            console.log(modalContent)
+            const modifiedModalContent = formatPopupContent(modalContent)
 
             return `<span class="open-modal" id="openModal-${modalId}">
-            <a class="bodylink redtext">${children}</a></span><dialog id="${modalId}" class="modal"><div class="wrapper flow flow-flushtop flow-flushbottom"><div class="modal-header"><h4>${modalTitle}</h4><div class="close-button" id="closeModal-${modalId}" aria-label="close">&#215;</div></div>${modalContent}</div></dialog>`
+            <a class="bodylink redtext">${children}</a></span><dialog id="m${modalId}" class="modal"><div class="wrapper flow flow-flushtop flow-flushbottom"><div class="modal-header"><h4>${modalTitle}</h4><div class="close-button" id="closeModal-${modalId}" aria-label="close">&#215;</div></div><div class="modal-content flow-inbetween">${modifiedModalContent}</div></div></dialog><script type="text/javascript">const modal_${modalId} = document.querySelector('#m${modalId}');const openModal_${modalId} = document.querySelector('#openModal-${modalId}');const closeModal_${modalId} = document.querySelector('#closeModal-${modalId}');openModal_${modalId}.addEventListener('click', () => {modal_${modalId}.showModal();});closeModal_${modalId}.addEventListener('click', () => {modal_${modalId}.close();});</script>`
         }
     },
     list: ({ type, children }) => {

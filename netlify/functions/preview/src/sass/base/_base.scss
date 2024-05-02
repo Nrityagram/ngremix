@@ -98,6 +98,14 @@ h4 {
 	}
 }
 
+h1+h3 {
+	margin-top: 0 !important;
+}
+
+h2+h4 {
+	margin-top: 0 !important;
+}
+
 p {
 	font-family: var(--ff-serif);
 
@@ -157,7 +165,7 @@ s {
 
 .rightflex {
 	display: flex;
-	justify-content: right;
+	justify-content: flex-end;
 }
 
 .center-on-mob {

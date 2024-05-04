@@ -122,3 +122,13 @@ module.exports = function (eleventyConfig) {
 		},
 	};
 };
+
+// Hard coding the paths in order to access it 
+// from another *.js file such as serializer.js
+const dir = {
+	input: 'src',
+	includes: '_includes',
+	data: '_data',
+	output: '_site',
+}
+module.exports.dir = dir

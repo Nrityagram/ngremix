@@ -73,11 +73,13 @@ function generateMarkdownPage(ngPage) {
         let contentBlocks = []
 
         ngPage.contentBlocks.forEach((block) => {
+            const content = BlocksToMarkdown(block.content, {
+                serializers,
+                ...client.config(),
+            })
+
             const singleBlock = {
-                content: BlocksToMarkdown(block.content, {
-                    serializers,
-                    ...client.config(),
-                }),
+                content,
                 bgcolour: block.bgColour ? block.bgColour : "",
                 anchorId: block.anchorId ? block.anchorId : ""
             }

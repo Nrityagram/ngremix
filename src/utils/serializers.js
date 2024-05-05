@@ -3,6 +3,8 @@ const urlFor = require("../utils/imageUrl");
 const client = require("../utils/sanityClient")
 const serializers = require("../utils/serializersSimpleContent")
 
+const pageSettings = require("../utils/pageSettings")
+
 
 function formatPopupContent(str) {
     // Order is important - first h4 then h3 then h2 and last h1
@@ -59,6 +61,36 @@ module.exports = {
 
             return `<div class="image-plus top-flow"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 560w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1046w" sizes="${sizes}">
             <img alt="${image.alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="credit" data-image-credit="${image.credit}" ></div></div>`
+        },
+        imageSlider: ({ node }) => {
+            pageSettings.setSlider()
+            const widths = { "mob": 425, "tab": 768, "desk": 1600 }
+            const images = node.images
+            const imageDetailList = new Array()
+            const aspectRatio = 1046 / 618 // Fixed for slider images
+            const sizes = "(max-width: 800px) 200px, 50vw"
+            const loadingOption = "lazy", decoding = "async"
+
+            images.forEach(image => {
+                const webpURLs = new Object()
+                const credit = image.credit
+                const alt = image.alt
+                const assets = decodeAssetId(image.asset._ref)
+                const desk_h = assets.dimensions.height / assets.dimensions.width * widths.desk
+
+                for (const screenKey in widths) {
+                    webpURLs[ screenKey ] = urlFor(image).format('webp').width(widths[ screenKey ]).url()
+                }
+
+                const pictureElem = `<div class="item rounded"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 425w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1600w" sizes="${sizes}"><img alt="${alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="photo-credit">Photo : ${credit}</div></div>`
+
+                imageDetailList.push(pictureElem)
+            });
+
+            const sliderImagesHTML = imageDetailList.join('')
+            // console.log(sliderImagesHTML)
+
+            return `</div><div class="owl-carousel ultra-wide owl-theme">${sliderImagesHTML}</div><div class="wrapper flow">`
         }
     },
     marks: {

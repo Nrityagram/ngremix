@@ -3,8 +3,13 @@ const client = require("../utils/sanityClient")
 const urlFor = require("../utils/imageUrl");
 const serializers = require("../utils/serializers");
 
+const pageSettings = require("../utils/pageSettings")
+
 
 function generateMarkdownPage(ngPage) {
+    // set all flags to false
+    pageSettings.initialise()
+
     let markdownPage = {}
 
     if (ngPage.mastheadImageDesk) {
@@ -85,11 +90,10 @@ function generateMarkdownPage(ngPage) {
             }
             contentBlocks.push(singleBlock)
         })
-
         markdownPage.contentBlocks = contentBlocks
+        markdownPage.pageSettings = pageSettings.getAll()
     }
-
-    // console.dir(markdownPage.contentBlocks)
+    // console.dir(markdownPage.pageSettings)
 
     return markdownPage
 

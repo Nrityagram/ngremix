@@ -64,10 +64,12 @@ module.exports = {
         },
         imageSlider: ({ node }) => {
             pageSettings.setSlider()
+            const aspectRatio = 1046 / 618 // Fixed for slider images
             const widths = { "mob": 425, "tab": 768, "desk": 1600 }
+            // ht = w / aspectRatio
+            const heights = { "mob": 251, "tab": 454, "desk": 945 }
             const images = node.images
             const imageDetailList = new Array()
-            const aspectRatio = 1046 / 618 // Fixed for slider images
             const sizes = "(max-width: 800px) 200px, 50vw"
             const loadingOption = "lazy", decoding = "async"
 
@@ -79,7 +81,7 @@ module.exports = {
                 const desk_h = assets.dimensions.height / assets.dimensions.width * widths.desk
 
                 for (const screenKey in widths) {
-                    webpURLs[ screenKey ] = urlFor(image).format('webp').width(widths[ screenKey ]).url()
+                    webpURLs[ screenKey ] = urlFor(image).format('webp').width(widths[ screenKey ]).height(heights[ screenKey ]).url()
                 }
 
                 const pictureElem = `<div class="item rounded"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 425w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1600w" sizes="${sizes}"><img alt="${alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="photo-credit">Photo : ${credit}</div></div>`

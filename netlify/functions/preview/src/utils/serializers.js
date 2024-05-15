@@ -135,6 +135,26 @@ module.exports = {
             }
 
             return pictureCardsHtml
+        },
+        redButton: ({ node }) => {
+            const btnText = node.buttonText
+            const onClickOption = node.onClickOption
+
+            let btnHtml = ''
+            switch (onClickOption) {
+                case 'extlink':
+                    btnHtml = `<div class="button red-plastic center" onClick="location.href='${node.url}';"><div class="glare"></div>${btnText}</div></div>`
+                    break;
+                case 'intlink':
+                    btnHtml = `<div class="button red-plastic center" onClick="location.href='/${node.slug.current}';"><div class="glare"></div>${btnText}</div></div>`
+                    break;
+                case 'paypallink':
+                    btnHtml = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="center"><input type="hidden" name="cmd" value="_s-xclick" /><input type="hidden" name="hosted_button_id" value="${node.paypalButtonId}" /><input type="image" src="https://res.cloudinary.com/nrityagram/image/upload/v1701072823/ng-donate-now-paypal_zg0qwu.png" border="0" name="submit" width="230" alt="PayPal – The safer, easier way to pay online!" /><img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1" /></form>`
+                    break;
+                default:
+                    break;
+            }
+            return btnHtml
         }
     },
     marks: {

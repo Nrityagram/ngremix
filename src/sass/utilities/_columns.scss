@@ -4,26 +4,43 @@
 
 
 .left-column {
-    grid-area: leftcol;  
+    grid-area: leftcol;
 }
+
 .right-column {
-    grid-area: rightcol; 
+    grid-area: rightcol;
 }
+
 .narrow-column {
     grid-area: narrowcol;
+
     @include mqmax(medium) {
         align-self: center;
     }
 }
+
 .wide-column {
     grid-area: widecol;
+
     @include mqmax(medium) {
         align-self: center;
     }
 }
+
 .spacer-column {
     grid-area: spacercol;
 }
+
+.center-column {
+    padding-left: 25%;
+    padding-right: 25%;
+
+    @include mqmax(medium) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 
 // TODO: make a sass/layouts folder to implement specific layout designs such pullquote-column, narrow-wide-40-60, etc.
 
@@ -45,15 +62,16 @@
     &.center-column-pair {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
+
         // For mobile, the pair of columns will be stacked
         .column-1 {
             grid-row: 1 / 2;
             grid-column: 1 / 2;
         }
-    
+
         .column-2 {
             grid-row: 2 / 3;
-            grid-column: 1 / 2;            
+            grid-column: 1 / 2;
         }
 
         @include mq(medium) {
@@ -72,14 +90,15 @@
 
         @include mq(large) {
             grid-template-columns: repeat(4, 1fr);
+
             .column-1 {
                 grid-row: 1 / 2;
                 grid-column: 2 / 3;
             }
-        
+
             .column-2 {
                 grid-row: 1 / 2;
-                grid-column: 3 / 4; 
+                grid-column: 3 / 4;
             }
         }
     }
@@ -87,11 +106,13 @@
     &.textbox-card-pair {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
+
         // For mobile, the pair of columns will be stacked
         .textbox-column {
             grid-row: 1 / 2;
             grid-column: 1 / 2;
         }
+
         .card-column {
             grid-row: 2 / 3;
             grid-column: 1 / 2;
@@ -102,25 +123,29 @@
         // two equal columns for ipad mini
         @include mq(medium2) {
             grid-template-columns: repeat(2, 1fr);
+
             // textbox will be first column
             .textbox-column {
                 grid-row: 1 / 2;
                 grid-column: 1 / 2;
             }
+
             .card-column {
                 grid-row: 1 / 2;
                 grid-column: 2 / 3;
             }
         }
-        
+
         // desktop (large screens)
         @include mq(large) {
             grid-template-columns: repeat(3, 1fr);
+
             // textbox will be 1st and 2nd columns
             .textbox-column {
                 grid-row: 1 / 2;
                 grid-column: 1 / 3;
             }
+
             // card column will be 3rd column
             .card-column {
                 grid-row: 1 / 2;
@@ -134,8 +159,8 @@
     @extend .grid;
     grid-template-columns: 100%;
     grid-template-areas:
-            "leftcol"
-            "rightcol";
+        "leftcol"
+        "rightcol";
 
     @include mq(medium) {
         grid-template-columns: 1fr 1fr;
@@ -144,6 +169,7 @@
     }
 
     &.reverse-mob {
+
         // mobile
         @include mqmax(medium) {
             grid-template-columns: 100%;
@@ -152,24 +178,30 @@
                 "leftcol";
         }
     }
+
     &.reverse-tab {
-      // tablet
-      @include mqmax(large) {
-        grid-template-columns: 100%;
-        grid-template-areas:
-          "rightcol"
-          "leftcol";
-      }
+
+        // tablet
+        @include mqmax(large) {
+            grid-template-columns: 100%;
+            grid-template-areas:
+                "rightcol"
+                "leftcol";
+        }
     }
+
     &.hide-right-mob {
+
         // mobile
-        @include mqmax(medium) {  
+        @include mqmax(medium) {
             .right-column {
                 display: none;
             }
         }
     }
+
     &.hide-left-mob {
+
         // mobile
         @include mqmax(medium) {
             .left-column {
@@ -190,12 +222,13 @@
             "narrowcol"
             "widecol";
 
-        @include mq(medium) { 
+        @include mq(medium) {
             grid-template-columns: 34% 63%;
             grid-template-areas:
                 "narrowcol widecol";
         }
     }
+
     // narrow | wide columns with pullquote in narrow
     &.pullquote-column {
         grid-template-columns: 100%;
@@ -203,28 +236,31 @@
             "narrowcol"
             "widecol";
 
-        @include mq(medium) { 
+        @include mq(medium) {
             grid-template-columns: 24% 67% 6%;
             grid-template-areas:
                 "narrowcol widecol spacercol";
         }
     }
+
     &.narrow-wide-40-60 {
         grid-template-columns: 100%;
         grid-template-areas:
             "narrowcol"
             "widecol";
 
-        @include mq(medium) { 
+        @include mq(medium) {
             // auto takes care of wide-grid-gap and does not overflow from the grid
             grid-template-columns: 40% auto;
             grid-template-areas:
                 "narrowcol widecol";
         }
     }
+
     &.narrow-wide,
     &.narrow-wide-40-60 {
         &.reverse-mob {
+
             // mobile
             @include mqmax(medium) {
                 grid-template-areas:
@@ -232,7 +268,9 @@
                     "narrowcol";
             }
         }
+
         &.reverse-tab {
+
             // tablet
             @include mqmax(large) {
                 grid-template-areas:
@@ -248,14 +286,15 @@
         grid-template-areas:
             "widecol"
             "narrowcol";
-    
+
         @include mq(medium) {
             grid-template-columns: 63% 34%;
             grid-template-areas:
                 "widecol narrowcol";
         }
-    
+
         &.reverse-mob {
+
             // mobile
             @include mqmax(medium) {
                 grid-template-areas:
@@ -263,7 +302,9 @@
                     "widecol";
             }
         }
+
         &.reverse-tab {
+
             // tablet
             @include mqmax(large) {
                 grid-template-areas:
@@ -272,21 +313,24 @@
             }
         }
     }
+
     &.wide-narrow-60-40 {
         grid-template-columns: 100%;
         grid-template-areas:
             "widecol"
             "narrowcol";
 
-        @include mq(medium) { 
+        @include mq(medium) {
             grid-template-columns: auto 40%;
             grid-template-areas:
                 "widecol narrowcol";
         }
     }
+
     &.wide-narrow,
     &.wide-narrow-60-40 {
         &.reverse-mob {
+
             // mobile
             @include mqmax(medium) {
                 grid-template-areas:
@@ -294,7 +338,9 @@
                     "widecol";
             }
         }
+
         &.reverse-tab {
+
             // tablet
             @include mqmax(large) {
                 grid-template-areas:
@@ -307,6 +353,7 @@
 
 .left-align-column {
     text-align: left;
+
     @include mqmax(medium) {
         // align-self: center;
         // margin: 0 auto;
@@ -316,6 +363,7 @@
 
 .right-align-column {
     text-align: right;
+
     @include mqmax(medium) {
         // align-self: center;
         // margin: 0 auto;

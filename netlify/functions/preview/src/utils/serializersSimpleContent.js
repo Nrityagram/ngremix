@@ -1,5 +1,44 @@
+const urlFor = require("../utils/imageUrl");
+const client = require("../utils/sanityClient")
+
+const pattern = /^image-([a-f\d]+)-(\d+x\d+)-(\w+)$/
+
+// asset._ref:image-2be3816058af1a2aedbbae41c381def16ee052ec-1079x1095-jpg
+const decodeAssetId = id => {
+    const [ , assetId, dimensions, format ] = pattern.exec(id)
+    const [ width, height ] = dimensions.split("x").map(v => parseInt(v, 10))
+
+    return {
+        assetId,
+        dimensions: { width, height },
+        format,
+    }
+}
+
 module.exports = {
     types: {
+        a11yImage: ({ node }) => {
+            const image = new Object()
+            image.credit = node.credit
+            image.caption = node.imgcaption
+            image.alt = node.imgalt
+            image.assets = decodeAssetId(node.asset._ref)
+
+            const widths = { "mob": 560, "tab": 768, "desk": 1046 }
+            const webpURLs = new Object()
+            const sizes = "(max-width: 800px) 200px, 50vw"
+            const loadingOption = "eager", decoding = "async"
+            const desk_h = image.assets.dimensions.height / image.assets.dimensions.width * widths.desk
+
+            for (const screenKey in widths) {
+                webpURLs[ screenKey ] = urlFor(node).format('webp').width(widths[ screenKey ]).url()
+            }
+
+            // console.dir(webpURLs)
+
+            return `<div class="image-plus top-flow"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 560w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1046w" sizes="${sizes}">
+            <img alt="${image.alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="credit" data-image-credit="${image.credit}" ></div></div>`
+        },
     },
     marks: {
         center: ({ mark, children }) => {

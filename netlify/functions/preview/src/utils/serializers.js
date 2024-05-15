@@ -120,14 +120,21 @@ module.exports = {
                     webpURLs[ screenKey ] = urlFor(card).format('webp').width(widths[ screenKey ]).height(heights[ screenKey ]).url()
                 }
 
-                const outerHTML = onClickOption == "intLink" ? `<div class="image-plus card" onClick="location.href='/${card.slug}';">` : `<div class="image-plus card" onClick="location.href='${card.url}';">`
+                const outerHTML = onClickOption == "intlink" ? `<div class="image-plus card" onClick="location.href='/${card.slug.current}';">` : `<div class="image-plus card" onClick="location.href='${card.url}';">`
 
                 const pictureElem = `${outerHTML}<picture><source type="image/webp" srcset="${webpURLs[ "tab" ]} 560w, ${webpURLs[ "desk" ]} 768w" sizes="${sizes}"><img alt="${alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "tab" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="credit" data-image-credit="${credit}"></div><div class="card-title">${cardTitle}<div class="sub-title">${cardSubtitle}</div></div></div>`
 
                 cardDetailList.push(pictureElem)
             });
 
-            return `</div><div class="wrapper ultra-wide flow"><div class="even-columns"><div class="left-column">${cardDetailList[ 0 ]}</div><div class="right-column">${cardDetailList[ 1 ]}</div></div></div><div class="wrapper flow">`
+            let pictureCardsHtml = ''
+            if (cardDetailList.length > 1) {
+                pictureCardsHtml = `</div><div class="wrapper ultra-wide flow"><div class="even-columns"><div class="left-column">${cardDetailList[ 0 ]}</div><div class="right-column">${cardDetailList[ 1 ]}</div></div></div><div class="wrapper flow">`
+            } else {
+                pictureCardsHtml = `</div><div class="wrapper ultra-wide flow"><div class="center-column">${cardDetailList[ 0 ]}</div></div><div class="wrapper flow">`
+            }
+
+            return pictureCardsHtml
         }
     },
     marks: {

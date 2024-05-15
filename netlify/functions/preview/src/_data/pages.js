@@ -101,7 +101,7 @@ function generateMarkdownPage(ngPage) {
 
 async function loadPages() {
     const pages = await client.fetch(
-        '*[_type=="page"]{ title, "slug":slug.current, "mastheadImageDeskCredit":mastheadImageDesk.credit, "mastheadImageDeskAlt":mastheadImageDesk.alt, mastheadImageDesk, "mastheadImagesCredit": mastheadImages[].credit, "mastheadImagesScreenTypes": mastheadImages[].screensize, "mastheadImageSources": mastheadImages[], contentBlocks[]{"bgColour":bgColour.label, "anchorId":anchorLinkName, content[]{..., markDefs[]{..., _type=="intlink"=>{...,"slug":@.pageReference->slug}, _type=="popuplink"=>{..., "modalId":@._key, "modalWindow":@.modalWindow{modalTitle, content[]{..., markDefs[]{...,_type=="intlink"=>{..., "slug":@.pageReference->slug}}}}}}, children[]{...}}}}'
+        '*[_type=="page"]{ title, "slug":slug.current, "mastheadImageDeskCredit":mastheadImageDesk.credit, "mastheadImageDeskAlt":mastheadImageDesk.alt, mastheadImageDesk, "mastheadImagesCredit": mastheadImages[].credit, "mastheadImagesScreenTypes": mastheadImages[].screensize, "mastheadImageSources": mastheadImages[], contentBlocks[]{"bgColour":bgColour.label, "anchorId":anchorLinkName, content[]{..., _type=="pictureCards"=>{"cards":@.cards[]{...,"credit":@.credit,"alt":@.alt,"slug":@.pageReference->slug.current,"cardTitle":@.cardTitle,"cardSubtitle":@.cardSubtitle}}, markDefs[]{..., _type=="intlink"=>{...,"slug":@.pageReference->slug}, _type=="popuplink"=>{..., "modalId":@._key, "modalWindow":@.modalWindow{modalTitle, content[]{..., markDefs[]{...,_type=="intlink"=>{..., "slug":@.pageReference->slug}}}}}}, children[]{...}}}}'
     ).catch((err) => console.error(err));
 
     const markdownResult = pages.map(generateMarkdownPage)

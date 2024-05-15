@@ -1,4 +1,5 @@
 const flowElemList = document.getElementsByClassName('flow')
+const wrapperFlowElemList = document.querySelectorAll('.wrapper.flow')
 
 for (const flowElem of flowElemList) {
     const nextElem = flowElem.nextElementSibling
@@ -10,3 +11,12 @@ for (const flowElem of flowElemList) {
         elemAfterCarousel.classList.add('flow-flushtop')
     }
 }
+
+for (const wrapFlowElem of wrapperFlowElemList) {
+    const nextElem = wrapFlowElem.nextElementSibling
+    if (nextElem && nextElem.classList.contains('wrapper') && nextElem.classList.contains('flow')) {
+        wrapFlowElem.classList.add('flow-flushbottom')
+    }
+}
+
+console.log(wrapperFlowElemList)

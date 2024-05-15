@@ -64,7 +64,7 @@ module.exports = {
         },
         imageSlider: ({ node }) => {
             pageSettings.setSlider()
-            const aspectRatio = 1046 / 618 // Fixed for slider images
+            // const aspectRatio = 1046 / 618 // Fixed for slider images
             const widths = { "mob": 425, "tab": 768, "desk": 1600 }
             // ht = w / aspectRatio
             const heights = { "mob": 251, "tab": 454, "desk": 945 }
@@ -75,8 +75,8 @@ module.exports = {
 
             images.forEach(image => {
                 const webpURLs = new Object()
-                const credit = image.credit
-                const alt = image.alt
+                const credit = image.credit ? image.credit : ""
+                const alt = image.alt ? image.alt : ""
                 const assets = decodeAssetId(image.asset._ref)
                 const desk_h = assets.dimensions.height / assets.dimensions.width * widths.desk
 
@@ -93,6 +93,41 @@ module.exports = {
             // console.log(sliderImagesHTML)
 
             return `</div><div class="owl-carousel ultra-wide owl-theme">${sliderImagesHTML}</div><div class="wrapper flow">`
+        },
+        pictureCards: ({ node }) => {
+            // const aspectRatio = 559 / 359 // Fixed for slider images
+            const widths = { "tab": 560, "desk": 768 }
+            // ht = w / aspectRatio
+            const heights = { "tab": 359, "desk": 492 }
+            const cards = node.cards
+            const cardDetailList = new Array()
+            const sizes = "(max-width: 800px) 200px, 50vw"
+            const loadingOption = "lazy", decoding = "async"
+
+            cards.forEach(card => {
+                const webpURLs = new Object()
+
+                const cardTitle = card.cardTitle ? card.cardTitle : ""
+                const cardSubtitle = card.cardSubtitle ? card.cardSubtitle : ""
+                const onClickOption = card.onClickOption
+                const credit = card.credit ? card.credit : ""
+                const alt = card.alt ? card.alt : ""
+
+                const assets = decodeAssetId(card.asset._ref)
+                const desk_h = assets.dimensions.height / assets.dimensions.width * widths.desk
+
+                for (const screenKey in widths) {
+                    webpURLs[ screenKey ] = urlFor(card).format('webp').width(widths[ screenKey ]).height(heights[ screenKey ]).url()
+                }
+
+                const outerHTML = onClickOption == "intLink" ? `<div class="image-plus card" onClick="location.href='/${card.slug}';">` : `<div class="image-plus card" onClick="location.href='${card.url}';">`
+
+                const pictureElem = `${outerHTML}<picture><source type="image/webp" srcset="${webpURLs[ "tab" ]} 560w, ${webpURLs[ "desk" ]} 768w" sizes="${sizes}"><img alt="${alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "tab" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="credit" data-image-credit="${credit}"></div><div class="card-title">${cardTitle}<div class="sub-title">${cardSubtitle}</div></div></div>`
+
+                cardDetailList.push(pictureElem)
+            });
+
+            return `</div><div class="wrapper ultra-wide flow"><div class="even-columns"><div class="left-column">${cardDetailList[ 0 ]}</div><div class="right-column">${cardDetailList[ 1 ]}</div></div></div><div class="wrapper flow">`
         }
     },
     marks: {

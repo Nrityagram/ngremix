@@ -143,13 +143,25 @@ module.exports = {
             let btnHtml = ''
             switch (onClickOption) {
                 case 'extlink':
-                    btnHtml = `<div class="button red-plastic center" onClick="location.href='${node.url}';"><div class="glare"></div>${btnText}</div></div>`
+                    btnHtml = `<div class="button red-plastic center" onClick="location.href='${node.url}';"><div class="glare"></div>${btnText}</div>`
                     break;
                 case 'intlink':
-                    btnHtml = `<div class="button red-plastic center" onClick="location.href='/${node.slug.current}';"><div class="glare"></div>${btnText}</div></div>`
+                    btnHtml = `<div class="button red-plastic center" onClick="location.href='/${node.slug.current}';"><div class="glare"></div>${btnText}</div>`
                     break;
                 case 'paypallink':
                     btnHtml = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="center"><input type="hidden" name="cmd" value="_s-xclick" /><input type="hidden" name="hosted_button_id" value="${node.paypalButtonId}" /><input type="image" src="https://res.cloudinary.com/nrityagram/image/upload/v1701072823/ng-donate-now-paypal_zg0qwu.png" border="0" name="submit" width="230" alt="PayPal – The safer, easier way to pay online!" /><img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1" /></form>`
+                    break;
+                case 'modal':
+                    const { modalId, modalWindow } = node
+                    const modalTitle = modalWindow.modalTitle
+                    const modalContent = BlocksToMarkdown(modalWindow.content, {
+                        serializers,
+                        ...client.config()
+                    })
+
+                    const modifiedModalContent = formatPopupContent(modalContent)
+
+                    btnHtml = `<div class="open-modal modal-button" id="openModal-${modalId}"><div class="button red-plastic center"><div class="glare"></div>${btnText}</div></div><dialog id="m${modalId}" class="modal"><div class="wrapper flow flow-flushtop flow-flushbottom"><div class="modal-header"><h4>${modalTitle}</h4><div class="close-button" id="closeModal-${modalId}" aria-label="close">&#215;</div></div><div class="modal-content flow-inbetween">${modifiedModalContent}</div></div></dialog><script type="text/javascript">const modal_${modalId} = document.querySelector('#m${modalId}');const openModal_${modalId} = document.querySelector('#openModal-${modalId}');const closeModal_${modalId} = document.querySelector('#closeModal-${modalId}');openModal_${modalId}.addEventListener('click', () => {modal_${modalId}.showModal();});closeModal_${modalId}.addEventListener('click', () => {modal_${modalId}.close();});</script>`
                     break;
                 default:
                     break;

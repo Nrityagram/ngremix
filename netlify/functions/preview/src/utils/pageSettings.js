@@ -3,12 +3,16 @@ const settings = new Object()
 module.exports = {
     initialise: function () {
         settings.sliderOnPage = false
+        settings.radioButtonsOnPage = false
         settings.gismapOnPage = false
         settings.youtubeOnPage = false
         settings.marqueeOnPage = false
     },
     setSlider: function () {
         settings.sliderOnPage = true
+    },
+    setRadio: function () {
+        settings.radioButtonsOnPage = true
     },
     setGismap: function () {
         settings.gismapOnPage = true
@@ -22,6 +26,7 @@ module.exports = {
     getAll: function () {
         return {
             "slider": settings.sliderOnPage,
+            "radio": settings.radioButtonsOnPage,
             "gismap": settings.gismapOnPage,
             "youtube": settings.youtubeOnPage,
             "marquee": settings.marqueeOnPage

@@ -1,5 +1,6 @@
 const urlFor = require("../utils/imageUrl");
 const client = require("../utils/sanityClient")
+const pageSettings = require("../utils/pageSettings")
 
 const pattern = /^image-([a-f\d]+)-(\d+x\d+)-(\w+)$/
 
@@ -39,6 +40,27 @@ module.exports = {
             return `<div class="image-plus top-flow"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 560w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1046w" sizes="${sizes}">
             <img alt="${image.alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="credit" data-image-credit="${image.credit}" ></div></div>`
         },
+        radioButtonList: ({ node }) => {
+            pageSettings.setRadio()
+
+            const options = node.options
+            const optionListName = 'radioOptions-'.concat(node._key)
+            const optionDetailList = new Array()
+
+            for (const option of options) {
+                const key = 'option-'.concat(option._key)
+                const optionText = option.optionText
+                const url = option.slug ? '/'.concat(option.slug.current) : option.url
+
+                const optionHtml = `<div><label for="${key}" class="radio"><input type="radio" value="${key}" name="${optionListName}" class="radio-option-type" id="${key}" />${optionText}</label></div>`
+
+                optionDetailList.push(optionHtml)
+            }
+
+            const optionsListHtml = optionDetailList.join('')
+
+            return `<div class="flow-inbetween">${optionsListHtml}</div>`
+        }
     },
     marks: {
         center: ({ mark, children }) => {

@@ -167,6 +167,27 @@ module.exports = {
                     break;
             }
             return btnHtml
+        },
+        radioButtonList: ({ node }) => {
+            pageSettings.setRadio()
+
+            const options = node.options
+            const optionListName = 'radioOptions-'.concat(node._key)
+            const optionDetailList = new Array()
+
+            for (const option of options) {
+                const key = 'option-'.concat(option._key)
+                const optionText = option.optionText
+                const url = option.slug ? '/'.concat(option.slug.current) : option.url
+
+                const optionHtml = `<div><label for="${key}" class="radio"><input type="radio" value="${key}" name="${optionListName}" class="radio-option-type" id="${key}" />${optionText}</label></div>`
+
+                optionDetailList.push(optionHtml)
+            }
+
+            const optionsListHtml = optionDetailList.join('')
+
+            return `<div class="flow-inbetween">${optionsListHtml}</div>`
         }
     },
     marks: {

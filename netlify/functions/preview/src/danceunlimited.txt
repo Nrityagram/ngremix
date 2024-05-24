@@ -1,0 +1,138 @@
+---
+layout: layouts/page.njk
+eleventyNavigation:
+  key: page
+  order: 1
+tags: page
+date: Last Modified
+parentMenuItem: "School"
+title: "Dance Unlimited"
+description: "We believe everyone can dance. That dance has the power to engage people and motivate them towards excellence. Nrityagram is a one-of-a-kind community of artistes, where dance is a way of life."
+OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1580617695/take_a_class-desk_a39xcn.jpg"
+---
+<div id="banner-container">
+  <div class="banner-image">
+    {% pictures 
+      {"desk":"https://res.cloudinary.com/nrityagram/image/upload/v1580617695/take_a_class-desk_a39xcn.jpg", 
+      "tab":"https://res.cloudinary.com/nrityagram/image/upload/v1589039867/ipad/take-a-class_hhn6gs.jpg", 
+      "mob":"https://res.cloudinary.com/nrityagram/image/upload/v1583863704/mobile/take-a-class-mob_odg2f9.jpg"}, 
+      "Dance Unlimited", 
+      {"mob": ["425"], "tab": ["768"], "desk":["1600"]}, {"desk":"65em", "tab":"50em", "mob":"35em"}, 
+      "eager", "high" %}
+  </div>
+  <div class="banner-image-credit"
+    data-image-credit-desk="Ravi Shankar" 
+    data-image-credit-tab="Ravi Shankar" 
+    data-image-credit-mob="Ravi Shankar"
+    ></div>
+  <div class="banner-title">
+        Dance<br />Unlimited
+  </div>
+</div>
+<div class="container">
+  <div class="wrapper flow">
+    <p>
+			We believe everyone can dance! That dance has the power to engage people and motivate them towards excellence. All
+			our students learn to work together and develop personal standards of merit, a curiosity about the world and pride
+			of achievement that supports their success in life.
+		</p>
+    <p>Our Dance Unlimited programme has students from four to forty, enrolled in different courses:</p>
+  </div>
+</div>
+<div id="residential" class="container accent-bg">
+  <div class="wrapper flow">
+    <h1 class="center">Residential Workshops</h1>
+    <div class="image-plus top-flow">
+      {% image "https://res.cloudinary.com/nrityagram/image/upload/c_scale,w_800/v1580737469/1_Summer_Dancing_kksi0l.jpg",
+      "Summer Dance Workshops",
+      ["560", "768", "1046"] %}
+      <div class="credit" data-image-credit="Surupa Sen" ></div>
+    </div>
+    <h2 class="center">Summer Dancing</h2>
+    <p>
+			Our Summer Workshop is a unique programme, which brings to students a compact experience of our philosophy of
+			“learning as a way of life”.
+		</p>
+    <p>
+			Students engage in a rigorous daily schedule where they participate in 5 hours of supervised classes, and have
+			time and studio space for independent rehearsal. Even though the workshop offers basic training in Odissi, in true Nrityagram fashion students are also taught <em>Yoga,</em>
+      <em>Kalaripayattu,</em> and western physical conditioning techniques. The study of dance-scriptures like <em>Abhinaya Darpana</em> and <em>Natyashastra</em> is an integral part of the experience, in addition to learning complex rhythm structures. Students are also encouraged to create their own choreography based on the vocabulary they have learned at Nrityagram.
+		</p>
+    <br />
+    <div class="image-plus top-flow">
+      {% image "https://res.cloudinary.com/nrityagram/image/upload/c_scale,w_800/v1580737468/2_Summer_Fun_For_Kids_hp99w6.jpg",
+      "Summer Camp for Kids",
+      ["560", "768", "1046"] %}
+      <div class="credit" data-image-credit="Dhruvatara Sharma" ></div>
+    </div>
+    <h2 class="center">Summer Fun for Kids</h2>
+    <p>
+			Our Summer Fun for Kids is a one-of-a-kind residential workshop designed to help young ones understand community
+			living. Every year a small group of children enrol in Nrityagram’s Summer Fun for Kids to find out for themselves,
+			what is the Nrityagram way of life. Far away from television sets and video games, surrounded by lush foliage,
+			beautiful birds and flowering trees, they experience life in a place where all residents take care of themselves
+			and their home, and the cornerstone for the entire community is mindful living and the pursuit of excellence. 
+		</p>
+    <p>
+			The focus is dance and theatre but they also go for
+			nature walks, tell stories, play games and most importantly, have lots of fun.
+		</p>
+    <p>	
+			Most of the children (and their parents) describe the experience as “life changing”.
+		</p>
+    <br />
+    <div class="image-plus top-flow">
+      {% image "https://res.cloudinary.com/nrityagram/image/upload/c_scale,w_800/v1580737468/3_NG101_r33pqg.jpg",
+      "NG 101 Training",
+      ["560", "768", "1046"] %}
+      <div class="credit" data-image-credit="Shalini Jain" ></div>
+    </div>
+    <h2 class="center">NG101</h2>
+    <p>
+			NG101 is crafted for our younger dancers who are ready to take this step of making a deeper commitment to dance
+			and to start on the path of a life-changing relationship with Nrityagram. By engaging them in our everyday
+			practice, our goal is to nurture a nuanced appreciation of Odissi and for these young dancers to grow into dance
+			practitioners or attentive <em>rasikas</em>.
+		</p>
+  </div>
+</div>
+<div id="parttime" class="container">
+  <div class="wrapper flow">
+    <h1 class="center">Non-Residential Training</h1>
+    <div class="image-plus top-flow">
+      {% image "https://res.cloudinary.com/nrityagram/image/upload/c_scale,w_800/v1600100164/4_City_Classes_dpbt0e.jpg",
+      "City Classes",
+      ["560", "768", "1046"] %}
+      <div class="credit" data-image-credit="Shalini Jain" ></div>
+    </div>
+    <h2 class="center">City Class</h2>
+    <p>
+			In Bangalore, <a href="/surupa" class="bodylink">Surupa Sen</a> has a training programme for people with an
+			interest in Odissi who may not have the option of becoming professional dancers or have successful careers or
+			families of their own or all of the above.
+		</p>
+    <p>
+			Classes are for 2 hours a day on Thursdays and Saturdays. There are 2 groups - under 12 and above 12, and there
+			are several Mother-Daughter combinations in this programme.
+		</p>
+    <p>
+			This is a specially satisfying programme for our teachers because of the noticeable change and growth in the students.
+		</p>
+    <br />
+    <div class="image-plus top-flow">
+      {% image "https://res.cloudinary.com/nrityagram/image/upload/c_scale,w_800/v1580737468/5_Sunday_Class_vjc0nw.jpg",
+      "City Classes",
+      ["560", "768", "1046"] %}
+      <div class="credit" data-image-credit="Shalini Jain" ></div>
+    </div>
+    <h2 class="center">Sunday Class</h2>
+    <p>
+			Every week, young students from the city who have a keen interest in Odissi, come for our Sunday Class. These students, aged between seven and fifteen undergo a specially crafted programme, which prepares them for advanced training, if that is what they choose to pursue.
+		</p>
+    <p>
+			Many students from the Sunday Class have moved on to the advanced class, demonstrating the success of such a focused intervention.
+		</p>
+    <p>Write to us for details <a href="mailto:learn@nrityagram.org" class="bodylink">learn@nrityagram.org</a>
+    </p>
+  </div>
+</div>

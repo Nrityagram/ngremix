@@ -2,18 +2,17 @@
 // secondary: bright red
 // accent: salmon
 // --------
-// primary-450: primary-bg
+// primary-450: primary-bg (Sanity: Brick Red)
 // --------
-// secondary-450: footer tagline bg
+// secondary-450: tagline bg
 // secondary-500: nav item in the top menu
-// secondary-525: footer bg
+// secondary-525: footer bg (Sanity: NG Red)
 // secondary-550: h1, h2, active nav item, underline nav item, red body text
 // --------
-// accent-200: salmon
+// accent-200: salmon (Sanity: Salmon Pink)
 
 $colours: (
-	neutral: (
-		100: 0 0% 100%,
+	neutral: (100: 0 0% 100%,
 		200: 0 0% 90%,
 		250: 0 0% 80%,
 		275: 0 0% 75%,
@@ -27,8 +26,7 @@ $colours: (
 		850: 0 0% 5%,
 		900: 0 0% 0%,
 	),
-	primary: (
-		100: 0 86% 44%,
+	primary: (100: 0 86% 44%,
 		200: 0 86% 42%,
 		300: 0 86% 40%,
 		400: 0 86% 38%,
@@ -41,8 +39,7 @@ $colours: (
 		800: 0 86% 24%,
 		900: 0 86% 22%,
 	),
-	secondary: (
-		100: 357 75% 90%,
+	secondary: (100: 357 75% 90%,
 		200: 357 75% 80%,
 		300: 357 75% 70%,
 		400: 357 75% 60%,
@@ -55,8 +52,7 @@ $colours: (
 		800: 357 75% 20%,
 		900: 357 75% 10%,
 	),
-	accent: (
-		100: 0 75% 100%,
+	accent: (100: 0 75% 100%,
 		200: 0 75% 97%,
 		300: 0 75% 95%,
 		400: 0 75% 92%,
@@ -66,7 +62,5 @@ $colours: (
 		800: 0 75% 82%,
 		900: 0 75% 80%,
 	),
-	
+
 );
-
-

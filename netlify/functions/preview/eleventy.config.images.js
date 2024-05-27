@@ -12,8 +12,8 @@ module.exports = eleventyConfig => {
 	// Eleventy Image shortcode
 	// EXAMPLE
 	// {% image "https://res.cloudinary.com/nrityagram/image/upload/v1643804553/community_card_qpjn0w.jpg",
-    //   "Children's Dance Class",
-    //   ["425", "768", "1600"], "eager" %}
+	//   "Children's Dance Class",
+	//   ["425", "768", "1600"], "eager" %}
 
 	// TODO: Need to modify return statement to add class names https://www.11ty.dev/docs/plugins/image/#make-your-own-markup
 
@@ -23,12 +23,13 @@ module.exports = eleventyConfig => {
 
 		// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
 		// Warning: Avif can be resource-intensive so take care!
-		let formats = ["avif", "webp", "auto"];
+		let formats = [ "webp" ];
 		// let file = relativeToInputPath(this.page.inputPath, url);
 		let metadata = await eleventyImage(url, {
-			widths: widths || ["auto"],
+			widths: widths || [ "auto" ],
 			formats,
 			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+			urlPath: "/img/",
 		});
 
 		// console.log(JSON.stringify(metadata, null, 2));

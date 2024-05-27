@@ -351,6 +351,17 @@
     }
 }
 
+// all direct children in this column are stacked one above the other
+.stacked-column {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    >* {
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+}
+
 .left-align-column {
     text-align: left;
 

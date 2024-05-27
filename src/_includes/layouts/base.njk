@@ -171,6 +171,9 @@
 				<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin="anonymous" defer="defer"
     		></script>
 			{% endif %}
+			{% if accordion %}
+				<script src="{{ '/utils/accordion.js' | url }}"></script>
+			{% endif %}
 
 			<!-- <script src="{{ '/utils/search.js' | url }}"></script> -->
 		</body>

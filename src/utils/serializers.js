@@ -178,11 +178,18 @@ module.exports = {
             for (const option of options) {
                 const key = 'option-'.concat(option._key)
                 const optionText = option.optionText
-                const url = option.slug ? '/'.concat(option.slug.current) : option.url
 
                 const optionHtml = `<div><label for="${key}" class="radio"><input type="radio" value="${key}" name="${optionListName}" class="radio-option-type" id="${key}" />${optionText}</label></div>`
 
                 optionDetailList.push(optionHtml)
+            }
+
+            for (const option of options) {
+                const url = option.slug ? '/'.concat(option.slug.current) : option.url
+                const actionType = option.actionType
+                const key = 'option-'.concat(option._key)
+
+                const switchCaseJS = `case`
             }
 
             const optionsListHtml = optionDetailList.join('')

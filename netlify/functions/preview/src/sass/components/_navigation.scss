@@ -5,7 +5,7 @@
     display: none !important;
 }
 
-.nav-deck { 
+.nav-deck {
     display: flex;
     flex-direction: column;
     gap: 0.25em;
@@ -23,6 +23,7 @@
         display: none;
     }
 }
+
 .nav-deck.showMobile {
     visibility: visible;
     scale: 1;
@@ -49,6 +50,7 @@
     // This will vertically center 'SUPPORT' item which has larger font size
     align-items: center;
     gap: 1em;
+
     @include mqmax(medium) {
         gap: 0.25em;
     }
@@ -66,11 +68,12 @@
     li .nav-item-name a {
         text-transform: uppercase;
         color: var(--_nav-link-color);
-        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         text-decoration: none;
         font-size: var(--_nav-item-fontsize-lrg);
         font-family: var(--ff-sans);
         font-weight: var(--fw-sans-normal);
+
         @include mqmax(medium) {
             font-weight: var(--fw-sans-normal);
         }
@@ -103,17 +106,21 @@
         text-decoration: 2px underline hsl(var(--clr-secondary-550)) !important;
     }
 }
+
 // set the first row of menu items to red on desktop
 .nav-list:first-child {
+
     li .nav-item-name,
     li .nav-item-name a {
         color: var(--_nav-item-red);
-        font-size: var(--_nav-item-fontsize-sml); 
+        font-size: var(--_nav-item-fontsize-sml);
     }
+
     li .nav-item-name::before {
         background-color: var(--_nav-item-red);
     }
 }
+
 .nav-deck.showMobile .nav-list {
     flex-direction: column;
     width: 100%;
@@ -124,29 +131,36 @@
             padding-block: 0.5em;
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
-        .nav-item-name  {
+
+        .nav-item-name {
             display: flex;
             justify-content: space-between;
             font-size: var(--_nav-item-fontsize-sml) !important;
+
             &.active {
                 text-decoration: none !important;
             }
+
             a {
                 font-size: var(--_nav-item-fontsize-sml) !important;
             }
+
             // menu item name takes up 75% of width
             :first-child {
                 width: 80%;
             }
+
             // chevron takes up remaining width
             :not(:first-child) {
                 flex: 1;
             }
         }
+
         .large-font {
             // Remove the large font size for Support in mobile menu
             font-size: var(--_nav-item-fontsize-sml) !important;
         }
+
         label.item-chevron::after {
             content: '';
             position: absolute;
@@ -172,22 +186,28 @@
         content: none;
     }
 }
+
 .nav-deck.showMobile .nav-sublist:not(:has([data-dropdown-lvl2])) {
     @include mqmax(medium) {
-       li {
-        border-bottom: none;
-       } 
+        li {
+            border-bottom: none;
+        }
     }
 }
+
 .nav-deck.showMobile .nav-sublist {
     li {
         padding-right: 1.9rem !important;
     }
-    li, li a {
+
+    li,
+    li a {
         font-size: var(--_nav-item-fontsize-sml) !important;
     }
 }
+
 .nav-deck.showMobile .nav-list:first-child {
+
     li .nav-item-name,
     li .nav-item-name a {
         color: var(--_nav-link-color);
@@ -205,37 +225,40 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity 500ms ease-in-out;
-    
+
     padding: 0;
     position: absolute;
     top: var(--_nav-sublist-top);
     left: 0;
-    
+
     background-color: var(--_nav-sublist-bgcolour);
     border: 1px solid hsl(var(--clr-neutral-400));
     border-radius: 4px;
 
-    > li {
+    >li {
         padding: 0.7rem;
     }
 
-    > li:not(:last-child) {
+    >li:not(:last-child) {
         // make the bottom border stretch full width of nav-sublist
         // margin: 0 -0.7rem;
         // padding-left: 0.7rem;
         border-bottom: 1px solid hsl(var(--clr-neutral-400));
     }
 
-    li, li a {
+    li,
+    li a {
         color: var(--_nav-link-color);
         text-decoration: none;
         font-size: var(--_nav-subitem-fontsize);
         font-family: var(--ff-sans);
     }
+
     li a:hover,
     li a:focus {
         opacity: 0.8;
     }
+
     li a::before {
         content: none;
     }
@@ -249,23 +272,26 @@
             content: "";
             margin-right: 5px;
             border-left: 2px solid hsl(var(--clr-secondary-550));
-          }
-          &::after {
+        }
+
+        &::after {
             content: "";
             margin-left: 5px;
             border-right: 2px solid hsl(var(--clr-secondary-550));
-          }
+        }
     }
 
     >li li {
         a {
             text-transform: none;
-            color: var(--_nav-link-color2);  
-            word-spacing: 0.1em;          
+            color: var(--_nav-link-color2);
+            word-spacing: 0.1em;
         }
+
         &:not(:last-child) {
             padding-bottom: 0.5rem;
         }
+
         &:first-child {
             padding-top: 0.4rem;
         }
@@ -275,20 +301,24 @@
         li {
             padding-left: 0;
         }
-        li, li a {
+
+        li,
+        li a {
             font-weight: var(--fw-normal) !important;
         }
-        .nav-item-name-lvl2 { 
+
+        .nav-item-name-lvl2 {
             a {
                 font-weight: var(--fw-normal) !important;
             }
-            width: 80vw;
+
+            width: 95vw;
             display: flex;
             justify-content: space-between;
 
-            // menu item name takes up 75% of width
+            // menu item name takes up nearly whole of width
             :first-child {
-                width: 80%;
+                width: 95%;
             }
 
             // chevron takes up remaining width
@@ -298,16 +328,19 @@
         }
     }
 }
+
 // nav-sublist top position for the red row
 .nav-list:first-child .nav-sublist {
     top: var(--_nav-sublist-top2);
 }
+
 // Make the last 2 nav-sublist dropdowns right-aligned to fit into the screen
-.nav-list > li:nth-last-child(1) .nav-sublist,
-.nav-list > li:nth-last-child(2) .nav-sublist {
+.nav-list>li:nth-last-child(1) .nav-sublist,
+.nav-list>li:nth-last-child(2) .nav-sublist {
     right: 0;
-    left:auto;
+    left: auto;
 }
+
 .nav-sublist-lvl2 {
     display: block;
     list-style: none;
@@ -340,6 +373,7 @@ li[data-link-active] {
             .nav-item-name {
                 font-weight: bold;
                 color: var(--_nav-item-red) !important;
+
                 &.item-chevron::after {
                     content: none !important;
                 }
@@ -357,6 +391,7 @@ li[data-link-active] {
                     &::before {
                         content: none;
                     }
+
                     &::after {
                         content: none;
                     }
@@ -365,24 +400,27 @@ li[data-link-active] {
                 .nav-sublist-lvl2 {
                     display: none;
                 }
-            
-                li[data-link-active-lvl2] {
-                    .nav-sublist-lvl2 {
-                        display: block;
-                    }
-                }
+
+                // REMOVE SECOND LEVEL MENU ITEMS ON MOBILE
+                // li[data-link-active-lvl2] {
+                //     .nav-sublist-lvl2 {
+                //         display: block;
+                //     }
+                // }
             }
         }
-    } 
+    }
 }
+
 li[data-link-active-lvl2] {
     li {
         width: 100%;
         border: none !important;
     }
+
     // for mobile only
     @include mqmax(medium) {
-        .nav-item-lvl2 { 
+        .nav-item-lvl2 {
             z-index: 25;
             position: fixed;
             top: 0;
@@ -397,7 +435,7 @@ li[data-link-active-lvl2] {
                 text-transform: uppercase;
                 font-weight: bold !important;
                 font-size: var(--_nav-item-fontsize-sml);
-                color: var(--_nav-item-red);                
+                color: var(--_nav-item-red);
                 letter-spacing: var(--ls-wide);
             }
 
@@ -412,6 +450,7 @@ li[data-link-active-lvl2] {
                 padding-top: 0.8rem;
                 background-color: transparent;
                 border: none;
+
                 li a {
                     font-size: var(--_nav-item-fontsize-sml);
                 }
@@ -421,6 +460,7 @@ li[data-link-active-lvl2] {
 }
 
 .mobileToggleIcons {
+
     // .closeMobileBtn {
     //     display: none;
     // }
@@ -428,6 +468,7 @@ li[data-link-active-lvl2] {
         display: none;
     }
 }
+
 .mobileToggleIcons>* {
     /* The search div containing the mag glass icon and x icon are at z-index 10*/
     z-index: 11;
@@ -440,8 +481,7 @@ li[data-link-active-lvl2] {
     bottom: 0;
     margin: auto 0;
 }
+
 img.icon.hide {
     display: none;
 }
-
-

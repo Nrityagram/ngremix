@@ -29,6 +29,7 @@ module.exports = eleventyConfig => {
 			widths: widths || [ "auto" ],
 			formats,
 			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+			urlPath: "/img/",
 		});
 
 		// console.log(JSON.stringify(metadata, null, 2));

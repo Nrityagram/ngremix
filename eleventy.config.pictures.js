@@ -43,6 +43,7 @@ module.exports = (eleventyConfig) => {
 					widths: widthslist[ key ] || [ "auto" ],
 					formats,
 					outputDir: path.join(eleventyConfig.dir.output, "img"),
+					urlPath: "/img/",
 				});
 			}
 

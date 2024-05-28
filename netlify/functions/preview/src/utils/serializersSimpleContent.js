@@ -46,20 +46,32 @@ module.exports = {
             const options = node.options
             const optionListName = 'radioOptions-'.concat(node._key)
             const optionDetailList = new Array()
+            const optionKeyList = new Array()
+            const onClickActionList = new Array()
 
             for (const option of options) {
                 const key = 'option-'.concat(option._key)
                 const optionText = option.optionText
-                const url = option.slug ? '/'.concat(option.slug.current) : option.url
 
-                const optionHtml = `<div><label for="${key}" class="radio"><input type="radio" value="${key}" name="${optionListName}" class="radio-option-type" id="${key}" />${optionText}</label></div>`
+                const optionHtml = `<div><label for="${key}" class="radio"><input type="radio" value="${key}" name="${optionListName}" class="radio-options-${node._key}" id="${key}" />${optionText}</label></div>`
 
+                const link = option.actionType == 'intlink' ? '/'.concat(option.slug.current) : option.url
+                const optionCase = `case '${key}': location.href = "${link}"; break;`
+
+                onClickActionList.push(optionCase)
+                optionKeyList.push(key)
                 optionDetailList.push(optionHtml)
             }
 
+            // TODO: Radio button eventListener JS inside modal not working
+            const allSwitchCases = onClickActionList.join('')
+            const radioSwitchCaseJS = `const allOptions_${node._key} = document.querySelectorAll('.radio-options-${node._key}'); allOptions_${node._key}.forEach((targetOption) => { targetOption.addEventListener('click', () => { switch (targetOption.id) {${allSwitchCases}}});});`
+
+            console.log('HHHHIIIIII ....!!')
+
             const optionsListHtml = optionDetailList.join('')
 
-            return `<div class="flow-inbetween">${optionsListHtml}</div>`
+            return `<div class="flow-inbetween">${optionsListHtml}</div>${radioSwitchCaseJS}`
         }
     },
     marks: {

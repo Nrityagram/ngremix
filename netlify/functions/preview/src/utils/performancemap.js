@@ -1712,7 +1712,7 @@ $(document).ready(function () {
   })
     .addTo(deskmap)
     .bindPopup(
-      "<city>Singapore</city><production>Surupa & Bijayini</production><location>Esplanade Theatre<date>13-14 NOV 2004</date></location><production>Saṃhāra</production><location>Esplanade Theatre<date>28-29 NOV 2012</date></location><production>Songs of Love and Longing</production><location>Esplanade Theatre<date>10 APR 2016</date></location>",
+      "<city>Singapore</city><production>Surupa & Bijayini</production><location>Esplanade Theatre<date>13-14 NOV 2004</date></location><production>Saṃhāra</production><location>Esplanade Theatre<date>28-29 NOV 2012</date></location><production>Songs of Love and Longing</production><location>Esplanade Theatre<date>10 APR 2016</date></location><production>Vinati: Songs from the Gita Govinda</production><location>Esplanade Theatre<date>11 SEP 2022</date></location>",
       { maxHeight: 200, maxWidth: 300 }
     ); // Singapore
   L.marker([ -31.955, 115.84 ], {
@@ -1905,6 +1905,17 @@ $(document).ready(function () {
       "<city>Macau, Macau</city><production>Sridevi</production><location><date>17 SEP 2010</date></location>",
       { maxHeight: 200, maxWidth: 300 }
     ); // Macau, Macau
+  L.marker([ 9.6699569, 80.0078271 ], {
+    icon: redIcon,
+    title: "Jaffna, Sri Lanka",
+    riseOnHover: true,
+  })
+    .addTo(deskmap)
+    .bindPopup(
+      "<city>Jaffna, Sri Lanka</city><production>Āhuti</production><location>Jaffna Cultural Center<date>21 APR 2024</date></location><location>Bishops College Auditorium<date>25-26 APR 2024</date></location>",
+      { maxHeight: 200, maxWidth: 300 }
+    ); // Jaffna, Sri Lanka
+
 
   // +++++++++++++++++  EUROPE  +++++++++++++++++
   L.marker([ 55.9483, -3.2191 ], {
@@ -3736,7 +3747,7 @@ $(document).ready(function () {
   })
     .addTo(mobmap)
     .bindPopup(
-      "<city>Singapore</city><production>Surupa & Bijayini</production><location>Esplanade Theatre<date>13-14 NOV 2004</date></location><production>Saṃhāra</production><location>Esplanade Theatre<date>28-29 NOV 2012</date></location><production>Songs of Love and Longing</production><location>Esplanade Theatre<date>10 APR 2016</date></location>",
+      "<city>Singapore</city><production>Surupa & Bijayini</production><location>Esplanade Theatre<date>13-14 NOV 2004</date></location><production>Saṃhāra</production><location>Esplanade Theatre<date>28-29 NOV 2012</date></location><production>Songs of Love and Longing</production><location>Esplanade Theatre<date>10 APR 2016</date></location><production>Vinati: Songs from the Gita Govinda</production><location>Esplanade Theatre<date>11 SEP 2022</date></location>",
       { maxHeight: 200, maxWidth: 300 }
     ); // Singapore
   L.marker([ -31.955, 115.84 ], {
@@ -3929,6 +3940,16 @@ $(document).ready(function () {
       "<city>Macau, Macau</city><production>Sridevi</production><location><date>17 SEP 2010</date></location>",
       { maxHeight: 200, maxWidth: 300 }
     ); // Macau, Macau
+  L.marker([ 9.6699569, 80.0078271 ], {
+    icon: redIcon,
+    title: "Jaffna, Sri Lanka",
+    riseOnHover: true,
+  })
+    .addTo(mobmap)
+    .bindPopup(
+      "<city>Jaffna, Sri Lanka</city><production>Āhuti</production><location>Jaffna Cultural Center<date>21 APR 2024</date></location><location>Bishops College Auditorium<date>25-26 APR 2024</date></location>",
+      { maxHeight: 200, maxWidth: 300 }
+    ); // Jaffna, Sri Lanka
 
   // +++++++++++++++++  EUROPE  +++++++++++++++++
   L.marker([ 55.9483, -3.2191 ], {

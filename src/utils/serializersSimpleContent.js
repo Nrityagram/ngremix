@@ -40,41 +40,6 @@ module.exports = {
             return `<div class="image-plus top-flow"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 560w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1046w" sizes="${sizes}">
             <img alt="${image.alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="credit" data-image-credit="${image.credit}" ></div></div>`
         },
-        radioButtonList: ({ node }) => {
-            pageSettings.setRadio()
-
-            const options = node.options
-            const optionListName = 'radioOptions-'.concat(node._key)
-            const optionDetailList = new Array()
-            const optionKeyList = new Array()
-            const onClickActionList = new Array()
-
-            for (const option of options) {
-                const key = 'option-'.concat(option._key)
-                const optionText = option.optionText
-
-                const optionHtml = `<div><label for="${key}" class="radio"><input type="radio" value="${key}" name="${optionListName}" class="radio-options-${node._key}" id="${key}" />${optionText}</label></div>`
-
-                // TODO: Cannot access slug.current
-                // const link = option.actionType == 'intlink' ? '/'.concat(option.slug.current) : option.url
-                // const optionCase = `case '${key}': location.href = "${link}"; break;`
-
-                // onClickActionList.push(optionCase)
-                // optionKeyList.push(key)
-                optionDetailList.push(optionHtml)
-            }
-
-            // TODO: Radio button eventListener JS inside modal not working
-            // const allSwitchCases = onClickActionList.join('')
-            // const radioSwitchCaseJS = `const allOptions_${node._key} = document.querySelectorAll('.radio-options-${node._key}'); allOptions_${node._key}.forEach((targetOption) => { targetOption.addEventListener('click', () => { switch (targetOption.id) {${allSwitchCases}}});});`
-
-            console.log('HHHHIIIIII ....!!')
-
-            const optionsListHtml = optionDetailList.join('')
-
-            // return `<div class="flow-inbetween">${optionsListHtml}</div>${radioSwitchCaseJS}`
-            return `<div class="flow-inbetween">${optionsListHtml}</div>`
-        }
     },
     marks: {
         center: ({ mark, children }) => {

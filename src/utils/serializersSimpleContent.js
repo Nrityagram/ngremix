@@ -41,21 +41,24 @@ module.exports = {
             <img alt="${image.alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="credit" data-image-credit="${image.credit}" ></div></div>`
         },
         ngTable: ({ node }) => {
-            const rowsHtml = new Array()
-
-            for (const row of node.tableContent.rows) {
-                const rowHtml = new Array()
-                for (let index = 0; index < row.cells.length; index++) {
-                    const element = row.cells[ index ];
-                    const cellHtml = index < 1 ? `<td><b>${element}</b></td>` : `<td>${element}</td>`
-                    rowHtml.push(cellHtml)
+            if (node.tableContent) {
+                const rowsHtml = new Array()
+                for (const row of node.tableContent.rows) {
+                    const rowHtml = new Array()
+                    for (let index = 0; index < row.cells.length; index++) {
+                        const element = row.cells[ index ];
+                        const cellHtml = index < 1 ? `<td><b>${element}</b></td>` : `<td>${element}</td>`
+                        rowHtml.push(cellHtml)
+                    }
+                    const singleRowCellsHtml = rowHtml.join('')
+                    const singleRowHtml = `<tr>${singleRowCellsHtml}</tr>`
+                    rowsHtml.push(singleRowHtml)
                 }
-                const singleRowCellsHtml = rowHtml.join('')
-                const singleRowHtml = `<tr>${singleRowCellsHtml}</tr>`
-                rowsHtml.push(singleRowHtml)
+                const allRowsHtml = rowsHtml.join('')
+                return `<table class="basic">${allRowsHtml}</table>`
+            } else {
+                return ``
             }
-            const allRowsHtml = rowsHtml.join('')
-            return `<table class="basic wider">${allRowsHtml}</table>`
         }
     },
     marks: {

@@ -18,7 +18,7 @@
 
     .timeline {
         min-height: fit-content;
-        
+
         .timeline--item {
             position: absolute;
             top: 0;
@@ -43,17 +43,15 @@
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
                 // outline: 2px dashed orange;
 
-                picture img {
-                    width: 100%; 
-                    height: auto;
-                    // max-height: 450px;
-                    // width: 100%;
+                img {
+                    width: 100%;
+                    height: 75%;
                     object-fit: cover;
                     margin: 0;
                     border-radius: 0;
                 }
 
-                picture:last-child img {
+                img:last-child {
                     border-radius: 0 0 8px 8px;
                 }
 
@@ -67,6 +65,7 @@
                     /* min-height: 70px; */
                     font-size: 19px;
                 }
+
                 /* draws the dot on the timeline */
                 &.dot {
                     content: "";
@@ -78,6 +77,7 @@
                     background: hsl(var(--clr-secondary-550));
                     box-shadow: none;
                 }
+
                 /* draws the arrow */
                 &.tooltip {
                     content: "";
@@ -89,6 +89,7 @@
                     background: transparent;
                     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0);
                 }
+
                 /* draws the shadow of arrow */
                 &.tooltip-shadow {
                     content: "";
@@ -100,6 +101,7 @@
                     background: transparent;
                     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0);
                 }
+
                 /* Gap btw rt-side box and timeline */
                 /* Only right-side boxes on mobile */
                 left: 38px;
@@ -118,8 +120,8 @@ time {
 }
 
 /* Desktop Media Query */
-@include mq(large) {    
-    .timeline--wrapper > .timelinebar{
+@include mq(large) {
+    .timeline--wrapper>.timelinebar {
         /* the timeline bar */
         // position: static;
         position: absolute;
@@ -129,7 +131,7 @@ time {
         background: hsl(var(--clr-neutral-300));
         // margin-inline: auto;
     }
-    
+
     .timeline--wrapper .timeline .timeline--item {
         position: absolute;
         top: 0;
@@ -140,6 +142,7 @@ time {
         div {
             margin-top: 10px;
             width: 400px;
+
             img {
                 width: 100%;
             }

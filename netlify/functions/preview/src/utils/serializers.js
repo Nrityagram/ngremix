@@ -217,6 +217,10 @@ module.exports = {
             } else {
                 return ``
             }
+        },
+        timeline: ({ node }) => {
+            pageSettings.setTimeline()
+            return `<h3>Timeline goes here</h3>`
         }
     },
     marks: {

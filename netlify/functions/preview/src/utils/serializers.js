@@ -2,6 +2,7 @@ const BlocksToMarkdown = require("@sanity/block-content-to-markdown");
 const urlFor = require("../utils/imageUrl");
 const client = require("../utils/sanityClient")
 const serializers = require("../utils/serializersSimpleContent")
+const serializersTimeline = require("../utils/serializersTimelineContent")
 
 const pageSettings = require("../utils/pageSettings")
 
@@ -220,6 +221,18 @@ module.exports = {
         },
         timeline: ({ node }) => {
             pageSettings.setTimeline()
+            // const eventsList = node.timelineArray
+            // const timelineHtml = new Array()
+
+            // for (const event of eventsList) {
+            //     const eventDate = event.timelineEventDate
+            //     const eventContent = BlocksToMarkdown(event.content, {
+            //         serializersTimeline,
+            //         ...client.config()
+            //     })
+            //     const modifiedEventContent = formatPopupContent(eventContent)
+            // }
+
             return `<h3>Timeline goes here</h3>`
         }
     },

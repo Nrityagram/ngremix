@@ -239,7 +239,8 @@
         border-radius: 8px;
         overflow: hidden;
         margin: 0;
-        box-shadow: 0px 4.0px 6.0px 1px hsl(0deg 0% 0% / 0.4);
+        // box-shadow: 0px 4.0px 6.0px 1px hsl(0deg 0% 0% / 0.4);
+        box-shadow: 0 5px 10px 2px hsl(0deg 0% 0% / 0.5);
 
         img {
             width: 100%;
@@ -270,6 +271,7 @@
 
             @include mqmax(small) {
                 padding: 2px 8px;
+
                 .info-label {
                     font-size: var(--fs-300);
                 }
@@ -298,11 +300,14 @@
         &:hover {
             img {
                 transform: scale(1.08);
-            } 
+            }
+
             cursor: pointer;
+
             .info {
                 opacity: 1;
             }
+
             .info-icon {
                 opacity: 0;
             }
@@ -313,9 +318,11 @@
             .info {
                 opacity: 1;
             }
+
             .info-icon {
                 opacity: 0;
             }
+
             // Turning off link icon for touch devices
             .link-icon {
                 opacity: 0;

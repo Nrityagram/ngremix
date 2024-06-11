@@ -22,7 +22,9 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.addAsyncShortcode(
 		"pictures",
-		async function (srclist, alt = "Alt Text Req", widthslist, screenwidths, loadingOption, fetchPriorityOption) {
+		async function (srclist, alt = "Alt Text Req", widthslist, screenwidths, loadingOption, fetchPriorityOption, imgClass = "") {
+
+			// console.log("IMAGE CLASS = " + imgClass)
 
 			// fetchOption = low / high
 			// loadingOption = lazy / eager
@@ -61,7 +63,7 @@ module.exports = (eleventyConfig) => {
 
 			// create img string with webp from mobile
 			let imgData = metadatalist[ metadataKeys.slice(-1) ][ formats[ 0 ] ][ 0 ]
-			let imgElem = `<img src="${imgData.url}" width="${imgData.width}" height="${imgData.height}" alt="${alt}" fetchPriority="${fetchPriorityOption}" loading="${loadingOption}" />`
+			let imgElem = `<img src="${imgData.url}" width="${imgData.width}" height="${imgData.height}" alt="${alt}" fetchPriority="${fetchPriorityOption}" loading="${loadingOption}" class="${imgClass}"/>`
 
 			return `<picture>${sourceList}${imgElem}</picture>`
 		}

@@ -27,7 +27,7 @@ for (const wrapFlowElem of wrapperFlowElemList) {
     }
 }
 
-// if a single image is preceded by H1, H2, H3 then reduce top-flow for the image
+// if a single image is preceeded by H1, H2, H3 then reduce top-flow for the image
 for (const imgPlusElem of imagePlusList) {
     const prevElem = imgPlusElem.previousElementSibling
 

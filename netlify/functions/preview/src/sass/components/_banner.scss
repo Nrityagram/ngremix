@@ -84,10 +84,10 @@
     bottom: 0;
 
     // background-color: rgba(0, 0, 0, 0.25);
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
 
     // padding: 1em 0.15em 13vh;
-    padding: 1em 0.15em 5vh;
+    padding: 1em 0.15em 10vh;
 
     font-size: var(--fs-400);
     font-family: var(--ff-serif);
@@ -107,7 +107,7 @@
     @include mq(large) {
         padding-bottom: 5vh;
         // background-color: transparent;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
         font-size: var(--fs-525);
     }
 }
@@ -227,7 +227,7 @@ $anim-timing: 3s;
     width: $circle-w;
     height: $circle-w;
     position: absolute;
-    bottom: 9vh;
+    bottom: 6vh;
     left: 49%;
 
     @include mq(medium) {
@@ -238,9 +238,11 @@ $anim-timing: 3s;
         bottom: 1vh;
     }
 
-    // transform: translateY(-50%);
+    opacity: 0;
+    // Animation -- fade-in + ease-out
+    animation: simpleFadeIn ease-out 2s forwards;
+    animation-delay: 3000ms;
 
-    // filter: url("#goo");
     .circle {
         background: $circle-bg;
         // border: 2px solid $circle-bg;
@@ -268,6 +270,16 @@ $anim-timing: 3s;
 .scroll-arrow-svg {
     z-index: 9;
     position: relative;
+}
+
+@keyframes simpleFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes scrolly {

@@ -227,12 +227,16 @@ $anim-timing: 3s;
     width: $circle-w;
     height: $circle-w;
     position: absolute;
-    bottom: 3vh;
-    left: 49%;
+    // bottom: 5.75vh;
+    left: 46.5%;
     scroll-behavior: smooth; // doesn't work
+    // hide for mobile
+    display: none;
 
     @include mq(medium) {
+        display: block;
         bottom: 6vh;
+        left: 49%;
     }
 
     &:hover {
@@ -250,7 +254,7 @@ $anim-timing: 3s;
     opacity: 0;
     // Animation -- fade-in + ease-out
     animation: simpleFadeIn ease-out 3s forwards;
-    animation-delay: 1500ms;
+    animation-delay: 3500ms;
 
     .circle {
         background: $circle-bg;

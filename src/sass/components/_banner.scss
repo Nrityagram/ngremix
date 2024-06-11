@@ -22,7 +22,7 @@
 
     opacity: 0;
     // Animation -- fade-in + ease-out
-    animation: simpleFadeIn ease-out 2s forwards;
+    animation: simpleFadeIn ease-out 3s forwards;
 }
 
 .banner-image-credit {
@@ -194,7 +194,7 @@
     opacity: 0;
     // Animation -- fade-in + translateY + ease-out
     animation: fadeInBannerTitle ease-out 2s forwards;
-    animation-delay: 1200ms;
+    animation-delay: 1500ms;
 }
 
 @keyframes fadeInBannerTitle {

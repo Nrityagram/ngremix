@@ -22,8 +22,19 @@ footer {
     }
 
     a {
-        text-decoration: none;
+        // text-decoration: none;
         color: hsl(var(--clr-neutral-100));
+
+        &.bodylink {
+            color: var(--clr-neutral-100) !important;
+            -moz-text-decoration-style: dotted;
+            text-decoration-style: dotted;
+            -moz-text-decoration-line: underline;
+            text-decoration-line: underline;
+            -moz-text-decoration-color: inherit;
+            text-decoration-color: inherit;
+            text-underline-offset: 0.2em;
+        }
     }
 }
 
@@ -36,6 +47,7 @@ footer .tagline {
     line-height: 1.2;
     letter-spacing: var(--ls-normal);
     padding: 8px 0;
+
     @include mq(medium) {
         font-size: var(--fs-400);
         padding: 10px 0;
@@ -45,8 +57,9 @@ footer .tagline {
 footer .columnstack {
     display: flex;
     justify-content: center;
-    gap: 8em; 
+    gap: 8em;
     padding: 0 50px 8px 50px;
+
     @include mqmax(small) {
         flex-direction: column;
         gap: 0.5em;

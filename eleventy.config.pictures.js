@@ -30,7 +30,7 @@ module.exports = (eleventyConfig) => {
 			// loadingOption = lazy / eager
 
 			// Warning: Avif can be resource-intensive so take care!
-			let formats = [ "webp" ];
+			let formats = [ "png" ];
 
 			// If you are loading images from local folder
 			// for (const key in srclist) {

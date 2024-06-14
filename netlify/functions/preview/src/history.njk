@@ -1,0 +1,113 @@
+---
+layout: layouts/page.njk
+eleventyNavigation:
+  key: page
+  order: 1
+tags: page
+date: Last Modified
+parentMenuItem: "About"
+title: "History"
+description: "The history of Nrityagram - Nrityagram is a one-of-a-kind community of artistes, where dance is a way of life."
+OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1572106197/history_kaf95n.jpg"
+---
+<div id="banner-container">
+    <div class="banner-image">
+        {% pictures {
+            "desk" : "https://res.cloudinary.com/nrityagram/image/upload/v1572106197/history_kaf95n.jpg",
+            "tab" : "https://res.cloudinary.com/nrityagram/image/upload/v1589047081/ipad/history_zbgxkl.jpg",
+            "mob" : "https://res.cloudinary.com/nrityagram/image/upload/v1581411931/mobile/history_exnolt.jpg"
+        },
+        "Historical Timeline of Nrityagram", {
+            "mob": ["425"],
+            "tab": ["768"],
+            "desk": ["1600"]
+        }, {
+            "desk": "65em",
+            "tab": "50em",
+            "mob": "35em"
+        },
+        "eager",
+        "high" %}
+    </div>
+    <div class="banner-image-credit"
+    data-image-credit-desk="Avinash Pasricha" 
+    data-image-credit-tab="Avinash Pasricha" 
+    data-image-credit-mob="Avinash Pasricha"
+    ></div>
+    <div class="banner-title">
+        History
+  </div>
+</div>
+<div class="container">
+    <div class="wrapper flow">
+        <div class="timeline--wrapper">
+            <div class="timelinebar"></div>
+            <ul class="timeline">
+                <li class="timeline--item">
+                    <div>
+                        <div class="tooltip-shadow"></div>
+                        <div class="tooltip"></div>
+                        <div class="dot"></div>
+                        <time>9 May 1979</time>
+                        <p>
+							Protima Gauri (Gaurima) registers The Odissi Dance Centre Trust
+						</p>
+                        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1717245594/9_may_1979_gaurima_p5svi9.jpg",
+                        "9 May 1979 Odissi Dance Centre Trust is incorporated. Picture of Protima Gauri.",
+                        ["573", "400"] %}
+                    </div>
+                </li>
+                <li class="timeline--item">
+                    <div>
+                        <div class="tooltip-shadow"></div>
+                        <div class="tooltip"></div>
+                        <div class="dot"></div>
+                        <time>1989</time>
+                        <p>Gaurima starts building Nrityagram</p>
+                        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1572106355/3_-1989_pquz0n.jpg",
+                        "1989 Protima Gauri starts building Nrityagram",
+                        ["573", "400"] %}
+                    </div>
+                </li>
+                <li class="timeline--item">
+                    <div>
+                        <div class="tooltip-shadow"></div>
+                        <div class="tooltip"></div>
+                        <div class="dot"></div>
+                        <time>February 1990</time>
+                        <p>Pavithra Reddy joins the Village Outreach programme</p>
+                        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1572106281/6_-June-1990_a5lgm9.jpg",
+                             "February 1990 Pavithra Reddy joins the Village Outreach programme",
+                        ["573", "400"] %}
+                    </div>
+                </li>
+                <li class="timeline--item">
+                    <div>
+                        <div class="tooltip-shadow"></div>
+                        <div class="tooltip"></div>
+                        <div class="dot"></div>
+                        <time>1990</time>
+                        <p>Odissi Gurukul is completed</p>
+                        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1589098328/4_-1990-2_zaildi.jpg",
+                        "1990 Odissi Gurukul is completed",
+                        ["573", "400"] %}
+                    </div>
+                </li>
+                <li class="timeline--item">
+                    <div>
+                        <div class="tooltip-shadow"></div>
+                        <div class="tooltip"></div>
+                        <div class="dot"></div>
+                        <time>11 May 1990</time>
+                        <p>Nrityagram is inaugurated by the Prime Minister of India</p>
+                        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1572106355/2_-11-May-1990_cps47k.jpg",
+                        "11 May 1990 Nrityagram is inaugurated by the Prime Minister of India",
+                        ["573", "400"] %}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="{{ '/utils/history-timeline.js' | url }}"></script>

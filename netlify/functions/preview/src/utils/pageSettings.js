@@ -34,7 +34,7 @@ module.exports = {
             "gismap": settings.gismapOnPage,
             "youtube": settings.youtubeOnPage,
             "marquee": settings.marqueeOnPage,
-            "timeline": settings.timeline
+            "timeline": settings.timelineOnPage
         }
     }
 };

@@ -81,11 +81,15 @@ module.exports = {
                 const assets = decodeAssetId(image.asset._ref)
                 const desk_h = assets.dimensions.height / assets.dimensions.width * widths.desk
 
+                // for (const screenKey in widths) {
+                //     webpURLs[ screenKey ] = urlFor(image).format('webp').width(widths[ screenKey ]).height(heights[ screenKey ]).url()
+                // }
                 for (const screenKey in widths) {
-                    webpURLs[ screenKey ] = urlFor(image).format('webp').width(widths[ screenKey ]).height(heights[ screenKey ]).url()
+                    webpURLs[ screenKey ] = urlFor(image).format('png').width(widths[ screenKey ]).height(heights[ screenKey ]).url()
                 }
 
-                const pictureElem = `<div class="item rounded"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 425w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1600w" sizes="${sizes}"><img alt="${alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="photo-credit">Photo : ${credit}</div></div>`
+                // const pictureElem = `<div class="item rounded"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 425w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1600w" sizes="${sizes}"><img alt="${alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="photo-credit">Photo : ${credit}</div></div>`
+                const pictureElem = `<div class="item rounded"><picture><source type="image/png" srcset="${webpURLs[ "mob" ]} 425w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1600w" sizes="${sizes}"><img alt="${alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="photo-credit">Photo : ${credit}</div></div>`
 
                 imageDetailList.push(pictureElem)
             });

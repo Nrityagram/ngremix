@@ -226,17 +226,18 @@ module.exports = {
 
             for (const event of eventsList) {
                 const eventDate = event.timelineEventDate
-                //     const eventContent = BlocksToMarkdown(event.content, {
-                //         serializersTimeline,
-                //         ...client.config()
-                //     })
-                //     const modifiedEventContent = formatPopupContent(eventContent)
-                const eventHtml = `<li class="timeline--item"><div><div class="tooltip-shadow"></div><div class="tooltip"></div><div class="dot"></div><time>${eventDate}</time></div></li>`
+                const eventContent = BlocksToMarkdown(event.content, {
+                    serializers,
+                    ...client.config()
+                })
+                const modifiedEventContent = formatPopupContent(eventContent)
+
+                console.log(modifiedEventContent)
+
+                const eventHtml = `<li class="timeline--item"><div><div class="tooltip-shadow"></div><div class="tooltip"></div><div class="dot"></div><time>${eventDate}</time><span class="details">${modifiedEventContent}</span></div></li>`
                 timelineHtml.push(eventHtml)
             }
             const timelineHtmlSerialize = timelineHtml.join('')
-
-            console.log(timelineHtmlSerialize)
 
             return `<div class="timeline--wrapper"><div class="timelinebar"></div><ul class="timeline">${timelineHtmlSerialize}</ul></div>`
         }
@@ -247,6 +248,9 @@ module.exports = {
         },
         right: ({ mark, children }) => {
             return `<span class="rightflex">${children}</span>`
+        },
+        strong: ({ mark, children }) => {
+            return `<strong>${children}</strong>`
         },
         semibold: ({ mark, children }) => {
             return `<span style="font-weight: 400">${children}</span>`

@@ -35,10 +35,29 @@ module.exports = {
                 webpURLs[ screenKey ] = urlFor(node).format('webp').width(widths[ screenKey ]).url()
             }
 
-            // console.dir(webpURLs)
-
             return `<div class="image-plus top-flow"><picture><source type="image/webp" srcset="${webpURLs[ "mob" ]} 560w, ${webpURLs[ "tab" ]} 768w, ${webpURLs[ "desk" ]} 1046w" sizes="${sizes}">
             <img alt="${image.alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "desk" ]}" height="${desk_h}"></picture><div class="credit" data-image-credit="${image.credit}" ></div></div>`
+        },
+        a11yImageTimeline: ({ node }) => {
+            const image = new Object()
+            image.credit = node.credit
+            image.caption = node.imgcaption
+            image.alt = node.imgalt
+            image.assets = decodeAssetId(node.asset._ref)
+
+            const widths = { "mob": 400, "tab": 573 }
+            const webpURLs = new Object()
+            const sizes = "(max-width: 800px) 200px, 50vw"
+            const loadingOption = "eager", decoding = "async"
+            const tab_h = image.assets.dimensions.height / image.assets.dimensions.width * widths.tab
+
+            for (const screenKey in widths) {
+                webpURLs[ screenKey ] = urlFor(node).format('webp').width(widths[ screenKey ]).url()
+            }
+
+            // console.dir(webpURLs)
+
+            return `<div><img alt="${image.alt}" loading="${loadingOption}" decoding="${decoding}" src="${webpURLs[ "mob" ]}" width="${widths[ "tab" ]}" height="${tab_h}" srcset="${webpURLs[ "mob" ]} 400w, ${webpURLs[ "tab" ]} 573w" sizes="${sizes}"></div>`
         },
         ngTable: ({ node }) => {
             if (node.tableContent) {
@@ -67,6 +86,9 @@ module.exports = {
         },
         right: ({ mark, children }) => {
             return `<span class="rightflex">${children}</span>`
+        },
+        strong: ({ mark, children }) => {
+            return `<strong>${children}</strong>`
         },
         semibold: ({ mark, children }) => {
             return `<span style="font-weight: 400">${children}</span>`

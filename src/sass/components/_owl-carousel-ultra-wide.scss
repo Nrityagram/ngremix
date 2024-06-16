@@ -18,6 +18,7 @@
         &.rounded {
             border-radius: 12px;
             overflow: hidden;
+
             @include mqmax(medium) {
                 border-radius: 0;
             }
@@ -54,6 +55,7 @@
         opacity: 1;
         transform: scale(1);
     }
+
     .owl-next,
     .owl-prev {
         z-index: 10;
@@ -78,6 +80,25 @@
     }
 }
 
+// Mobile
+@include mq(small) {
+    .owl-carousel.ultra-wide {
+
+        .owl-next,
+        .owl-prev {
+            top: 45%;
+        }
+
+        .owl-prev {
+            left: 2vw;
+        }
+
+        .owl-next {
+            right: 2vw;
+        }
+    }
+}
+
 //  Laptop
 @include mq(medium) {
     .owl-carousel.ultra-wide {
@@ -92,30 +113,32 @@
     }
 
     .owl-carousel.ultra-wide {
+
         .owl-next,
         .owl-prev {
             top: 45%;
         }
-    
+
         .owl-prev {
             left: 2vw;
         }
-    
+
         .owl-next {
             right: 2vw;
         }
     }
-    
+
 }
+
 // Large Desktop
 @include mq(large) {
-  .owl-carousel.ultra-wide {
-    .owl-prev {
-        left: 4vw;
-    }
+    .owl-carousel.ultra-wide {
+        .owl-prev {
+            left: 4vw;
+        }
 
-    .owl-next {
-        right: 4vw;
+        .owl-next {
+            right: 4vw;
+        }
     }
-  }
 }

@@ -23,8 +23,8 @@ $(document).ready(function () {
       0: {
         items: 1,
         stagePadding: 0,
-        dots: false,
-        nav: true,
+        dots: true,
+        nav: false,
       },
       768: {
         items: 1,

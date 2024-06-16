@@ -10,15 +10,15 @@ $(document).ready(function () {
     lazyLoadEager: 2,
     onInitialized: function (event) {
       // apply aria-label info to next and previous buttons and make them focusable
-        $('.owl-carousel.ultra-wide').find('.owl-prev').attr('aria-label','Previous Slide');
-        $('.owl-carousel.ultra-wide').find('.owl-next').attr('aria-label','Next Slide');
-        $('.owl-carousel.ultra-wide, .owl-prev, .owl-next').attr('tabindex','0');
+      $('.owl-carousel.ultra-wide').find('.owl-prev').attr('aria-label', 'Previous Slide');
+      $('.owl-carousel.ultra-wide').find('.owl-next').attr('aria-label', 'Next Slide');
+      $('.owl-carousel.ultra-wide, .owl-prev, .owl-next').attr('tabindex', '0');
     },
     navText: [
       '<img src="https://res.cloudinary.com/nrityagram/image/upload/v1646318418/chevron-left-2_bta3sl.png" alt="left arrow">',
       '<img src="https://res.cloudinary.com/nrityagram/image/upload/v1646318418/chevron-right-2_dped9m.png" alt="right arrow">',
     ],
-    
+
     responsive: {
       0: {
         items: 1,
@@ -96,9 +96,9 @@ $(document).ready(function () {
     animateOut: 'fadeOut',
     onInitialized: function (event) {
       // apply aria-label info to next and previous buttons and make them focusable
-        $('.owl-carousel.review-slider').find('.owl-prev').attr('aria-label','Previous Slide');
-        $('.owl-carousel.review-slider').find('.owl-next').attr('aria-label','Next Slide');
-        $('.owl-carousel.review-slider, .owl-prev, .owl-next').attr('tabindex','0');
+      $('.owl-carousel.review-slider').find('.owl-prev').attr('aria-label', 'Previous Slide');
+      $('.owl-carousel.review-slider').find('.owl-next').attr('aria-label', 'Next Slide');
+      $('.owl-carousel.review-slider, .owl-prev, .owl-next').attr('tabindex', '0');
     },
     navText: [
       '<img src="https://res.cloudinary.com/nrityagram/image/upload/v1646318418/chevron-left-2_bta3sl.png" alt="left arrow">',

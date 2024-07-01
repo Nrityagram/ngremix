@@ -189,3 +189,15 @@ s {
 		color: hsl(var(--clr-neutral-600)) !important;
 	}
 }
+
+#at-the-top {
+	position: absolute;
+	left: 30px;
+	top: 1px;
+	scroll-margin-top: 0;
+
+	img.pixel-size {
+		width: 1px;
+		height: auto;
+	}
+}

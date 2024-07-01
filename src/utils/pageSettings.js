@@ -8,6 +8,7 @@ module.exports = {
         settings.youtubeOnPage = false
         settings.marqueeOnPage = false
         settings.timelineOnPage = false
+        settings.scrollToTop = false
     },
     setSlider: function () {
         settings.sliderOnPage = true
@@ -27,6 +28,9 @@ module.exports = {
     setTimeline: function () {
         settings.timelineOnPage = true
     },
+    setScrollToTop: function () {
+        settings.scrollToTop = true
+    },
     getAll: function () {
         return {
             "slider": settings.sliderOnPage,
@@ -34,7 +38,8 @@ module.exports = {
             "gismap": settings.gismapOnPage,
             "youtube": settings.youtubeOnPage,
             "marquee": settings.marqueeOnPage,
-            "timeline": settings.timeline
+            "timeline": settings.timeline,
+            "scrollToTop": settings.scrollToTop,
         }
     }
 };

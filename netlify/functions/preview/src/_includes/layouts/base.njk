@@ -53,6 +53,11 @@
 	</head>
 	<body>
 		<main>
+			{% if ngpage.pageSettings.scrollToTop or scrollToTop %}
+				<div id="at-the-top">
+					<img src="/img/arrow-up-circle.svg" alt="up arrow icon" class="pixel-size">
+				</div>
+			{% endif %}
 			{% if nobanner %}
 				<header class="primary-header solidbg">
 				{% else %}
@@ -116,7 +121,12 @@
 					</div>
 					<div class="rowstack smalltext">
 							Nrityagram is a Project of Odissi Dance Centre, a Public Charitable Trust  |  Registration # E 7242 MUMBAI dated 23/07/1979
+					</div>
+					{% if ngpage.pageSettings.scrollToTop or scrollToTop%}
+						<div id="go-to-top">
+							<img src="/img/arrow-up-circle.svg" alt="up arrow icon">
 						</div>
+					{% endif %}
 
 					<sidebar>
 						<div class="hovertext" data-hovertext="+91 80 28466312 / 3 / 4">
@@ -154,6 +164,16 @@
 			<script src="{{ '/utils/fadein-observer.js' | url }}"></script>
 			<script src="{{ '/utils/fadeinplace-observer.js' | url }}"></script>
 			<script src="{{ '/utils/zoomin-observer.js' | url }}"></script>
+
+			{% if ngpage.pageSettings.scrollToTop or scrollToTop %}
+				<script type="text/javascript">
+					const goToTop = document.getElementById("go-to-top");
+					const atTheTop = document.getElementById("at-the-top");
+					goToTop.addEventListener("click", () => {
+						atTheTop.scrollIntoView({behavior: "smooth", block: "start"});
+					});
+				</script>
+			{% endif %}
 
 			{% if ngpage.pageSettings.slider or slider or ngpage.pageSettings.gismap or gismap%}
 				<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

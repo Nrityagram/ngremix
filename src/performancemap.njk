@@ -56,6 +56,28 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1580617717/perform
     </div>
     <div id="deskmapid" class="desk-only"></div>
   </div>
+  <div class="wrapper ultra-wide flow">
+    <div class="even-columns">
+      <div class="left-column">
+        <div class="image-plus card" onclick="location.href='/ensemble';">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1569697661/ensemble_shfto0.jpg",
+          "Ensemble Card",
+          ["560", "768"] %}
+          <div class="credit" data-image-credit="Anita Anand" ></div>
+          <div class="card-title">Ensemble</div>
+        </div>
+      </div>
+      <div class="right-column">
+        <div class="image-plus card" onclick="location.href='/repertoire';">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1569697663/repertory_xcac1z.jpg",
+          "Répertoire Card",
+          ["560", "768"] %}
+          <div class="credit" data-image-credit="Uma Dhanwatey" ></div>
+          <div class="card-title">Répertoire</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="{{ '/utils/performancemap.js' | url }}" defer="defer"></script>

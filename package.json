@@ -9,9 +9,11 @@
 		"watch:eleventy": "npx @11ty/eleventy --serve",
 		"build:eleventy": "npx @11ty/eleventy",
 		"debug:eleventy": "DEBUG=* npx @11ty/eleventy",
-		"start": "npm-run-all build:sass --parallel watch:*",
+		"start": "npm-run-all build:clean build:sass --parallel watch:*",
+		"quickstart": "npm-run-all build:sass --parallel watch:*",
 		"build": "npm-run-all build:sass build:eleventy",
-		"debug": "npm-run-all debug:*"
+		"debug": "npm-run-all debug:*",
+		"build:clean": "rm -rf _site/"
 	},
 	"keywords": [],
 	"author": {

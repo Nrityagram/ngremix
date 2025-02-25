@@ -7,7 +7,7 @@
 		"watch:sass": "sass --watch src/sass:_site/css",
 		"build:sass": "sass src/sass:_site/css",
 		"watch:eleventy": "npx @11ty/eleventy --serve",
-		"build:eleventy": "npx @11ty/eleventy",
+		"build:eleventy": "npx @11ty/eleventy --incremental",
 		"debug:eleventy": "DEBUG=* npx @11ty/eleventy",
 		"start": "npm-run-all build:clean build:sass --parallel watch:*",
 		"quickstart": "npm-run-all build:sass --parallel watch:*",

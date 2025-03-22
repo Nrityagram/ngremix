@@ -110,7 +110,7 @@
         align-items: center;
         flex-direction: column;
         flex-wrap: wrap;
-        bottom: 1rem;
+        bottom: 0.8rem;
         padding-inline: 2rem;
 
         font-size: var(--fs-400);
@@ -118,8 +118,10 @@
         font-family: var(--ff-serif);
         font-weight: var(--fw-light);
         color: hsl(var(--clr-neutral-100));
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
         text-align: center;
+        line-height: 1.2rem;
 
         &.left-align {
             text-align: left;

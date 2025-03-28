@@ -44,11 +44,18 @@
         font-size: var(--fs-530);
     }
 
-    .cta-line-sml {
+    .cta-line-md {
         padding-top: 0.2rem;
         padding-bottom: 0;
         padding-inline: 0.8rem;
         font-size: var(--fs-300);
+    }
+
+    .cta-line-sml {
+        padding-top: 0.2rem;
+        padding-bottom: 0;
+        padding-inline: 0.8rem;
+        font-size: var(--fs-250);
 
         &:last-child {
             padding-bottom: 0.5rem;

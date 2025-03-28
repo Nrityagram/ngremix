@@ -105,17 +105,23 @@
     .caption {
         position: absolute;
         width: 100%;
+        margin: 0 auto;
         display: flex;
+        align-items: center;
         flex-direction: column;
-        bottom: 1rem;
-        padding-left: 1rem;
+        flex-wrap: wrap;
+        bottom: 0.8rem;
+        padding-inline: 2rem;
 
-        font-size: var(--fs-200);
+        font-size: var(--fs-400);
+        // font-size: var(--medium-fontsize);
         font-family: var(--ff-serif);
         font-weight: var(--fw-light);
         color: hsl(var(--clr-neutral-100));
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
         text-align: center;
+        line-height: 1.2rem;
 
         &.left-align {
             text-align: left;

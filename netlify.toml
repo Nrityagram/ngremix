@@ -23,6 +23,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/danceprof.htm"
+to = "/danceprofessional"
+status = 301
+force = true
+
+[[redirects]]
 from = "/danceprof.html"
 to = "/danceprofessional"
 status = 301
@@ -119,6 +125,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/artists/protima/protima.htm"
+to = "/protima"
+status = 301
+force = true
+
+[[redirects]]
 from = "/4artists/protima/*"
 to = "/protima"
 status = 301
@@ -137,13 +149,31 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/artists/surupa/images/"
+to = "/surupa"
+status = 301
+force = true
+
+[[redirects]]
 from = "/artists/bijayini/*"
 to = "/bijayini"
 status = 301
 force = true
 
 [[redirects]]
+from = "/artists/bijayini/bijayini.htm"
+to = "/bijayini"
+status = 301
+force = true
+
+[[redirects]]
 from = "/4artists/bijayini/*"
+to = "/bijayini"
+status = 301
+force = true
+
+[[redirects]]
+from = "/4artists/bijoyini/*"
 to = "/bijayini"
 status = 301
 force = true
@@ -168,6 +198,12 @@ force = true
 
 [[redirects]]
 from = "/expression/bnatyam/*"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/expression/bnatyam/bnatyam.htm"
 to = "/gurukula"
 status = 301
 force = true
@@ -198,6 +234,24 @@ force = true
 
 [[redirects]]
 from = "/soul/dream/*"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/1soul/dream/*"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/1soul/dream/dream.htm"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/soul/dream/dream.htm"
 to = "/about"
 status = 301
 force = true
@@ -239,6 +293,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/village/friends/friends1.htm"
+to = "/community"
+status = 301
+force = true
+
+[[redirects]]
 from = "/wisdom/apply/*"
 to = "/gurukula"
 status = 301
@@ -246,6 +306,24 @@ force = true
 
 [[redirects]]
 from = "/2wisdom/apply/*"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/2wisdom/apply/apply.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/wisdom/apply/apply.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/wisdom/apply/apply2.htm"
 to = "/gurukula"
 status = 301
 force = true
@@ -281,6 +359,18 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/village/spaces/guest.htm"
+to = "/kula-artistes-residence"
+status = 301
+force = true
+
+[[redirects]]
+from = "/village/spaces/yoga.htm"
+to = "/space/#yoga"
+status = 301
+force = true
+
+[[redirects]]
 from = "/village/spaces/*"
 to = "/space"
 status = 301
@@ -299,8 +389,86 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/wisdom/workshops/workshops2.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/wisdom/workshops/workshops3.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/wisdom/workshops/workshops4.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
 from = "/2wisdom/workshops/*"
 to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/2wisdom/workshops/workshops.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/2wisdom/workshops/workshops1.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/2wisdom/workshops/workshops2.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/2wisdom/gyan/*"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/2wisdom/gyan/gyan.htm"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/2wisdom/gyan/gyan1.htm"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/wisdom/gyan/*"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/wisdom/gyan/gyan.htm"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/wisdom/gyan/gyan1.htm"
+to = "/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/wisdom/gyan/gyan2.htm"
+to = "/about"
 status = 301
 force = true
 
@@ -331,5 +499,41 @@ force = true
 [[redirects]]
 from = "/expression/kathak/*"
 to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/expression/kathak/kathak.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/expression/kuchipudi/*"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/expression/kuchipudi/kuchipudi.htm"
+to = "/gurukula"
+status = 301
+force = true
+
+[[redirects]]
+from = "/space.html"
+to = "/space"
+status = 301
+force = true
+
+[[redirects]]
+from = "/privacypolicy.html"
+to = "/privacy"
+status = 301
+force = true
+
+[[redirects]]
+from = "/behindthescenes.html"
+to = "/repertoire"
 status = 301
 force = true

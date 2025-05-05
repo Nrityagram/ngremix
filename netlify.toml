@@ -383,6 +383,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/village/trustees*"
+to = "/board"
+status = 301
+force = true
+
+[[redirects]]
 from = "/wisdom/workshops/*"
 to = "/gurukula"
 status = 301

@@ -67,7 +67,7 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1747992608/virtual
                     <td>
                   Registration Fee: ₹2000<br />(Non-refundable)
                   <div class="razorpay-embed-btn"
-                 data-url="https://pages.razorpay.com/pl_PLGPLwCbwRpKUs/view"
+                 data-url="https://pages.razorpay.com/pl_QYMkoI74RuroTM/view"
                  data-text="Pay your Registration Fee"
                  data-color="#C91D25"
                  data-size="large"></div>
@@ -76,8 +76,8 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1747992608/virtual
                   Fee per Month: ₹2000<br />(to be paid in advance)
                   <div class="razorpay-embed-btn"
                   id="monthly-fee-button"
-                 data-url="https://pages.razorpay.com/pl_PLGPLwCbwRpKUs/view"
-                 data-text="Pay your Fee"
+                 data-url="https://pages.razorpay.com/pl_QYMtfsYhKmJHtN/view"
+                 data-text="Pay your Monthly Fee"
                  data-color="#C91D25"
                  data-size="large"></div>
                     </td>
@@ -153,9 +153,9 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1747992608/virtual
     "December"
   ];
 
-  const now = new Date();
-  const currentMonth = now.getMonth(); // Month is 0-indexed, so add 1
-  let monthName = monthNames[currentMonth];
-  const monthlyFeeBtn = document.getElementById('monthly-fee-button');
-  monthlyFeeBtn.setAttribute('data-text', `Pay your Fee for ${monthName} ${now.getFullYear()}`);
+  // const now = new Date();
+  // const currentMonth = now.getMonth() + 1;  Month is 0-indexed; temporarily add 1 to start from June 2025
+  // let monthName = monthNames[currentMonth];
+  // const monthlyFeeBtn = document.getElementById('monthly-fee-button');
+  // monthlyFeeBtn.setAttribute('data-text', `Pay your Fee for ${monthName} ${now.getFullYear()}`);
 </script>

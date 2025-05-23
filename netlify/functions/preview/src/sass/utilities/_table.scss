@@ -69,16 +69,20 @@ table.responsive tr {
         background-color: transparent;
     }
 
+    table.responsive {
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 0.1em
+    }
+
     table.responsive tr {
         margin-bottom: 0;
     }
 
     table.responsive td {
         width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 2px;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        // background-color: rgba(0, 0, 0, 0.05);
+        margin-bottom: 0.1em;
+        // box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0.05);
     }
 
     table.responsive td:last-child {

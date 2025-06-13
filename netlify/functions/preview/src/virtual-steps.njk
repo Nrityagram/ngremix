@@ -1,0 +1,172 @@
+---
+layout: layouts/page.njk
+eleventyNavigation:
+  key: page
+  order: 1
+tags: page
+date: Last Modified
+title: "Virtual Steps : Nrityagram.Online"
+scrollToTop: true
+description: "With Virtual Steps, you can take classes from anywhere in the world, via our Online Dance School!"
+OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1749799897/virtual-steps-og_effoyk.png"
+---
+<div id="banner-container">
+  <div class="banner-image">
+    {% pictures 
+      {"desk":"https://res.cloudinary.com/nrityagram/image/upload/v1747992148/virtual-steps-desk_ot0jat.png", 
+      "tab":"https://res.cloudinary.com/nrityagram/image/upload/v1747992147/virtual-steps-tablet_rigscd.png", 
+      "mob":"https://res.cloudinary.com/nrityagram/image/upload/v1747992147/virtual-steps-mobile_sqtyb3.png"}, 
+      "Virtual Steps", 
+      {"mob": ["425"], "tab": ["768"], "desk":["1600"]}, {"desk":"65em", "tab":"50em", "mob":"35em"}, 
+      "eager", "high" %}
+  </div>
+  <div class="banner-image-credit"
+    data-image-credit-desk="Anoushka Rahman" 
+    data-image-credit-tab="Pavithra Reddy" 
+    data-image-credit-mob="Pavithra Reddy"
+    ></div>
+  <div class="banner-title">
+        Virtual Steps
+  </div>
+</div>
+<div class="container">
+  <div class="wrapper flow">
+    <p>Welcome to Virtual Steps with Nrityagram<span class="redtext">.Online</span>!</p>
+    <p>
+      With Virtual Steps, you can take classes from anywhere in the world, via our Online Dance School. Whether you’re a beginner, supplementing in-person classes with at-home training or simply prefer to take class in the comfort of your own space, we’ve brought the Nrityagram dance experience to you. 
+    </p>
+    <p>Join our Live and Interactive classes led by our talented dancers.</p>
+  </div>
+</div>
+
+<div class="container accent-bg">
+  <div class="wrapper flow">
+    <ul class="extra-margin no-bullets">
+      <li>
+        <ul class="no-bullets">
+          <li>
+            <b>New Batch starting 5 July 2025</b>
+          </li>
+          <li>
+            Saturdays 5 - 6PM IST
+          </li>
+          <li>
+            <b>Age</b> 12 Years and above
+          </li>
+          <li>
+            <ul class="no-bullets top-margin">
+              <li>
+                <b>Fee</b>
+              </li>
+              <li>
+                <b>Resident Citizens of India</b>
+              </li>
+              <li>
+                <table class="responsive">
+                  <tr>
+                    <td>
+                  Registration Fee: ₹2500<br />(Non-refundable)
+                  <div class="razorpay-embed-btn"
+                 data-url="https://pages.razorpay.com/pl_QYMkoI74RuroTM/view"
+                 data-text="Pay your Registration Fee"
+                 data-color="#C91D25"
+                 data-size="large"></div>
+                    </td>
+                    <td>
+                  Fee per Month: ₹2000<br />(to be paid in advance)
+                  <div class="razorpay-embed-btn"
+                  id="monthly-fee-button"
+                 data-url="https://pages.razorpay.com/pl_QYMtfsYhKmJHtN/view"
+                 data-text="Pay your Monthly Fee"
+                 data-color="#C91D25"
+                 data-size="large"></div>
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul class="no-bullets top-margin">
+              <li>
+                <b>Non-Resident Indians & Citizens of Other Countries</b>
+              </li>
+              <li>
+                <table class="responsive">
+                  <tr>
+                    <td>
+                  Registration Fee: US $50<br />(Non-refundable)
+                  <div class="razorpay-embed-btn"
+                 data-url="https://pages.razorpay.com/pl_QaPp6BgD1w6TZS/view"
+                 data-text="Pay your Registration Fee"
+                 data-color="#C91D25"
+                 data-size="large"></div>
+                    </td>
+                    <td>
+                  Fee per Month: US $40<br />(to be paid in advance)
+                  <div class="razorpay-embed-btn"
+                  id="monthly-fee-button"
+                 data-url="https://pages.razorpay.com/pl_QaPuerg3n25wyZ/view"
+                 data-text="Pay your Monthly Fee"
+                 data-color="#C91D25"
+                 data-size="large"></div>
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="extra-margin no-bullets">
+      <li>
+        Limited places - Register Now!
+      </li>
+      <li>
+        Questions? Write to us <a href="mailto:pavithra@nrityagram.org" class="bodylink">pavithra@nrityagram.org</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var d = document;
+    var x = !d.getElementById('razorpay-embed-btn-js')
+    if (x) {
+      var s = d.createElement('script');
+      s.defer = !0;
+      s.id = 'razorpay-embed-btn-js';
+      s.src = 'https://cdn.razorpay.com/static/embed_btn/bundle.js';
+      d
+        .body
+        .appendChild(s);
+    } else {
+      var rzp = window['__rzp__'];
+      rzp && rzp.init && rzp.init()
+    }
+  })();
+
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  // const now = new Date();
+  // const currentMonth = now.getMonth() + 1;  Month is 0-indexed; temporarily add 1 to start from June 2025
+  // let monthName = monthNames[currentMonth];
+  // const monthlyFeeBtn = document.getElementById('monthly-fee-button');
+  // monthlyFeeBtn.setAttribute('data-text', `Pay your Fee for ${monthName} ${now.getFullYear()}`);
+</script>

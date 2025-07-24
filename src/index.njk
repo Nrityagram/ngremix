@@ -9,6 +9,7 @@ slider: true
 youtube: true
 marquee: true
 scrollToTop: true
+cta: false
 date: Last Modified
 OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo_blk_bg_sg0emm.png'
 ---
@@ -27,20 +28,22 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
 
       <div class="banner-image-credit homepage"
            data-image-credit-desk="Karthik Venkatraman"
-           data-image-credit-tab="Karthik Venkatraman"
-           data-image-credit-mob="Karthik Venkataraman"></div>
+             data-image-credit-tab="Karthik Venkatraman"
+             data-image-credit-mob="Karthik Venkataraman"></div>
 
       <div class="banner-tagline-cta-combo">
         <div class="banner-tagline">
           <span class="banner-tagline--text">
             “These are among the world’s greatest dancers!”
-          </span>
+            </span>
           <span class="banner-tagline--credit">
             The New York Times
-          </span>
+            </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
     </div>
     {# Slide 2 #}
@@ -69,7 +72,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
         </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
     </div>
     {# Slide 3 #}
@@ -105,7 +110,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
         </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
     </div>
     {# Slide 4 #}
@@ -141,7 +148,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
         </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
 
     </div>
@@ -179,7 +188,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
         </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
 
     </div>
@@ -217,7 +228,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
           </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
 
     </div>
@@ -255,7 +268,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
         </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
 
     </div>
@@ -292,7 +307,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
         </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
 
     </div>
@@ -329,7 +346,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
         </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
 
     </div>
@@ -366,7 +385,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
         </span>
         </div>
         <!-- CTA Box for Mobile Here -->
-        {% include "./_includes/cta-mobile.njk" %}
+        {% if cta %}
+          {% include "./_includes/cta-mobile.njk" %}
+        {% endif %}
       </div>
 
     </div>
@@ -413,17 +434,9 @@ OGImage: 'https://res.cloudinary.com/nrityagram/image/upload/v1701794529/ng_logo
   </div>
 
   <!-- CTA Box for Desktop Here -->
-  <div class="cta-desk"
-       onclick="location.href='/virtual-steps';">
-    {% image "https://res.cloudinary.com/nrityagram/image/upload/v1748004445/virtual-steps-cta_yp7fcg.png",
-    "Virtual Steps CTA picture",
-    ["200"] %}
-    <div class="cta-textbox">
-      <div class="cta-line-lrg">Virtual Steps</div>
-      <div class="cta-line-sml">New Batch Starts on 5 July 2025</div>
-      <div class="cta-line-sml">Registration Closed</div>
-    </div>
-  </div>
+  {% if cta %}
+    {% include "./_includes/cta-desk.njk" %}
+  {% endif %}
 
   <!-- close vanilla-slideshow-container -->
 </div>

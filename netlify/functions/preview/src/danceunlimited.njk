@@ -8,6 +8,7 @@ date: Last Modified
 parentMenuItem: "School"
 title: "Dance Unlimited"
 scrollToTop: true
+vsRegistrationOn: false
 description: "We believe everyone can dance. That dance has the power to engage people and motivate them towards excellence. Nrityagram is a one-of-a-kind collective of artistes, where dance is a way of life."
 OGImage: "https://res.cloudinary.com/nrityagram/image/upload/w_600/v1717245209/dance-unlimited-desk_qqqjqz.png"
 ---
@@ -104,26 +105,6 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/w_600/v1717245209/d
 <div id="parttime" class="container">
   <div class="wrapper flow">
     <h1 class="center">Non-Residential Training</h1>
-    <!-- <div class="image-plus top-flow">
-      {% image "https://res.cloudinary.com/nrityagram/image/upload/c_scale,w_800/v1600100164/4_City_Classes_dpbt0e.jpg",
-      "City Classes",
-      ["560", "768", "1046"] %}
-      <div class="credit" data-image-credit="Shalini Jain" ></div>
-    </div>
-    <h2 class="center">City Class</h2>
-    <p>
-			In Bangalore, <a href="/surupa" class="bodylink">Surupa Sen</a> has a training programme for people with an
-			interest in Odissi who may not have the option of becoming professional dancers or have successful careers or
-			families of their own or all of the above.
-		</p>
-    <p>
-			Classes are for 2 hours a day on Thursdays and Saturdays. There are 2 groups - under 12 and above 12, and there
-			are several Mother-Daughter combinations in this programme.
-		</p>
-    <p>
-			This is a specially satisfying programme for our teachers because of the noticeable change and growth in the students.
-		</p>
-    -->
     <div class="image-plus top-flow">
       {% image "https://res.cloudinary.com/nrityagram/image/upload/c_scale,w_800/v1580737468/5_Sunday_Class_vjc0nw.jpg",
       "City Classes",
@@ -139,14 +120,21 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/w_600/v1717245209/d
 		</p>
     <p>Write to us for details <a href="mailto:learn@nrityagram.org" class="bodylink">learn@nrityagram.org</a>
     </p>
+    <div class="image-plus top-flow">
+      {% image "https://res.cloudinary.com/nrityagram/image/upload/v1753430743/virtual-steps-body-image_rvr5gv.png",
+      "Virtual Steps Online Classes",
+      ["560", "768", "1046"] %}
+      <div class="credit" data-image-credit="Anoushka Rahman" ></div>
+    </div>
     <h2 class="center">Nrityagram.Online | Virtual Steps</h2>
     <p>
-      With Virtual Steps, you can take classes from anywhere in the world, via our Online Dance School. 
-Whether you’re a beginner, supplementing in-person classes with at-home training or simply prefer to take class in the comfort of your own space, we’ve brought the Nrityagram dance experience to you.
+      With Virtual Steps, you can take classes from anywhere in the world, via our Online Dance School. Whether you’re a beginner, supplementing in-person classes with at-home training or simply prefer to take class in the comfort of your own space, we’ve brought the Nrityagram dance experience to you.
     </p>
-    <p>
-      <a href="/virtual-steps" class="bodylink">Join our Live and Interactive classes led by our talented dancers.</a>
-    </p>
+    {% if vsRegistrationOn %}
+      <p>
+        <a href="/virtual-steps" class="bodylink">Join our Live and Interactive classes led by our talented dancers.</a>
+      </p>
+    {% endif %}
     <p>
       Questions? Write to us <a href="mailto:pavithra@nrityagram.org" class="bodylink">pavithra@nrityagram.org</a>
     </p>

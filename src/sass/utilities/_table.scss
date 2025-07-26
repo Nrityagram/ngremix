@@ -43,20 +43,28 @@ table.basic {
 }
 
 table.responsive {
-    width: 100%;
+    width: 80%;
     border: 1px solid rgba(0, 0, 0, 0.05);
     font-family: var(--ff-serif);
 }
 
 table.responsive td {
     padding: 0.2em 0.5em;
-    text-align: center;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+table.responsive th {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.2em 0.5em;
+    text-align: left;
+    font-weight: bold;
 }
 
 table.responsive tr {
-    background-color: rgba(0, 0, 0, 0.05);
     margin-bottom: 0.25em;
 }
+
 
 /* Mobile styles - activated when screen width is 768px or less */
 @media screen and (max-width: 768px) {
@@ -70,11 +78,21 @@ table.responsive tr {
     }
 
     table.responsive {
+        width: 100%;
         border: 1px solid rgba(0, 0, 0, 0.05);
-        padding: 0.1em
+        padding: 0.1em;
+        margin-bottom: 1em;
+    }
+
+    table.responsive th {
+        border: none;
     }
 
     table.responsive tr {
+        margin-bottom: 0.5em;
+    }
+
+    table.responsive tr:last-child {
         margin-bottom: 0;
     }
 

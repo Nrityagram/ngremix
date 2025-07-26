@@ -130,14 +130,50 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/w_600/v1717245209/d
     <p>
       With Virtual Steps, you can take classes from anywhere in the world, via our Online Dance School. Whether you’re a beginner, supplementing in-person classes with at-home training or simply prefer to take class in the comfort of your own space, we’ve brought the Nrityagram dance experience to you.
     </p>
-    {% if vsRegistrationOn %}
-      <p>
-        <a href="/virtual-steps" class="bodylink">Join our Live and Interactive classes led by our talented dancers.</a>
-      </p>
-    {% endif %}
-    <p>
-      Questions? Write to us <a href="mailto:pavithra@nrityagram.org?subject=Inquiry%20about%20Virtual%20Steps%20Online%20Dance%20School" class="bodylink">pavithra@nrityagram.org</a>
-    </p>
+    <br />
+    <ul class="extra-margin-top no-bullets">
+      <li>
+        <ul class="no-bullets">
+          <li>
+            <b>Beginner Level</b>
+          </li>
+          <li>
+            Saturdays 5PM - 6PM IST (Indian Standard Time)
+          </li>
+          <li>
+            <b>Age</b> 12 Years and above
+          </li>
+        </ul>
+        <br />
+        <ul class="no-bullets">
+          <li>
+            <b>Intermediate Level</b>
+          </li>
+          <li>
+            Saturdays 6:15PM - 7:45PM IST (Indian Standard Time)
+          </li>
+          <li>
+            <b>Age</b> 15 Years and above
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="extra-margin-top no-bullets">
+      {% if vsRegistrationOn %}
+        <li>
+          <a href="/virtual-steps" class="bodylink">Join our Live and Interactive classes led by our talented dancers.</a>
+        </li>
+      {% else %}
+        <li>
+        Registrations are closed for both batches. Look out for an announcement when we begin the next session!
+      </li>
+      {% endif %}
+      <li>
+        Questions? Write to us <a href="mailto:pavithra@nrityagram.org?subject=Inquiry%20about%20Virtual%20Steps%20Online%20Dance%20School" class="bodylink">pavithra@nrityagram.org</a>
+      </li>
+    </ul>
+
   </div>
 </div>
 <div class="container accent-bg">

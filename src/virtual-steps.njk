@@ -46,7 +46,7 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1749799897/virtual
       <li>
         <ul class="no-bullets">
           <li>
-            <b>Beginner Level</b>
+            <h3>Beginner Level</h3>
           </li>
           <li>
             Saturdays 5PM - 6PM IST (Indian Standard Time)
@@ -54,11 +54,43 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1749799897/virtual
           <li>
             <b>Age</b> 12 Years and above
           </li>
+
+          <li>
+            <table class="responsive">
+              <th colspan="2">
+                <b>Resident Citizens of India</b>
+              </th>
+              <tr>
+                <td>Registration Fee</td>
+                <td>₹2500 (Non-refundable)</td>
+              </tr>
+              <tr>
+                <td>Fee per Month</td>
+                <td>₹2000 (to be paid by the 25th of every month in advance)</td>
+              </tr>
+            </table>
+          </li>
+
+          <li>
+            <table class="responsive">
+              <th colspan="2">
+                <b>Non-Resident Indians & Citizens of Other Countries</b>
+              </th>
+              <tr>
+                <td>Registration Fee</td>
+                <td>US $50 (Non-refundable)</td>
+              </tr>
+              <tr>
+                <td>Fee per Month</td>
+                <td>US $40 (to be paid by the 25th of every month in advance)</td>
+              </tr>
+            </table>
+          </li>
         </ul>
         <br />
         <ul class="no-bullets">
           <li>
-            <b>Intermediate Level</b>
+            <h3>Intermediate Level</h3>
           </li>
           <li>
             Saturdays 6:15PM - 7:45PM IST (Indian Standard Time)
@@ -66,17 +98,57 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1749799897/virtual
           <li>
             <b>Age</b> 15 Years and above
           </li>
+          <li>
+            <table class="responsive">
+              <th colspan="2">
+                <b>Resident Citizens of India</b>
+              </th>
+              <tr>
+                <td>Registration Fee</td>
+                <td>₹2500 (Non-refundable)</td>
+              </tr>
+              <tr>
+                <td>Fee per Month</td>
+                <td>₹3000 (to be paid by the 25th of every month in advance)</td>
+              </tr>
+            </table>
+          </li>
+
+          <li>
+            <table class="responsive">
+              <th colspan="2">
+                <b>Non-Resident Indians & Citizens of Other Countries</b>
+              </th>
+              <tr>
+                <td>Registration Fee</td>
+                <td>US $50 (Non-refundable)</td>
+              </tr>
+              <tr>
+                <td>Fee per Month</td>
+                <td>US $60 (to be paid by the 25th of every month in advance)</td>
+              </tr>
+            </table>
+          </li>
         </ul>
       </li>
     </ul>
 
     <ul class="extra-margin-top no-bullets">
-      <li>
+      {% if vsRegistrationOn %}
+        <li>
+          <b>Registrations are open for both batches!</b>
+        </li>
+        <li>
+          To register for Beginner or Intermediate class, please email <a href="mailto:pavithra@nrityagram.org?subject=To%20Register%20for%20Virtual%20Steps" class="bodylink">pavithra@nrityagram.org</a> and mention Beginner or Intermediate in the subject line.
+        </li>
+      {% else %}
+        <li>
         Registrations are closed for both batches. Look out for an announcement when we begin the next session!
       </li>
-      <li>
+        <li>
         Questions? Write to us <a href="mailto:pavithra@nrityagram.org?subject=Inquiry%20about%20Virtual%20Steps%20Online%20Dance%20School" class="bodylink">pavithra@nrityagram.org</a>
-      </li>
+        </li>
+      {% endif %}
     </ul>
   </div>
 </div>

@@ -1,0 +1,45 @@
+{
+  "name": "ngnext-front",
+  "version": "1.0.0",
+  "description": "Nrityagram - A one-of-a-kind collective of artistes, where dance is a way of life",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nrityagram/ngnext-front.git"
+  },
+  "keywords": ["dance", "nrityagram", "odissi"],
+  "author": "Amrita Chanda <amrita@nrityagram.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nrityagram/ngnext-front/issues"
+  },
+  "homepage": "https://nrityagram.org",
+  "dependencies": {
+    "@sanity/client": "^7.13.2",
+    "@sanity/image-url": "^2.0.2",
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "luxon": "^3.7.2",
+    "next": "^15.5.9",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sass": "^1.97.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^16.0.10",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.0.10"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

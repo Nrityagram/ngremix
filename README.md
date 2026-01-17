@@ -27,7 +27,7 @@ The official website for [Nrityagram](https://nrityagram.org), a one-of-a-kind c
 - **Search Functionality**: Built-in search capabilities
 - **404 Handling**: Custom 404 page with proper routing
 - **URL Redirects**: Comprehensive legacy URL redirects for SEO preservation
-- **Analytics**: Google Analytics and Microsoft Clarity integration
+- **Analytics**: Google Analytics integration
 
 ## Prerequisites
 
@@ -179,7 +179,6 @@ The site supports modern browsers with features like:
 ## SEO and Analytics
 
 - **Google Analytics**: Tracking with UA-166089693-1
-- **Microsoft Clarity**: User behavior analytics
 - **Open Graph**: Social media sharing metadata
 - **Twitter Cards**: Twitter-specific sharing metadata
 - **Sitemap**: Automatically generated at `/sitemap.xml`

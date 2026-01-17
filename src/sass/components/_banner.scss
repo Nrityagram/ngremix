@@ -38,9 +38,12 @@
     letter-spacing: var(--ls-wide);
     color: hsl(var(--clr-neutral-200));
     text-shadow: 1px 1.5px 1.5px hsl(var(--clr-neutral-700));
-
     right: 2px;
     bottom: calc(var(--gap-from-bottom) * 4.5);
+    opacity: 0;
+    // Fade-in the credit after the banner image loads
+    animation: fadeIn linear 25ms forwards;
+    animation-delay: 750ms;
 
     @include mq(small) {
         bottom: calc(var(--gap-from-bottom) * 3);
@@ -59,11 +62,6 @@
     // @include mqmax(small) {
     //     bottom: 20vh;
     // }
-
-    opacity: 0;
-    // Fade-in the credit after the banner image loads
-    animation: fadeIn linear 25ms forwards;
-    animation-delay: 750ms;
 }
 
 .banner-image-credit::after {
@@ -181,6 +179,7 @@
     bottom: 9vh;
     display: flex;
     justify-content: center;
+    animation: bounce 4s infinite;
 
     @include mq(medium) {
         bottom: 6vh;
@@ -189,8 +188,6 @@
     @include mq(large) {
         bottom: 1.5vh;
     }
-
-    animation: bounce 4s infinite;
 }
 
 .banner-title {
@@ -201,26 +198,23 @@
     flex-direction: column;
     gap: 0.3em;
     text-align: right;
-
-    // To display line breaks from text area in Sanity 
+    // To display line breaks from text area in Sanity
     white-space: pre-line;
-
     font-size: var(--fs-1000);
     line-height: 1.1em;
     font-family: var(--ff-serif);
     font-weight: var(--fw-light);
     color: hsl(var(--clr-neutral-100));
     text-shadow: 0 2px 3px hsl(var(--clr-neutral-800));
+    opacity: 0;
+    // Animation -- fade-in + translateY + ease-out
+    animation: fadeInBannerTitle ease-out 2s forwards;
+    animation-delay: 1500ms;
 
     @include mq(medium) {
         right: 5vw;
         bottom: 11vh;
     }
-
-    opacity: 0;
-    // Animation -- fade-in + translateY + ease-out
-    animation: fadeInBannerTitle ease-out 2s forwards;
-    animation-delay: 1500ms;
 }
 
 @keyframes fadeInBannerTitle {
@@ -279,6 +273,10 @@ $anim-timing: 3s;
     scroll-behavior: smooth; // doesn't work
     // hide for portrait orientation
     display: none;
+    opacity: 0;
+    // Animation -- fade-in + ease-out
+    animation: simpleFadeIn ease-out 3s forwards;
+    animation-delay: 3500ms;
 
     &:hover {
         cursor: pointer;
@@ -293,12 +291,6 @@ $anim-timing: 3s;
             bottom: 2vh;
         }
     }
-
-
-    opacity: 0;
-    // Animation -- fade-in + ease-out
-    animation: simpleFadeIn ease-out 3s forwards;
-    animation-delay: 3500ms;
 
     .circle {
         background: $circle-bg;

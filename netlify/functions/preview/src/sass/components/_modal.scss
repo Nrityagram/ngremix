@@ -23,16 +23,15 @@ dialog {
         background-color: hsl(var(--clr-secondary-550));
         min-height: 20px;
         padding: 0.2em 1em;
-
-        @include mqmax(small) {
-            padding: 0.5em 0.75em;
-        }
-
         border-radius: 12px 12px 0 0;
         // position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include mqmax(small) {
+            padding: 0.5em 0.75em;
+        }
 
         h4 {
             color: hsl(var(--clr-neutral-200));

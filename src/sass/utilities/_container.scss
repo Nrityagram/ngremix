@@ -43,6 +43,7 @@
 .wrapper {
 	margin-inline: auto;
 	--width: var(--ultra-wide-width);
+	max-width: var(--width, var(--max-char-in-line));
 
 	@include mq(medium) {
 		--width: var(--regular-width);
@@ -61,12 +62,12 @@
 		--width: var(--ultra-wide-width);
 
 		.lrg-screen-shrink-width {
+			max-width: var(--width, var(--max-char-in-line));
+			margin: 0 auto;
+
 			@include mq(large) {
 				--width: var(--regular-width);
 			}
-
-			max-width: var(--width, var(--max-char-in-line));
-			margin: 0 auto;
 		}
 	}
 
@@ -81,8 +82,6 @@
 	&.border-bottom {
 		border-bottom: 1px solid hsl(var(--clr-neutral-200));
 	}
-
-	max-width: var(--width, var(--max-char-in-line));
 }
 
 #banner-container {

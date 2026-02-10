@@ -50,7 +50,6 @@ h3 {
 	color: hsl(var(--clr-secondary-550));
 }
 
-
 h4 {
 	color: hsl(var(--clr-neutral-850));
 }
@@ -67,7 +66,7 @@ h1 {
 	}
 }
 
-// for portable txt style 
+// for portable txt style
 .medium-wt {
 	font-weight: var(--fw-serif-medium);
 }
@@ -98,11 +97,11 @@ h4 {
 	}
 }
 
-h1+h3 {
+h1 + h3 {
 	margin-top: 0 !important;
 }
 
-h2+h4 {
+h2 + h4 {
 	margin-top: 0 !important;
 }
 
@@ -161,7 +160,10 @@ s {
 
 .centerflex {
 	display: flex;
-	justify-content: center
+	justify-content: center;
+	&.fitwidth {
+		width: fit-content;
+	}
 }
 
 .right {

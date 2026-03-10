@@ -5,5 +5,10 @@ permalink: /robots.txt
 User-agent: *
 Allow: /
 Disallow: /pagetemplate
+{%- for page in collections.all %}
+{%- if page.data.archive %}
+Disallow: {{ page.url }}
+{%- endif %}
+{%- endfor %}
 
 Sitemap: {{ metadata.url }}/sitemap.xml

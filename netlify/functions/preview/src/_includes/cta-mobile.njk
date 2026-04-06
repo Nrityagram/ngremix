@@ -18,6 +18,7 @@
     </div>
 
     {# To add more CTAs: copy a cta-mobile div above and update content and href #}
+    <div class="cta-mobile-dots"></div>
 </div>
 
 <script>
@@ -29,6 +30,14 @@
         var current = 0;
         var displayDuration = 5000;
 
+        // Build dots
+        var dotsEl = container.querySelector('.cta-mobile-dots');
+        items.forEach(function (_, i) {
+            var dot = document.createElement('span');
+            dot.className = 'cta-mobile-dot' + (i === 0 ? ' cta-mobile-dot--active' : '');
+            dotsEl.appendChild(dot);
+        });
+
         // Show only the first CTA; hide the rest
         items.forEach(function (el, i) {
             if (i !== 0) el.style.display = 'none';
@@ -37,6 +46,10 @@
         function show(index) {
             items.forEach(function (el, i) {
                 el.style.display = (i === index) ? 'grid' : 'none';
+            });
+            var dots = dotsEl.querySelectorAll('.cta-mobile-dot');
+            dots.forEach(function (dot, i) {
+                dot.classList.toggle('cta-mobile-dot--active', i === index);
             });
             current = index;
         }

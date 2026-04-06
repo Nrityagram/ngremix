@@ -1,12 +1,73 @@
-<div class="cta-desk"
+<div>
+    <div class="cta-desk" id="cta-desk-1"
        onclick="location.href='/summer-fun-for-kids';">
-    <img src="https://res.cloudinary.com/nrityagram/image/upload/v1739448387/summer-fun-cta_v2i7bb.png"
+        <img src="https://res.cloudinary.com/nrityagram/image/upload/v1739448387/summer-fun-cta_v2i7bb.png"
          alt="Summer Fun for Kids 2026 picture"
          width="200"
          loading="lazy">
-    <div class="cta-textbox">
-        <div class="cta-line-lrg">Summer Fun for Kids</div>
-        <div class="cta-line-sml">28 April - 3 May 2026</div>
-        <div class="cta-line-sml">Registrations Open</div>
+        <div class="cta-textbox">
+            <div class="cta-line-lrg">Summer Fun for Kids</div>
+            <div class="cta-line-sml">28 April - 3 May 2026</div>
+            <div class="cta-line-sml">Registrations Open</div>
+        </div>
+    </div>
+
+    <div class="cta-desk" id="cta-desk-2"
+       onclick="location.href='/dance-residency';">
+        <img src="https://res.cloudinary.com/nrityagram/image/upload/v1728724534/three-women_fawijr.jpg"
+         alt="Dance Residency 2026 picture"
+         width="200"
+         loading="lazy">
+        <div class="cta-textbox">
+            <div class="cta-line-lrg">Fully-funded Dance Residency</div>
+            <div class="cta-line-sml">Deadline: 15 May 2026</div>
+            <div class="cta-line-sml">Applications Open</div>
+        </div>
     </div>
 </div>
+
+<script>
+    (function () {
+        var items = Array.from(document.querySelectorAll('.cta-desk'));
+        if (items.length <= 1) 
+            return;
+        
+        var current = 0;
+        var displayDuration = 5000; // ms each CTA stays visible
+
+        // Hide all CTAs after the first; disable their entry animation
+        items.forEach(function (el, i) {
+            if (i !== 0) {
+                el.style.animation = 'none';
+                el.style.opacity = '0';
+                el.style.pointerEvents = 'none';
+                el.style.zIndex = '0';
+            }
+        });
+
+        function show(index) {
+            items.forEach(function (el, i) {
+                var active = (i === index);
+                el.style.opacity = active
+                    ? '1'
+                    : '0';
+                el.style.zIndex = active
+                    ? '1'
+                    : '0';
+                el.style.pointerEvents = active
+                    ? 'auto'
+                    : 'none';
+            });
+            current = index;
+        }
+
+        function advance() {
+            show((current + 1) % items.length);
+            setTimeout(advance, displayDuration);
+        }
+
+        // Wait for the initial fade-in animation to finish, then start cycling
+        var initialAnimDuration = 4000; // matches 1s delay + 3s animation
+        setTimeout(advance, initialAnimDuration + displayDuration);
+    })();
+</script>

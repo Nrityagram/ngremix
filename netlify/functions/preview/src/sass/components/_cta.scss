@@ -1,20 +1,30 @@
 @use '../abstracts/' as *;
 
+.cta-desk-container {
+	display: none;
+
+	@media (orientation: landscape) {
+		display: block;
+		position: relative;
+	}
+}
+
 #cta-dots {
-	position: absolute;
-	bottom: calc(5.7vh - 1.4rem);
-	right: 3vw;
-	width: 25vw;
-	display: flex;
-	justify-content: center;
-	gap: 6px;
+	display: none;
 
-	opacity: 0;
-	animation: simpleFadeIn ease-out 3s forwards;
-	animation-delay: 1000ms;
+	@media (orientation: landscape) {
+		display: block;
+		position: absolute;
+		bottom: calc(5.7vh - 1.4rem);
+		right: 3vw;
+		width: 25vw;
+		display: flex;
+		justify-content: center;
+		gap: 6px;
 
-	@media (orientation: portrait) {
-		display: none;
+		opacity: 0;
+		animation: simpleFadeIn ease-out 3s forwards;
+		animation-delay: 1000ms;
 	}
 }
 
@@ -34,80 +44,68 @@
 }
 
 .cta-desk {
-	cursor: pointer;
-	height: 18vh;
-	width: 25vw;
-	overflow: hidden;
-	position: absolute;
-	bottom: 5.7vh;
-	right: 3vw;
+	display: none;
 
-	background-color: rgba(0, 0, 0, 0.6);
-	border: 0.08rem solid hsl(var(--clr-neutral-300));
-	// border-radius: 12px;
-	color: hsl(var(--clr-neutral-100));
+	@media (orientation: landscape) {
+		cursor: pointer;
+		height: 18vh;
+		width: 25vw;
+		overflow: hidden;
+		position: absolute;
+		bottom: 5.7vh;
+		right: 3vw;
 
-	font-family: var(--ff-serif);
+		background-color: rgba(0, 0, 0, 0.6);
+		border: 0.08rem solid hsl(var(--clr-neutral-300));
+		// border-radius: 12px;
+		color: hsl(var(--clr-neutral-100));
 
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+		font-family: var(--ff-serif);
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 
-	img {
-		height: 100%;
-		width: auto;
-		border-right: 0.08rem solid hsl(var(--clr-neutral-775));
-	}
-
-	opacity: 0;
-	// Animation -- fade-in + ease-out
-	animation: simpleFadeIn ease-out 3s forwards;
-	animation-delay: 1000ms;
-
-	.cta-textbox {
-		min-width: 15vw;
-	}
-
-	.cta-line-lrg {
-		padding-top: 0.5rem;
-		padding-bottom: 0;
-		padding-inline: 0.8rem;
-		font-size: var(--fs-530);
-	}
-
-	.cta-line-md {
-		padding-top: 0.2rem;
-		padding-bottom: 0;
-		padding-inline: 0.8rem;
-		font-size: var(--fs-300);
-	}
-
-	.cta-line-sml {
-		padding-top: 0.2rem;
-		padding-bottom: 0;
-		padding-inline: 0.8rem;
-		font-size: var(--fs-250);
-
-		&:last-child {
-			padding-bottom: 0.5rem;
+		img {
+			height: 100%;
+			width: auto;
+			border-right: 0.08rem solid hsl(var(--clr-neutral-775));
 		}
-	}
 
-	// For tablet and below
-	// @include mqmax(large) {
-	// @media (orientation: landscape) {
-	//     display: flex;
-	//     bottom: 20vh;
-	//     left: 50%;
-	//     transform: translateX(-50%);
-	// }
+		opacity: 0;
+		// Animation -- fade-in + ease-out
+		animation: simpleFadeIn ease-out 3s forwards;
+		animation-delay: 1000ms;
 
-	// For ipad and below, hide it
-	// @include mqmax(medium) {
-	@media (orientation: portrait) {
-		display: none;
+		.cta-textbox {
+			min-width: 15vw;
+		}
+
+		.cta-line-lrg {
+			padding-top: 0.5rem;
+			padding-bottom: 0;
+			padding-inline: 0.8rem;
+			font-size: var(--fs-530);
+		}
+
+		.cta-line-md {
+			padding-top: 0.2rem;
+			padding-bottom: 0;
+			padding-inline: 0.8rem;
+			font-size: var(--fs-300);
+		}
+
+		.cta-line-sml {
+			padding-top: 0.2rem;
+			padding-bottom: 0;
+			padding-inline: 0.8rem;
+			font-size: var(--fs-250);
+
+			&:last-child {
+				padding-bottom: 0.5rem;
+			}
+		}
 	}
 }
 
@@ -125,6 +123,17 @@
 // 1. hide CTA image
 // 2. Display CTA text on a red band at the bottom of the masthead
 // 3. Banner tagline+credit will always sit above the red band CTA
+.cta-mobile-container {
+	display: none;
+
+	@media (orientation: portrait) {
+		display: block;
+		height: fit-content;
+		width: 100vw;
+		background-color: hsl(var(--clr-secondary-525));
+	}
+}
+
 .cta-mobile {
 	display: none;
 
@@ -135,7 +144,7 @@
 		grid-column-gap: 0px;
 		grid-row-gap: 0px;
 
-		color: hsl(var(--clr-neutral-100));
+		z-index: 1;
 
 		> img {
 			display: none;

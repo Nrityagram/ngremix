@@ -1,4 +1,4 @@
-<div id="cta-container">
+<div id="cta-desk-container">
     <div class="cta-desk" id="cta-desk-1"
        onclick="location.href='/summer-fun-for-kids';">
         <img src="https://res.cloudinary.com/nrityagram/image/upload/v1739448387/summer-fun-cta_v2i7bb.png"
@@ -60,10 +60,14 @@
             }
         });
 
+        function isLandscape() {
+            return window.matchMedia('(orientation: landscape)').matches;
+        }
+
         function show(index) {
             items.forEach(function (el, i) {
                 el.style.animation = 'none';
-                el.style.display = (i === index)
+                el.style.display = (i === index && isLandscape())
                     ? 'flex'
                     : 'none';
                 el.style.opacity = (i === index)

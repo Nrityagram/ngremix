@@ -1,5 +1,38 @@
 @use '../abstracts/' as *;
 
+#cta-dots {
+	position: absolute;
+	bottom: calc(5.7vh - 1.4rem);
+	right: 3vw;
+	width: 25vw;
+	display: flex;
+	justify-content: center;
+	gap: 6px;
+
+	opacity: 0;
+	animation: simpleFadeIn ease-out 3s forwards;
+	animation-delay: 1000ms;
+
+	@media (orientation: portrait) {
+		display: none;
+	}
+}
+
+.cta-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	border: 1.5px solid #fff;
+	background: transparent;
+	padding: 0;
+	cursor: pointer;
+	transition: background 0.2s ease;
+
+	&--active {
+		background: #fff;
+	}
+}
+
 .cta-desk {
 	cursor: pointer;
 	height: 18vh;

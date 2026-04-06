@@ -1,0 +1,576 @@
+// ============================================================
+// Dance Residency Application Form — SCSS
+// ============================================================
+// Matches the Nrityagram form design:
+// - Transparent background (inherits page background)
+// - Maroon heading and accents
+// - Clean, light input fields with subtle borders
+// - Pill-style radio buttons for Individual/Duo/Group
+// - Drag-and-drop file upload zone
+// - Custom checkbox styling
+// - Dark submit button with arrow
+// ============================================================
+
+// ── Variables ───────────────────────────────────────────────
+$color-accent: #be0000;
+$color-accent-dark: #8b0000;
+$color-text: #222;
+$color-text-secondary: #404040;
+$color-text-muted: #606060;
+$color-text-light: #888;
+$color-text-placeholder: #999;
+$color-border: #d0d0d0;
+$color-border-hover: #999;
+$color-bg-input: #fff;
+$color-bg-muted: #f7f5f2;
+$color-bg-accent-light: #fdf2f2;
+$color-bg-accent-hover: #fdf8f8;
+$color-success: #2d6a30;
+$color-success-bg: #edf7ed;
+$color-success-border: #c3e0c4;
+$color-error-bg: #fdf2f2;
+$color-error-border: #e8c6c6;
+$color-btn-dark: #222;
+$color-btn-dark-hover: #444;
+$color-pill-icon-bg: #eee;
+$color-checkbox-border: #bbb;
+
+$font-size-base: 1.22rem;
+$font-size-sm: 1.07rem;
+$font-size-xs: 0.78rem;
+$font-size-title: 1.8rem;
+$font-size-title-mobile: 1.5rem;
+
+$radius-sm: 3px;
+$radius-md: 4px;
+$radius-lg: 6px;
+
+$max-width-form: 720px;
+$input-width-half: 50%;
+$input-min-width: 250px;
+
+$transition-fast: 0.15s ease;
+$transition-base: 0.2s ease;
+
+// ── Section & Container ─────────────────────────────────────
+.residency-form-section {
+	background: transparent;
+	padding: 2.5rem 1.5rem 3rem;
+}
+
+.residency-form-container {
+	max-width: $max-width-form;
+	margin: 0 auto;
+
+	form {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: $radius-lg;
+		padding: 2rem 2.5rem;
+	}
+}
+
+// ── Title ───────────────────────────────────────────────────
+.residency-form-title {
+	font-family: inherit;
+	font-size: $font-size-title;
+	font-weight: 500;
+	font-style: italic;
+	color: $color-accent;
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+
+// ── Form Groups ─────────────────────────────────────────────
+.rf-group {
+	margin-bottom: 1.6rem;
+
+	> label {
+		display: block;
+		margin-bottom: 0.45rem;
+		font-size: $font-size-base;
+		font-weight: 400;
+		color: $color-text;
+		line-height: 1.5;
+	}
+}
+
+.rf-required {
+	color: $color-accent;
+	font-weight: 700;
+}
+
+// ── Text Inputs & Textareas ─────────────────────────────────
+.rf-group {
+	input[type='text'],
+	input[type='email'],
+	input[type='url'],
+	input[type='tel'],
+	input[type='number'] {
+		width: $input-width-half;
+		min-width: $input-min-width;
+		max-width: 100%;
+		padding: 0.55rem 0.7rem;
+		font-size: $font-size-sm;
+		font-family: inherit;
+		color: $color-text-secondary;
+		background: $color-bg-input;
+		border: 1px solid $color-border;
+		border-radius: $radius-md;
+		box-sizing: border-box;
+		transition: border-color $transition-base;
+
+		&:focus {
+			outline: none;
+			border-color: $color-accent;
+		}
+	}
+
+	textarea {
+		width: 100%;
+		padding: 0.65rem 0.8rem;
+		font-size: $font-size-sm;
+		font-family: inherit;
+		color: $color-text-secondary;
+		background: $color-bg-muted;
+		border: 1px solid $color-border;
+		border-radius: $radius-lg;
+		box-sizing: border-box;
+		resize: vertical;
+		transition: border-color $transition-base;
+
+		&:focus {
+			outline: none;
+			border-color: $color-accent;
+		}
+	}
+}
+
+// ── Pill Radio Buttons (Individual / Duo / Group) ───────────
+.rf-pill-options {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-top: 0.25rem;
+}
+
+.rf-pill {
+	display: inline-flex;
+	cursor: pointer;
+	margin: 0;
+
+	input[type='radio'] {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+
+		&:checked + .rf-pill-label {
+			border-color: $color-accent;
+			background: $color-bg-accent-light;
+
+			.rf-pill-icon {
+				background: $color-accent;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.rf-pill-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.4rem 0.85rem;
+	font-size: 0.9rem;
+	color: $color-text-secondary;
+	background: $color-bg-input;
+	border: 1px solid $color-border;
+	border-radius: $radius-md;
+	transition:
+		border-color $transition-fast,
+		background $transition-fast;
+	user-select: none;
+
+	&:hover {
+		border-color: $color-border-hover;
+	}
+}
+
+.rf-pill-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.3rem;
+	height: 1.3rem;
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: $color-text-muted;
+	background: $color-pill-icon-bg;
+	border-radius: $radius-sm;
+}
+
+// ── File Upload Zone ────────────────────────────────────────
+.rf-file-upload {
+	position: relative;
+	border: 1px solid $color-border;
+	border-radius: $radius-lg;
+	background: $color-bg-muted;
+	padding: 1.8rem 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	transition:
+		border-color $transition-base,
+		background $transition-base;
+
+	&:hover,
+	&.rf-dragover {
+		border-color: $color-accent;
+		background: $color-bg-accent-hover;
+	}
+
+	input[type='file'] {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		cursor: pointer;
+	}
+}
+
+.rf-file-upload-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25rem;
+	pointer-events: none;
+}
+
+.rf-upload-icon {
+	font-size: 1.3rem;
+	color: $color-text-light;
+	margin-bottom: 0.15rem;
+}
+
+.rf-upload-text {
+	font-size: 0.9rem;
+	color: $color-text-muted;
+}
+
+.rf-upload-meta {
+	font-size: $font-size-xs;
+	color: $color-text-placeholder;
+}
+
+.rf-file-chosen {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.6rem;
+	pointer-events: auto;
+}
+
+.rf-file-name {
+	font-size: 0.88rem;
+	color: $color-text-secondary;
+}
+
+.rf-file-remove {
+	background: none;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	width: 1.4rem;
+	height: 1.4rem;
+	font-size: 0.9rem;
+	line-height: 1;
+	color: $color-text-light;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+
+	&:hover {
+		color: $color-accent;
+		border-color: $color-accent;
+	}
+}
+
+// ── Checkboxes ──────────────────────────────────────────────
+.rf-checkbox-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-top: 0.25rem;
+}
+
+.rf-checkbox {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+	cursor: pointer;
+	font-size: $font-size-sm;
+	color: $color-text-secondary;
+	line-height: 1.4;
+
+	input[type='checkbox'] {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+
+		&:checked + .rf-checkbox-mark {
+			background: $color-accent;
+			border-color: $color-accent;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 1px;
+				left: 4px;
+				width: 4px;
+				height: 8px;
+				border: solid #fff;
+				border-width: 0 2px 2px 0;
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	&:hover .rf-checkbox-mark {
+		border-color: $color-text-light;
+	}
+}
+
+.rf-checkbox-mark {
+	display: inline-block;
+	flex-shrink: 0;
+	width: 1.05rem;
+	height: 1.05rem;
+	border: 1.5px solid $color-checkbox-border;
+	border-radius: $radius-sm;
+	background: $color-bg-input;
+	margin-top: 0.15rem;
+	transition:
+		border-color $transition-fast,
+		background $transition-fast;
+	position: relative;
+}
+
+.rf-checkbox-label {
+	flex: 1;
+	font-size: 0.9rem;
+}
+
+// ── Radio Buttons ───────────────────────────────────────────
+.rf-radio-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-top: 0.25rem;
+}
+
+.rf-radio {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+	font-size: $font-size-sm;
+	color: $color-text-secondary;
+	line-height: 1.4;
+
+	input[type='radio'] {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+
+		&:checked + .rf-radio-mark {
+			border-color: $color-accent;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 0.45rem;
+				height: 0.45rem;
+				border-radius: 50%;
+				background: $color-accent;
+			}
+		}
+	}
+
+	&:hover .rf-radio-mark {
+		border-color: $color-text-light;
+	}
+}
+
+.rf-radio-mark {
+	display: inline-block;
+	flex-shrink: 0;
+	width: 1.05rem;
+	height: 1.05rem;
+	border: 1.5px solid $color-checkbox-border;
+	border-radius: 50%;
+	background: $color-bg-input;
+	vertical-align: middle;
+	transition:
+		border-color $transition-fast,
+		background $transition-fast;
+	position: relative;
+}
+
+.rf-radio-label {
+	flex: 1;
+	font-size: 0.9rem;
+}
+
+// ── Submit Button ───────────────────────────────────────────
+.rf-submit-row {
+	margin-top: 2rem;
+}
+
+.rf-submit-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.6rem 1.4rem;
+	font-size: $font-size-sm;
+	font-family: var(--ff-sans);
+	// font-weight: 500;
+	color: #fff;
+	background: $color-accent;
+	border: none;
+	border-radius: $radius-md;
+	cursor: pointer;
+	transition: background $transition-base;
+
+	&:hover {
+		background: $color-accent-dark;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+.rf-submit-arrow {
+	font-size: 1rem;
+}
+
+// ── Status Messages ─────────────────────────────────────────
+.rf-status {
+	margin-top: 1rem;
+	font-size: $font-size-sm;
+	line-height: 1.6;
+}
+
+.rf-success {
+	color: $color-success;
+	padding: 0.85rem 1rem;
+	background: $color-success-bg;
+	border: 1px solid $color-success-border;
+	border-radius: $radius-md;
+}
+
+.rf-error {
+	color: $color-accent;
+	padding: 0.85rem 1rem;
+	background: $color-error-bg;
+	border: 1px solid $color-error-border;
+	border-radius: $radius-md;
+}
+
+// ── Responsive ──────────────────────────────────────────────
+@media (max-width: 600px) {
+	.residency-form-section {
+		padding: 1.5rem 1rem 2.5rem;
+	}
+
+	.residency-form-title {
+		font-size: $font-size-title-mobile;
+	}
+
+	.rf-group {
+		input[type='text'],
+		input[type='email'],
+		input[type='url'] {
+			width: 100%;
+		}
+	}
+
+	.rf-submit-btn {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+// ── FAQ Accordion ────────────────────────────────────────────
+.residency-faq {
+	margin-top: 2rem;
+}
+
+.residency-faq__item {
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.residency-faq__question {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 1.1rem 0;
+	font-family: inherit;
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: $color-text;
+	background: transparent;
+	cursor: pointer;
+	list-style: none;
+	user-select: none;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+}
+
+.residency-faq__chevron {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 1px solid $color-text-secondary;
+	border-radius: 50%;
+	color: $color-text-muted;
+	transition:
+		border-color $transition-base,
+		color $transition-base;
+
+	&::before {
+		content: '+';
+		font-size: 1.25rem;
+		// font-weight: 300;
+		// line-height: 1;
+		font-family: var(--ff-sans);
+	}
+}
+
+details[open] .residency-faq__chevron {
+	border-color: $color-text;
+	color: $color-text;
+
+	&::before {
+		content: '\00D7';
+	}
+}
+
+.residency-faq__answer {
+	padding: 0 2.85rem 1.1rem 0;
+	font-family: inherit;
+	font-size: $font-size-base;
+	color: $color-text-secondary;
+	line-height: 1.8;
+}

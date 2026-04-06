@@ -135,19 +135,44 @@
 	}
 }
 
+.cta-mobile-progress {
+	display: none;
+
+	@media (orientation: portrait) {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1px;
+		width: 0%;
+		background: rgba(240, 240, 240, 0.5);
+		z-index: 3;
+		animation: ctaMobileProgress 5s linear forwards;
+	}
+}
+
+@keyframes ctaMobileProgress {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+
 .cta-mobile-dots {
 	display: none;
 
 	@media (orientation: portrait) {
-		display: flex;
+		display: none;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: 5px;
+		gap: 7px;
 		position: absolute;
 		left: 3%;
-		top: 0;
-		bottom: 0;
+		top: 15%;
+		z-index: 2;
 	}
 }
 
@@ -155,13 +180,13 @@
 	width: 9px;
 	height: 9px;
 	border-radius: 50%;
-	border: 1.5px solid #fff;
+	border: 1px solid rgba(240, 240, 240, 0.5);
 	background: transparent;
 	display: block;
 	flex-shrink: 0;
 
 	&--active {
-		background: #fff;
+		background: rgba(240, 240, 240, 0.5);
 	}
 }
 

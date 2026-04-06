@@ -132,6 +132,32 @@
 		height: fit-content;
 		width: 100vw;
 		background-color: hsl(var(--clr-secondary-525));
+		padding-top: 8px;
+	}
+}
+
+.cta-mobile-progress {
+	display: none;
+
+	@media (orientation: portrait) {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1.5px;
+		width: 0%;
+		background: rgba(240, 240, 240, 0.25);
+		z-index: 3;
+		animation: ctaMobileProgress 7.5s linear forwards;
+	}
+}
+
+@keyframes ctaMobileProgress {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
 	}
 }
 
@@ -139,7 +165,7 @@
 	display: none;
 
 	@media (orientation: portrait) {
-		display: flex;
+		display: none;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -155,13 +181,13 @@
 	width: 9px;
 	height: 9px;
 	border-radius: 50%;
-	border: 1px solid #f0f0f0;
+	border: 1px solid rgba(240, 240, 240, 0.5);
 	background: transparent;
 	display: block;
 	flex-shrink: 0;
 
 	&--active {
-		background: #f0f0f0;
+		background: rgba(240, 240, 240, 0.5);
 	}
 }
 

@@ -11,6 +11,8 @@
 // - Dark submit button with arrow
 // ============================================================
 
+@use '../abstracts/' as *;
+
 // ── Variables ───────────────────────────────────────────────
 $color-accent: #be0000;
 $color-accent-dark: #8b0000;
@@ -92,6 +94,10 @@ $transition-base: 0.2s ease;
 		font-weight: 400;
 		color: $color-text;
 		line-height: 1.5;
+		.desc {
+			font-family: var(--ff-sans);
+			font-size: var(--fs-250);
+		}
 	}
 }
 
@@ -569,8 +575,8 @@ details[open] .residency-faq__chevron {
 
 .residency-faq__answer {
 	padding: 0 2.85rem 1.1rem 0;
-	font-family: inherit;
-	font-size: $font-size-base;
+	font-family: var(--ff-sans);
+	font-size: var(--fs-400);
 	color: $color-text-secondary;
 	line-height: 1.8;
 }

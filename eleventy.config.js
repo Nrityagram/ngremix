@@ -49,6 +49,8 @@ module.exports = function (eleventyConfig) {
 	// Shortcodes
 	// Usage: {% year %}
 	eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+	// Usage: {{ 1990 | yearsSince }}
+	eleventyConfig.addFilter("yearsSince", (startYear) => new Date().getFullYear() - startYear);
 
 	// Filters
 	// {{ page.date | readableDate }}

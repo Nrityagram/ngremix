@@ -30,6 +30,13 @@
         object-fit: cover;
     }
 
+    &.portrait {
+        @include mq(medium) {
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
+
     &.shrink-desk {
         @include mq(medium) {
             width: 75%;

@@ -1,12 +1,98 @@
-<div class="cta-desk"
-       onclick="location.href='/summer-fun-for-kids';">
-    <img src="https://res.cloudinary.com/nrityagram/image/upload/v1739448387/summer-fun-cta_v2i7bb.png"
-         alt="Summer Fun for Kids 2026 picture"
+<div id="cta-desk-container">
+	<div class="cta-desk" id="cta-desk-1" onclick="location.href = '/summer-workshop'">
+		<img
+			src="https://res.cloudinary.com/nrityagram/image/upload/q_auto/f_auto/v1743082932/summer-workshop-cta_asluao.png"
+			alt="Summer Workshop 2026 picture"
+			width="200"
+			loading="lazy"
+		/>
+		<div class="cta-textbox">
+			<div class="cta-line-lrg">Summer Workshop</div>
+			<div class="cta-line-sml">30 June - 11 July 2026</div>
+			<div class="cta-line-sml">Application Deadline: April 30</div>
+		</div>
+	</div>
+	<div class="cta-desk" id="cta-desk-2" onclick="location.href = '/summer-fun-for-kids'">
+		<img
+			src="https://res.cloudinary.com/nrityagram/image/upload/v1739448387/summer-fun-cta_v2i7bb.png"
+			alt="Summer Fun for Kids 2026 picture"
+			width="200"
+			loading="lazy"
+		/>
+		<div class="cta-textbox">
+			<div class="cta-line-lrg">Summer Fun for Kids</div>
+			<div class="cta-line-sml">28 April - 3 May 2026</div>
+			<div class="cta-line-sml">Registrations Open</div>
+		</div>
+	</div>
+
+	<!-- <div class="cta-desk" id="cta-desk-3"
+       onclick="location.href='/dance-residency';">
+        <img src="https://res.cloudinary.com/nrityagram/image/upload/v1728724534/three-women_fawijr.jpg"
+         alt="Dance Residency 2026 picture"
          width="200"
          loading="lazy">
-    <div class="cta-textbox">
-        <div class="cta-line-lrg">Summer Fun for Kids</div>
-        <div class="cta-line-sml">28 April - 3 May 2026</div>
-        <div class="cta-line-sml">Registrations Open</div>
-    </div>
+        <div class="cta-textbox">
+            <div class="cta-line-lrg">Fully-funded Dance Residency</div>
+            <div class="cta-line-sml">Deadline: 15 May 2026</div>
+            <div class="cta-line-sml">Applications Open</div>
+        </div>
+    </div> -->
+	<div id="cta-dots"></div>
 </div>
+
+<script>
+	(function () {
+		var items = Array.from(document.querySelectorAll('.cta-desk'));
+		if (items.length <= 1) return;
+
+		var current = 0;
+		var displayDuration = 5000; // ms each CTA stays visible
+
+		// Build dots
+		var dotsContainer = document.getElementById('cta-dots');
+		items.forEach(function (_, i) {
+			var dot = document.createElement('button');
+			dot.className = 'cta-dot' + (i === 0 ? ' cta-dot--active' : '');
+			dot.setAttribute('aria-label', 'Go to announcement ' + (i + 1));
+			dot.addEventListener('click', function () {
+				show(i);
+			});
+			dotsContainer.appendChild(dot);
+		});
+
+		// Hide all CTAs except the first; disable their entry animation
+		items.forEach(function (el, i) {
+			if (i !== 0) {
+				el.style.animation = 'none';
+				el.style.display = 'none';
+			}
+		});
+
+		function isLandscape() {
+			return window.matchMedia('(orientation: landscape)').matches;
+		}
+
+		function show(index) {
+			items.forEach(function (el, i) {
+				el.style.animation = 'none';
+				el.style.display = i === index && isLandscape() ? 'flex' : 'none';
+				el.style.opacity = i === index ? '1' : '0';
+			});
+			var dots = dotsContainer.querySelectorAll('.cta-dot');
+			dots.forEach(function (dot, i) {
+				dot.classList.toggle('cta-dot--active', i === index);
+			});
+			current = index;
+		}
+
+		function advance() {
+			show((current + 1) % items.length);
+			setTimeout(advance, displayDuration);
+		}
+
+		// Wait for the initial fade-in animation to finish, then start cycling
+		var initialAnimDuration = 4000; // matches 1s delay + 3s animation
+		setTimeout(advance, initialAnimDuration + displayDuration);
+	})();
+</script>

@@ -6,18 +6,18 @@
         <div class="cta-line-lrg">
             <span class="whitetext">Summer Workshop</span>
         </div>
-        <div class="cta-line-sml">30 June - 11 July 2026 • Application Deadline: April 30</div>
+        <div class="cta-line-sml">30 June - 11 July 2026 • Application Deadline: May 3</div>
         <div class="cta-arrow"><img src="/img/cta-arrow-circle-right.svg" alt=""></div>
     </div>
 
-    <div class="cta-mobile"
+    <!-- <div class="cta-mobile"
              onclick="location.href='/summer-fun-for-kids';">
         <div class="cta-line-lrg">
             <span class="whitetext">Summer Fun for Kids</span>
         </div>
         <div class="cta-line-sml">28 April - 3 May 2026 • Registrations Open</div>
         <div class="cta-arrow"><img src="/img/cta-arrow-circle-right.svg" alt=""></div>
-    </div>
+    </div> -->
 
     <!-- <div class="cta-mobile"
              onclick="location.href='/dance-residency';">
@@ -36,8 +36,13 @@
     (function () {
         var container = document.currentScript.previousElementSibling;
         var items = Array.from(container.querySelectorAll('.cta-mobile'));
-        if (items.length <= 1) 
+        if (items.length <= 1) {
+            if (items.length === 1) {
+                var progressEl = container.querySelector('.cta-mobile-progress');
+                progressEl.style.display = 'none';
+            }
             return;
+        }
         
         var current = 0;
         var displayDuration = 7500;

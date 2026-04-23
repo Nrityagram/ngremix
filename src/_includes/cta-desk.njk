@@ -12,7 +12,7 @@
 			<div class="cta-line-sml">Application Deadline: May 3</div>
 		</div>
 	</div>
-	<div class="cta-desk" id="cta-desk-2" onclick="location.href = '/summer-fun-for-kids'">
+	<!-- <div class="cta-desk" id="cta-desk-2" onclick="location.href = '/summer-fun-for-kids'">
 		<img
 			src="https://res.cloudinary.com/nrityagram/image/upload/v1739448387/summer-fun-cta_v2i7bb.png"
 			alt="Summer Fun for Kids 2026 picture"
@@ -24,7 +24,7 @@
 			<div class="cta-line-sml">28 April - 3 May 2026</div>
 			<div class="cta-line-sml">Registrations Open</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- <div class="cta-desk" id="cta-desk-3"
        onclick="location.href='/dance-residency';">
@@ -44,7 +44,13 @@
 <script>
 	(function () {
 		var items = Array.from(document.querySelectorAll('.cta-desk'));
-		if (items.length <= 1) return;
+		if (items.length <= 1) {
+			if (items.length === 1) {
+				items[0].style.animation = 'none';
+				items[0].style.opacity = '1';
+			}
+			return;
+		}
 
 		var current = 0;
 		var displayDuration = 5000; // ms each CTA stays visible

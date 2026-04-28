@@ -10,6 +10,7 @@ nobanner: true
   <div class="wrapper flow">
     <h4 class="center">Application Form</h4>
     <h2 class="center">Vihāra: Living the Dance at Nrityagram</h2>
+    <p class="center" style="font-family: var(--ff-sans); font-size: var(--fs-250);">Fields marked with <span class="rf-required">•</span> are required.</p>
     <section class="residency-form-section" id="apply">
       <div class="residency-form-container">
 
@@ -213,19 +214,8 @@ nobanner: true
 
           <!-- Availability between 1 Aug - 30 Sept 2026 -->
           <div class="rf-group">
-            <label>10. Availability between 1 Aug - 30 Sept 2026: <span class="rf-required">•</span></label>
-            <div class="rf-radio-group">
-              <label class="rf-radio">
-                <input type="radio" name="availability" value="Yes" required>
-                <span class="rf-radio-mark"></span>
-                <span class="rf-radio-label">Yes</span>
-              </label>
-              <label class="rf-radio">
-                <input type="radio" name="availability" value="No">
-                <span class="rf-radio-mark"></span>
-                <span class="rf-radio-label">No</span>
-              </label>
-            </div>
+            <label for="rf-availability">10. Your availability between 1 Aug - 30 Sept 2026: <span class="rf-required">•</span></label>
+            <input type="text" id="rf-availability" name="availability" required>
           </div>
 
           <br />
@@ -552,10 +542,7 @@ nobanner: true
             payload.accommodation = accRadio
               ? accRadio.value
               : "";
-            var availRadio = form.querySelector('input[name="availability"]:checked');
-            payload.availability = availRadio
-              ? availRadio.value
-              : "";
+            payload.availability = form.availability.value;
 
             // Section 6: Closing
             payload.extraInfo = form.extraInfo.value;

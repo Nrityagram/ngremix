@@ -8,228 +8,227 @@ nobanner: true
 ---
 <div class="container">
   <div class="wrapper flow">
-    <h4 class="center">Application Form</h4>
     <h2 class="center">Vihāra: Living the Dance at Nrityagram</h2>
+    <h4 class="center">Application Form</h4>
     <p class="center" style="font-family: var(--ff-sans); font-size: var(--fs-250);">Fields marked with <span class="rf-required">•</span> are required.</p>
     <section class="residency-form-section" id="apply">
       <div class="residency-form-container">
 
         <form id="residencyForm" novalidate>
 
-          <h3>Section 1: Basic Information</h3>
-          <br />
-          <!-- Name -->
-          <div class="rf-group">
-            <label for="rf-name">Name <span class="rf-required">•</span></label>
-            <input type="text" id="rf-name" name="name" required>
-          </div>
+          <!-- ── Section 1: Basic Information ── -->
+          <div class="rf-section">
+            <h3>Basic Information</h3>
 
-          <!-- Age -->
-          <div class="rf-group">
-            <label for="rf-age">Age <span class="rf-required">•</span></label>
-            <input type="number" id="rf-age" name="age" required>
-          </div>
-
-          <!-- City / Country of Residence -->
-          <div class="rf-group">
-            <label for="rf-city">City / Country of Residence <span class="rf-required">•</span></label>
-            <input type="text" id="rf-city" name="city" required>
-          </div>
-
-          <!-- Primary Dance Form -->
-          <div class="rf-group">
-            <label for="rf-dance-form">Primary Dance Form <span class="rf-required">•</span></label>
-            <input type="text" id="rf-dance-form" name="danceForm" required>
-          </div>
-
-          <!-- Years of Training -->
-          <div class="rf-group">
-            <label for="rf-years-of-training">Years of Training <span class="rf-required">•</span></label>
-            <input type="number" id="rf-years-of-training" name="yearsOfTraining" required>
-          </div>
-
-          <!-- Current Occupation / Primary Engagement (dance-related or otherwise) -->
-          <div class="rf-group">
-            <label for="rf-current-occupation">Current Occupation / Primary Engagement (dance-related or otherwise)</label>
-            <input type="text" id="rf-current-occupation" name="currentOccupation">
-          </div>
-
-          <!-- Email -->
-          <div class="rf-group">
-            <label for="rf-email">Email <span class="rf-required">•</span></label>
-            <input type="email" id="rf-email" name="email" required>
-          </div>
-
-          <!-- Phone Number -->
-          <div class="rf-group">
-            <label for="rf-phone">Phone Number <span class="rf-required">•</span></label>
-            <div class="rf-phone-row">
-              <select id="rf-countryCode" name="countryCode" aria-label="Country code">
-                <option value="+91">India +91</option>
-                <option value="+1">USA +1</option>
-                <option value="+44">UK +44</option>
-                <option value="+61">Australia +61</option>
-                <option value="+64">New Zealand +64</option>
-                <option value="+1-CA">Canada +1</option>
-                <option value="+92">Pakistan +92</option>
-                <option value="+880">Bangladesh +880</option>
-                <option value="+94">Sri Lanka +94</option>
-                <option value="+977">Nepal +977</option>
-                <option value="+33">France +33</option>
-                <option value="+49">Germany +49</option>
-                <option value="+39">Italy +39</option>
-                <option value="+34">Spain +34</option>
-                <option value="+31">Netherlands +31</option>
-                <option value="+41">Switzerland +41</option>
-                <option value="+46">Sweden +46</option>
-                <option value="+47">Norway +47</option>
-                <option value="+45">Denmark +45</option>
-                <option value="+358">Finland +358</option>
-                <option value="+7">Russia +7</option>
-                <option value="+81">Japan +81</option>
-                <option value="+82">South Korea +82</option>
-                <option value="+86">China +86</option>
-                <option value="+65">Singapore +65</option>
-                <option value="+60">Malaysia +60</option>
-                <option value="+66">Thailand +66</option>
-                <option value="+62">Indonesia +62</option>
-                <option value="+971">UAE +971</option>
-                <option value="+966">Saudi Arabia +966</option>
-                <option value="+27">South Africa +27</option>
-                <option value="+55">Brazil +55</option>
-                <option value="+52">Mexico +52</option>
-              </select>
-              <input type="tel" id="rf-phone" name="phone" placeholder="Phone number" required>
+            <!-- Name -->
+            <div class="rf-group">
+              <label for="rf-name">Name <span class="rf-required">•</span></label>
+              <input type="text" id="rf-name" name="name" required>
             </div>
-          </div>
 
-          <br />
+            <!-- Age -->
+            <div class="rf-group">
+              <label for="rf-age">Age <span class="rf-required">•</span></label>
+              <input type="number" id="rf-age" name="age" required>
+            </div>
 
-          <h3>Section 2: Practice</h3>
-          <br />
+            <!-- City / Country of Residence -->
+            <div class="rf-group">
+              <label for="rf-city">City / Country of Residence <span class="rf-required">•</span></label>
+              <input type="text" id="rf-city" name="city" required>
+            </div>
 
-          <!-- Current Relationship to Dance -->
-          <div class="rf-group">
-            <label for="rf-relationship">1. How would you describe your current relationship to your dance? <br />
-              <span class="desc">You may respond in any form that feels natural. We are interested in an honest reflection.</span></label>
+            <!-- Primary Dance Form -->
+            <div class="rf-group">
+              <label for="rf-dance-form">Primary Dance Form <span class="rf-required">•</span></label>
+              <input type="text" id="rf-dance-form" name="danceForm" required>
+            </div>
 
-            <textarea id="rf-relationship" name="relationship" rows="4" data-word-limit="200"></textarea>
-            <span class="rf-word-count">0 / 200 words</span>
-          </div>
+            <!-- Years of Training -->
+            <div class="rf-group">
+              <label for="rf-years-of-training">Years of Training <span class="rf-required">•</span></label>
+              <input type="number" id="rf-years-of-training" name="yearsOfTraining" required>
+            </div>
 
-          <!-- Why are you applying -->
-          <div class="rf-group">
-            <label for="rf-applyreason">2. What brings you to apply for this residency at this point in time?</label>
-            <textarea id="rf-applyreason" name="applyReason" rows="4" data-word-limit="200"></textarea>
-            <span class="rf-word-count">0 / 200 words</span>
-          </div>
+            <!-- Current Occupation -->
+            <div class="rf-group">
+              <label for="rf-current-occupation">Current Occupation / Primary Engagement (dance-related or otherwise) <span class="rf-required">•</span></label>
+              <input type="text" id="rf-current-occupation" name="currentOccupation" required>
+            </div>
 
-          <!-- How will you use this time -->
-          <div class="rf-group">
-            <label for="rf-timeuse">3. How will you use this time to advance your artistic practice?
-              <br />
-              <span class="desc">This may remain open, tentative, or specific. You might find yourself returning to something, following a question, or continuing a line of practice.</span>
-            </label>
-            <textarea id="rf-timeuse" name="timeuse" rows="4" data-word-limit="200"></textarea>
-            <span class="rf-word-count">0 / 200 words</span>
-          </div>
+            <!-- Email -->
+            <div class="rf-group">
+              <label for="rf-email">Email <span class="rf-required">•</span></label>
+              <input type="email" id="rf-email" name="email" required>
+            </div>
 
-          <br />
-
-          <h3>Section 3: Working in a Self-Directed Way</h3>
-
-          <br />
-
-          <!-- Working in self-directed way -->
-          <div class="rf-group">
-            <label for="rf-selfdirected">4. This residency is self-directed. How do you relate to working in this way?</label>
-            <textarea id="rf-selfdirected" name="selfDirected" rows="4" data-word-limit="150"></textarea>
-            <span class="rf-word-count">0 / 150 words</span>
-          </div>
-
-          <!-- Supports or conditions that allow deepening of practice -->
-          <div class="rf-group">
-            <label for="rf-supports">5. What supports or conditions allow your practice to deepen?</label>
-            <textarea id="rf-supports" name="supports" rows="4" data-word-limit="150"></textarea>
-            <span class="rf-word-count">0 / 150 words</span>
-          </div>
-
-          <br />
-          <h3>Section 4: Background</h3>
-          <br />
-
-          <!-- Artiste Bio -->
-          <div class="rf-group">
-            <label for="rf-bio">6. Briefly outline your training and journey in dance. <span class="rf-required">•</span></label>
-            <textarea id="rf-bio" name="artisteBio" required rows="5" data-word-limit="300" required></textarea>
-            <span class="rf-word-count">0 / 300 words</span>
-          </div>
-
-          <!-- Resume Upload -->
-          <div class="rf-group">
-            <label for="rf-resume">7. Resume <span class="rf-required">•</span></label>
-            <div class="rf-file-upload" id="rfDropZone">
-              <input type="file" id="rf-resume" name="resume" accept=".pdf,application/pdf" required>
-              <div class="rf-file-upload-content">
-                <span class="rf-upload-icon">&#8682;</span>
-                <span class="rf-upload-text">Click to choose a file or drag here</span>
-                <span class="rf-upload-meta">Accepts .pdf files</span>
-                <span class="rf-upload-meta">Size limit: 10 MB</span>
-              </div>
-              <div class="rf-file-chosen" id="rfFileChosen" style="display:none;">
-                <span class="rf-file-name" id="rfFileName"></span>
-                <button type="button" class="rf-file-remove" id="rfFileRemove">&times;</button>
+            <!-- Phone Number -->
+            <div class="rf-group">
+              <label for="rf-phone">Phone Number <span class="rf-required">•</span></label>
+              <div class="rf-phone-row">
+                <select id="rf-countryCode" name="countryCode" aria-label="Country code">
+                  <option value="+91">India +91</option>
+                  <option value="+1">USA +1</option>
+                  <option value="+44">UK +44</option>
+                  <option value="+61">Australia +61</option>
+                  <option value="+64">New Zealand +64</option>
+                  <option value="+1-CA">Canada +1</option>
+                  <option value="+92">Pakistan +92</option>
+                  <option value="+880">Bangladesh +880</option>
+                  <option value="+94">Sri Lanka +94</option>
+                  <option value="+977">Nepal +977</option>
+                  <option value="+33">France +33</option>
+                  <option value="+49">Germany +49</option>
+                  <option value="+39">Italy +39</option>
+                  <option value="+34">Spain +34</option>
+                  <option value="+31">Netherlands +31</option>
+                  <option value="+41">Switzerland +41</option>
+                  <option value="+46">Sweden +46</option>
+                  <option value="+47">Norway +47</option>
+                  <option value="+45">Denmark +45</option>
+                  <option value="+358">Finland +358</option>
+                  <option value="+7">Russia +7</option>
+                  <option value="+81">Japan +81</option>
+                  <option value="+82">South Korea +82</option>
+                  <option value="+86">China +86</option>
+                  <option value="+65">Singapore +65</option>
+                  <option value="+60">Malaysia +60</option>
+                  <option value="+66">Thailand +66</option>
+                  <option value="+62">Indonesia +62</option>
+                  <option value="+971">UAE +971</option>
+                  <option value="+966">Saudi Arabia +966</option>
+                  <option value="+27">South Africa +27</option>
+                  <option value="+55">Brazil +55</option>
+                  <option value="+52">Mexico +52</option>
+                </select>
+                <input type="tel" id="rf-phone" name="phone" placeholder="Phone number" required>
               </div>
             </div>
           </div>
 
-          <!-- Work Samples -->
-          <div class="rf-group">
-            <label for="rf-samples">8. Share a link of your work (GDrive, Dropbox, YouTube, Vimeo, etc.) <span class="rf-required">•</span><br />
-              <span class="desc">A clear recording of you dancing. This may be from practice or informal work.</span>
-            </label>
-            <input type="url" id="rf-samples" name="workSamples" required>
-          </div>
+          <!-- ── Section 2: Practice ── -->
+          <div class="rf-section rf-section--accent">
+            <h3>Practice</h3>
 
-          <br />
-          <h3>Section 5: Practical Details</h3>
-          <br />
+            <!-- Current Relationship to Dance -->
+            <div class="rf-group">
+              <label for="rf-relationship">1. How would you describe your current relationship to your dance? <span class="rf-required">•</span><br />
+                <span class="desc">You may respond in any form that feels natural. We are interested in an honest reflection.</span></label>
+              <textarea id="rf-relationship" name="relationship" rows="4" data-word-limit="200" required></textarea>
+              <span class="rf-word-count">0 / 200 words</span>
+            </div>
 
-          <!-- Preferred residency format -->
-          <div class="rf-group">
-            <label for="rf-accommodation">9. Preferred residency format: <span class="rf-required">•</span></label>
-            <div class="rf-radio-group">
-              <label class="rf-radio">
-                <input type="radio" name="accommodation" value="4weeks" required>
-                <span class="rf-radio-mark"></span>
-                <span class="rf-radio-label">One continuous 4-week period</span>
+            <!-- Why are you applying -->
+            <div class="rf-group">
+              <label for="rf-applyreason">2. What brings you to apply for this residency at this point in time? <span class="rf-required">•</span></label>
+              <textarea id="rf-applyreason" name="applyReason" rows="4" data-word-limit="200" required></textarea>
+              <span class="rf-word-count">0 / 200 words</span>
+            </div>
+
+            <!-- How will you use this time -->
+            <div class="rf-group">
+              <label for="rf-timeuse">3. How will you use this time to advance your artistic practice? <span class="rf-required">•</span>
+                <br />
+                <span class="desc">This may remain open, tentative, or specific. You might find yourself returning to something, following a question, or continuing a line of practice.</span>
               </label>
-              <label class="rf-radio">
-                <input type="radio" name="accommodation" value="2weekblocks" required>
-                <span class="rf-radio-mark"></span>
-                <span class="rf-radio-label">Two blocks of 2 weeks</span>
-              </label>
+              <textarea id="rf-timeuse" name="timeuse" rows="4" data-word-limit="200" required></textarea>
+              <span class="rf-word-count">0 / 200 words</span>
             </div>
           </div>
 
-          <!-- Availability between 1 Aug - 30 Sept 2026 -->
-          <div class="rf-group">
-            <label for="rf-availability">10. Your availability between 1 Aug - 30 Sept 2026: <span class="rf-required">•</span></label>
-            <input type="text" id="rf-availability" name="availability" required>
+          <!-- ── Section 3: Working in a Self-Directed Way ── -->
+          <div class="rf-section">
+            <h3>Working in a Self-Directed Way</h3>
+
+            <!-- Working in self-directed way -->
+            <div class="rf-group">
+              <label for="rf-selfdirected">4. This residency is self-directed. How do you relate to working in this way? <span class="rf-required">•</span></label>
+              <textarea id="rf-selfdirected" name="selfDirected" rows="4" data-word-limit="150" required></textarea>
+              <span class="rf-word-count">0 / 150 words</span>
+            </div>
+
+            <!-- Supports or conditions -->
+            <div class="rf-group">
+              <label for="rf-supports">5. What supports or conditions allow your practice to deepen? <span class="rf-required">•</span></label>
+              <textarea id="rf-supports" name="supports" rows="4" data-word-limit="150" required></textarea>
+              <span class="rf-word-count">0 / 150 words</span>
+            </div>
           </div>
 
-          <br />
-          <h3>Section 6: Closing</h3>
-          <br />
+          <!-- ── Section 4: Background ── -->
+          <div class="rf-section rf-section--accent">
+            <h3>Background</h3>
 
-          <!-- Additional Information -->
-          <div class="rf-group">
-            <label for="rf-extrainfo">11. Is there anything else you would like us to know?</label>
-            <textarea id="rf-extrainfo" name="extraInfo" rows="4"></textarea>
+            <!-- Artiste Bio -->
+            <div class="rf-group">
+              <label for="rf-bio">6. Briefly outline your training and journey in dance. <span class="rf-required">•</span></label>
+              <textarea id="rf-bio" name="artisteBio" required rows="5" data-word-limit="300"></textarea>
+              <span class="rf-word-count">0 / 300 words</span>
+            </div>
+
+            <!-- Resume Upload -->
+            <div class="rf-group">
+              <label for="rf-resume">7. Resume <span class="rf-required">•</span></label>
+              <div class="rf-file-upload" id="rfDropZone">
+                <input type="file" id="rf-resume" name="resume" accept=".pdf,application/pdf" required>
+                <div class="rf-file-upload-content">
+                  <span class="rf-upload-icon">&#8682;</span>
+                  <span class="rf-upload-text">Click to choose a file or drag here</span>
+                  <span class="rf-upload-meta">Accepts .pdf files</span>
+                  <span class="rf-upload-meta">Size limit: 10 MB</span>
+                </div>
+                <div class="rf-file-chosen" id="rfFileChosen" style="display:none;">
+                  <span class="rf-file-name" id="rfFileName"></span>
+                  <button type="button" class="rf-file-remove" id="rfFileRemove">&times;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Work Samples -->
+            <div class="rf-group">
+              <label for="rf-samples">8. Share a link of your work (GDrive, Dropbox, YouTube, Vimeo, etc.) <span class="rf-required">•</span><br />
+                <span class="desc">A clear recording of you dancing. This may be from practice or informal work.</span>
+              </label>
+              <input type="url" id="rf-samples" name="workSamples" required>
+            </div>
+          </div>
+
+          <!-- ── Section 5: Practical Details ── -->
+          <div class="rf-section">
+            <h3>Practical Details</h3>
+
+            <!-- Preferred residency format -->
+            <div class="rf-group">
+              <label for="rf-accommodation">9. Preferred residency format: <span class="rf-required">•</span></label>
+              <div class="rf-radio-group">
+                <label class="rf-radio">
+                  <input type="radio" name="accommodation" value="4weeks" required>
+                  <span class="rf-radio-mark"></span>
+                  <span class="rf-radio-label">One continuous 4-week period</span>
+                </label>
+                <label class="rf-radio">
+                  <input type="radio" name="accommodation" value="2weekblocks" required>
+                  <span class="rf-radio-mark"></span>
+                  <span class="rf-radio-label">Two blocks of 2 weeks</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Availability -->
+            <div class="rf-group">
+              <label for="rf-availability">10. Your availability between 1 Aug - 30 Sept 2026: <span class="rf-required">•</span></label>
+              <input type="text" id="rf-availability" name="availability" required>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="rf-group">
+              <label for="rf-extrainfo">11. Is there anything else you would like us to know?</label>
+              <textarea id="rf-extrainfo" name="extraInfo" rows="4"></textarea>
+            </div>
           </div>
 
           <!-- Submit -->
-          <div class="rf-group rf-submit-row">
+          <div class="rf-group rf-submit-row" style="margin-top: 1rem">
             <button type="submit" id="rfSubmitBtn" class="rf-submit-btn">
                 SUBMIT
               </button>

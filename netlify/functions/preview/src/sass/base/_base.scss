@@ -13,7 +13,7 @@ body {
 	font-size: var(--fs-450);
 	color: var(--_body-text-color);
 
-	hyphens: auto;
+	// hyphens: auto;
 
 	@include mqmax(medium) {
 		font-size: var(--fs-510);

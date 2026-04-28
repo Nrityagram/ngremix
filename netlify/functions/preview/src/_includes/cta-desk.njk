@@ -5,7 +5,7 @@
 			alt="Summer Workshop 2026 picture"
 			width="200"
 			loading="lazy"
-		/>
+		 />
 		<div class="cta-textbox">
 			<div class="cta-line-lrg">Summer Workshop</div>
 			<div class="cta-line-sml">30 June - 11 July 2026</div>
@@ -26,18 +26,17 @@
 		</div>
 	</div> -->
 
-	<!-- <div class="cta-desk" id="cta-desk-3"
+	<div class="cta-desk" id="cta-desk-2"
        onclick="location.href='/dance-residency';">
-        <img src="https://res.cloudinary.com/nrityagram/image/upload/v1728724534/three-women_fawijr.jpg"
+		<img src="https://res.cloudinary.com/nrityagram/image/upload/v1777364290/dance-residency-cta_lm1e1c.png"
          alt="Dance Residency 2026 picture"
          width="200"
          loading="lazy">
-        <div class="cta-textbox">
-            <div class="cta-line-lrg">Fully-funded Dance Residency</div>
-            <div class="cta-line-sml">Deadline: 15 May 2026</div>
-            <div class="cta-line-sml">Applications Open</div>
-        </div>
-    </div> -->
+		<div class="cta-textbox">
+			<div class="cta-line-lrg">Vihāra: Dance Residency</div>
+			<div class="cta-line-sml">Application Deadline: 24 May 2026</div>
+		</div>
+	</div>
 	<div id="cta-dots"></div>
 </div>
 
@@ -59,8 +58,12 @@
 		var dotsContainer = document.getElementById('cta-dots');
 		items.forEach(function (_, i) {
 			var dot = document.createElement('button');
-			dot.className = 'cta-dot' + (i === 0 ? ' cta-dot--active' : '');
-			dot.setAttribute('aria-label', 'Go to announcement ' + (i + 1));
+			dot.className = 'cta-dot' + (
+				i === 0
+				? ' cta-dot--active'
+				: '');
+			dot.setAttribute('aria-label', 'Go to announcement ' + (
+			i + 1));
 			dot.addEventListener('click', function () {
 				show(i);
 			});
@@ -76,18 +79,26 @@
 		});
 
 		function isLandscape() {
-			return window.matchMedia('(orientation: landscape)').matches;
+			return window
+				.matchMedia('(orientation: landscape)')
+				.matches;
 		}
 
 		function show(index) {
 			items.forEach(function (el, i) {
 				el.style.animation = 'none';
-				el.style.display = i === index && isLandscape() ? 'flex' : 'none';
-				el.style.opacity = i === index ? '1' : '0';
+				el.style.display = i === index && isLandscape()
+					? 'flex'
+					: 'none';
+				el.style.opacity = i === index
+					? '1'
+					: '0';
 			});
 			var dots = dotsContainer.querySelectorAll('.cta-dot');
 			dots.forEach(function (dot, i) {
-				dot.classList.toggle('cta-dot--active', i === index);
+				dot
+					.classList
+					.toggle('cta-dot--active', i === index);
 			});
 			current = index;
 		}

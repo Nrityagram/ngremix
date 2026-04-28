@@ -1,0 +1,615 @@
+---
+layout: layouts/page.njk
+date: Last Modified
+eleventyExcludeFromCollections: true
+title: "Dance Residency Application Form"
+description: "Apply for Nrityagram's Dance Residency which is a fully funded month-long residency for Indian classical dancers."
+nobanner: true
+---
+<div class="container">
+  <div class="wrapper flow">
+    <h4 class="center">Application Form</h4>
+    <h2 class="center">Vihāra: Living the Dance at Nrityagram</h2>
+    <section class="residency-form-section" id="apply">
+      <div class="residency-form-container">
+
+        <form id="residencyForm" novalidate>
+
+          <h3>Section 1: Basic Information</h3>
+          <br />
+          <!-- Name -->
+          <div class="rf-group">
+            <label for="rf-name">Name <span class="rf-required">•</span></label>
+            <input type="text" id="rf-name" name="name" required>
+          </div>
+
+          <!-- Age -->
+          <div class="rf-group">
+            <label for="rf-age">Age <span class="rf-required">•</span></label>
+            <input type="number" id="rf-age" name="age" required>
+          </div>
+
+          <!-- City / Country of Residence -->
+          <div class="rf-group">
+            <label for="rf-city">City / Country of Residence <span class="rf-required">•</span></label>
+            <input type="text" id="rf-city" name="city" required>
+          </div>
+
+          <!-- Primary Dance Form -->
+          <div class="rf-group">
+            <label for="rf-dance-form">Primary Dance Form <span class="rf-required">•</span></label>
+            <input type="text" id="rf-dance-form" name="danceForm" required>
+          </div>
+
+          <!-- Years of Training -->
+          <div class="rf-group">
+            <label for="rf-years-of-training">Years of Training <span class="rf-required">•</span></label>
+            <input type="number" id="rf-years-of-training" name="yearsOfTraining" required>
+          </div>
+
+          <!-- Current Occupation / Primary Engagement (dance-related or otherwise) -->
+          <div class="rf-group">
+            <label for="rf-current-occupation">Current Occupation / Primary Engagement (dance-related or otherwise)</label>
+            <input type="text" id="rf-current-occupation" name="currentOccupation">
+          </div>
+
+          <!-- Email -->
+          <div class="rf-group">
+            <label for="rf-email">Email <span class="rf-required">•</span></label>
+            <input type="email" id="rf-email" name="email" required>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="rf-group">
+            <label for="rf-phone">Phone Number <span class="rf-required">•</span></label>
+            <div class="rf-phone-row">
+              <select id="rf-countryCode" name="countryCode" aria-label="Country code">
+                <option value="+91">India +91</option>
+                <option value="+1">USA +1</option>
+                <option value="+44">UK +44</option>
+                <option value="+61">Australia +61</option>
+                <option value="+64">New Zealand +64</option>
+                <option value="+1-CA">Canada +1</option>
+                <option value="+92">Pakistan +92</option>
+                <option value="+880">Bangladesh +880</option>
+                <option value="+94">Sri Lanka +94</option>
+                <option value="+977">Nepal +977</option>
+                <option value="+33">France +33</option>
+                <option value="+49">Germany +49</option>
+                <option value="+39">Italy +39</option>
+                <option value="+34">Spain +34</option>
+                <option value="+31">Netherlands +31</option>
+                <option value="+41">Switzerland +41</option>
+                <option value="+46">Sweden +46</option>
+                <option value="+47">Norway +47</option>
+                <option value="+45">Denmark +45</option>
+                <option value="+358">Finland +358</option>
+                <option value="+7">Russia +7</option>
+                <option value="+81">Japan +81</option>
+                <option value="+82">South Korea +82</option>
+                <option value="+86">China +86</option>
+                <option value="+65">Singapore +65</option>
+                <option value="+60">Malaysia +60</option>
+                <option value="+66">Thailand +66</option>
+                <option value="+62">Indonesia +62</option>
+                <option value="+971">UAE +971</option>
+                <option value="+966">Saudi Arabia +966</option>
+                <option value="+27">South Africa +27</option>
+                <option value="+55">Brazil +55</option>
+                <option value="+52">Mexico +52</option>
+              </select>
+              <input type="tel" id="rf-phone" name="phone" placeholder="Phone number" required>
+            </div>
+          </div>
+
+          <br />
+
+          <h3>Section 2: Practice</h3>
+          <br />
+
+          <!-- Current Relationship to Dance -->
+          <div class="rf-group">
+            <label for="rf-relationship">1. How would you describe your current relationship to your dance? <br />
+              <span class="desc">You may respond in any form that feels natural. We are interested in an honest reflection.</span></label>
+
+            <textarea id="rf-relationship" name="relationship" rows="4" data-word-limit="200"></textarea>
+            <span class="rf-word-count">0 / 200 words</span>
+          </div>
+
+          <!-- Why are you applying -->
+          <div class="rf-group">
+            <label for="rf-applyreason">2. What brings you to apply for this residency at this point in time?</label>
+            <textarea id="rf-applyreason" name="applyReason" rows="4" data-word-limit="200"></textarea>
+            <span class="rf-word-count">0 / 200 words</span>
+          </div>
+
+          <!-- How will you use this time -->
+          <div class="rf-group">
+            <label for="rf-timeuse">3. How will you use this time to advance your artistic practice?
+              <br />
+              <span class="desc">This may remain open, tentative, or specific. You might find yourself returning to something, following a question, or continuing a line of practice.</span>
+            </label>
+            <textarea id="rf-timeuse" name="timeuse" rows="4" data-word-limit="200"></textarea>
+            <span class="rf-word-count">0 / 200 words</span>
+          </div>
+
+          <br />
+
+          <h3>Section 3: Working in a Self-Directed Way</h3>
+
+          <br />
+
+          <!-- Working in self-directed way -->
+          <div class="rf-group">
+            <label for="rf-selfdirected">4. This residency is self-directed. How do you relate to working in this way?</label>
+            <textarea id="rf-selfdirected" name="selfDirected" rows="4" data-word-limit="150"></textarea>
+            <span class="rf-word-count">0 / 150 words</span>
+          </div>
+
+          <!-- Supports or conditions that allow deepening of practice -->
+          <div class="rf-group">
+            <label for="rf-supports">5. What supports or conditions allow your practice to deepen?</label>
+            <textarea id="rf-supports" name="supports" rows="4" data-word-limit="150"></textarea>
+            <span class="rf-word-count">0 / 150 words</span>
+          </div>
+
+          <br />
+          <h3>Section 4: Background</h3>
+          <br />
+
+          <!-- Artiste Bio -->
+          <div class="rf-group">
+            <label for="rf-bio">6. Briefly outline your training and journey in dance. <span class="rf-required">•</span></label>
+            <textarea id="rf-bio" name="artisteBio" required rows="5" data-word-limit="300" required></textarea>
+            <span class="rf-word-count">0 / 300 words</span>
+          </div>
+
+          <!-- Resume Upload -->
+          <div class="rf-group">
+            <label for="rf-resume">7. Resume <span class="rf-required">•</span></label>
+            <div class="rf-file-upload" id="rfDropZone">
+              <input type="file" id="rf-resume" name="resume" accept=".pdf,application/pdf" required>
+              <div class="rf-file-upload-content">
+                <span class="rf-upload-icon">&#8682;</span>
+                <span class="rf-upload-text">Click to choose a file or drag here</span>
+                <span class="rf-upload-meta">Accepts .pdf files</span>
+                <span class="rf-upload-meta">Size limit: 10 MB</span>
+              </div>
+              <div class="rf-file-chosen" id="rfFileChosen" style="display:none;">
+                <span class="rf-file-name" id="rfFileName"></span>
+                <button type="button" class="rf-file-remove" id="rfFileRemove">&times;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work Samples -->
+          <div class="rf-group">
+            <label for="rf-samples">8. Share a link of your work (Google Drive, Dropbox, YouTube, Vimeo, etc.) <span class="rf-required">•</span><br />
+              <span class="desc">A clear recording of you dancing. This may be from practice or informal work.</span>
+            </label>
+            <input type="url" id="rf-samples" name="workSamples" required>
+          </div>
+
+          <br />
+          <h3>Section 5: Practical Details</h3>
+          <br />
+
+          <!-- Preferred residency format -->
+          <div class="rf-group">
+            <label for="rf-accommodation">9. Preferred residency format: <span class="rf-required">•</span></label>
+            <div class="rf-radio-group">
+              <label class="rf-radio">
+                <input type="radio" name="accommodation" value="4weeks" required>
+                <span class="rf-radio-mark"></span>
+                <span class="rf-radio-label">One continuous 4-week period</span>
+              </label>
+              <label class="rf-radio">
+                <input type="radio" name="accommodation" value="2weekblocks" required>
+                <span class="rf-radio-mark"></span>
+                <span class="rf-radio-label">Two blocks of 2 weeks</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Availability between 1 Aug - 30 Sept 2026 -->
+          <div class="rf-group">
+            <label>10. Availability between 1 Aug - 30 Sept 2026: <span class="rf-required">•</span></label>
+            <div class="rf-radio-group">
+              <label class="rf-radio">
+                <input type="radio" name="availability" value="Yes" required>
+                <span class="rf-radio-mark"></span>
+                <span class="rf-radio-label">Yes</span>
+              </label>
+              <label class="rf-radio">
+                <input type="radio" name="availability" value="No">
+                <span class="rf-radio-mark"></span>
+                <span class="rf-radio-label">No</span>
+              </label>
+            </div>
+          </div>
+
+          <br />
+          <h3>Section 6: Closing</h3>
+          <br />
+
+          <!-- Additional Information -->
+          <div class="rf-group">
+            <label for="rf-extrainfo">10. Is there anything else you would like us to know?</label>
+            <textarea id="rf-extrainfo" name="extraInfo" rows="4"></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div class="rf-group rf-submit-row">
+            <button type="submit" id="rfSubmitBtn" class="rf-submit-btn">
+                SUBMIT
+              </button>
+            <span id="rfSubmitHint" class="rf-submit-hint" style="display:none;" aria-live="polite">Please check responses that exceed the word limit.</span>
+            <div id="rfFormStatus" class="rf-status" aria-live="polite"></div>
+          </div>
+
+          <p class="small-text">
+            <a href="/dance-residency" class="bodylink">Back to Dance Residency</a>
+          </p>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT — Form Submission Handler
+     ═══════════════════════════════════════════════════════════ -->
+    <script>
+      (function () {
+        // Guard against double-registration (BrowserSync re-injects script without full reload)
+        var form = document.getElementById("residencyForm");
+        if (!form || form.dataset.listenerAttached) 
+          return;
+        form.dataset.listenerAttached = 'true';
+
+        // ⚠️ REPLACE THIS with your deployed Google Apps Script URL
+        var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_xL1OEo4i34Ma76Yjfp5ah7vQvFwD0VAkgAfKMlMUWiKCGe4uMFr-4RqTFNVOfTslxw/exec";
+
+        var submitBtn = document.getElementById("rfSubmitBtn");
+        var statusEl = document.getElementById("rfFormStatus");
+        var fileInput = document.getElementById("rf-resume");
+
+        // ── Word count (generic) ─────────────────────────────────
+        function countWords(str) {
+          return str.trim() === ""
+            ? 0
+            : str
+              .trim()
+              .split(/\s+/)
+              .length;
+        }
+
+        function anyFieldOverLimit() {
+          return Array
+            .from(document.querySelectorAll("textarea[data-word-limit]"))
+            .some(function (ta) {
+              return countWords(ta.value) > parseInt(ta.dataset.wordLimit, 10);
+            });
+        }
+
+        var submitHint = document.getElementById("rfSubmitHint");
+
+        function updateSubmitBtn() {
+          var over = anyFieldOverLimit();
+          submitBtn.disabled = over;
+          submitHint.style.display = over
+            ? "inline"
+            : "none";
+        }
+
+        function initWordCount(textarea) {
+          var limit = parseInt(textarea.dataset.wordLimit, 10);
+          var counter = textarea
+            .closest(".rf-group")
+            .querySelector(".rf-word-count");
+          if (!counter) 
+            return;
+          counter.textContent = "0 / " + limit + " words";
+          textarea.addEventListener("input", function () {
+            var words = countWords(textarea.value);
+            counter.textContent = words + " / " + limit + " words";
+            counter
+              .classList
+              .toggle("rf-word-count--over", words > limit);
+            updateSubmitBtn();
+          });
+        }
+
+        document
+          .querySelectorAll("textarea[data-word-limit]")
+          .forEach(initWordCount);
+        var dropZone = document.getElementById("rfDropZone");
+        var fileChosen = document.getElementById("rfFileChosen");
+        var fileNameEl = document.getElementById("rfFileName");
+        var fileRemoveBtn = document.getElementById("rfFileRemove");
+
+        // ── Drag & drop + file selection UI ─────────────────────
+        fileInput.addEventListener("change", function () {
+          if (fileInput.files.length > 0) {
+            showFile(fileInput.files[0]);
+          }
+        });
+
+        dropZone.addEventListener("dragover", function (e) {
+          e.preventDefault();
+          dropZone
+            .classList
+            .add("rf-dragover");
+        });
+
+        dropZone.addEventListener("dragleave", function () {
+          dropZone
+            .classList
+            .remove("rf-dragover");
+        });
+
+        dropZone.addEventListener("drop", function (e) {
+          e.preventDefault();
+          dropZone
+            .classList
+            .remove("rf-dragover");
+          if (e.dataTransfer.files.length > 0) {
+            fileInput.files = e.dataTransfer.files;
+            showFile(e.dataTransfer.files[0]);
+          }
+        });
+
+        fileRemoveBtn.addEventListener("click", function () {
+          fileInput.value = "";
+          fileChosen.style.display = "none";
+          dropZone
+            .querySelector(".rf-file-upload-content")
+            .style
+            .display = "";
+        });
+
+        function showFile(file) {
+          fileNameEl.textContent = file.name + " (" + (
+          file.size / 1024 / 1024).toFixed(1) + " MB)";
+          fileChosen.style.display = "flex";
+          dropZone
+            .querySelector(".rf-file-upload-content")
+            .style
+            .display = "none";
+        }
+
+        // ── Inline validation ────────────────────────────────────
+        function showFieldError(anchor, message) {
+          clearFieldError(anchor);
+          var err = document.createElement("span");
+          err.className = "rf-field-error";
+          err.setAttribute("role", "alert");
+          err.textContent = message;
+          anchor.insertAdjacentElement("afterend", err);
+          anchor
+            .classList
+            .add("rf-invalid");
+        }
+
+        function clearFieldError(anchor) {
+          if (!anchor) 
+            return;
+          var next = anchor.nextElementSibling;
+          if (next && next.classList.contains("rf-field-error")) 
+            next.remove();
+          anchor
+            .classList
+            .remove("rf-invalid");
+        }
+
+        function validateRequired() {
+          var valid = true;
+
+          // Text / number / email / url / tel inputs and required textareas
+          form
+            .querySelectorAll("input[required]:not([type='radio']):not([type='file']), textarea[required]")
+            .forEach(function (field) {
+              if (!field.value.trim()) {
+                showFieldError(field, "This field is required.");
+                valid = false;
+              } else if (!field.validity.valid) {
+                showFieldError(field, field.validationMessage);
+                valid = false;
+              } else {
+                clearFieldError(field);
+              }
+            });
+
+          // File upload
+          if (fileInput.files.length === 0) {
+            showFieldError(dropZone, "Please upload your resume.");
+            valid = false;
+          } else {
+            clearFieldError(dropZone);
+          }
+
+          // Radio groups (find all unique names marked required)
+          var radioNames = new Set();
+          form
+            .querySelectorAll("input[type='radio'][required]")
+            .forEach(function (r) {
+              radioNames.add(r.name);
+            });
+          radioNames.forEach(function (name) {
+            var firstRadio = form.querySelector('input[type="radio"][name="' + name + '"]');
+            var group = firstRadio && (firstRadio.closest(".rf-pill-options") || firstRadio.closest(".rf-radio-group"));
+            if (!group) 
+              return;
+            var checked = form.querySelector('input[type="radio"][name="' + name + '"]:checked');
+            if (!checked) {
+              showFieldError(group, "Please select an option.");
+              valid = false;
+            } else {
+              clearFieldError(group);
+            }
+          });
+
+          return valid;
+        }
+
+        // Clear field errors as user fills them in
+        form
+          .querySelectorAll("input:not([type='radio']):not([type='file']), textarea")
+          .forEach(function (field) {
+            field.addEventListener("input", function () {
+              clearFieldError(field);
+            });
+          });
+        form
+          .querySelectorAll("input[type='radio']")
+          .forEach(function (radio) {
+            radio.addEventListener("change", function () {
+              var group = radio.closest(".rf-pill-options") || radio.closest(".rf-radio-group");
+              if (group) 
+                clearFieldError(group);
+              }
+            );
+          });
+        fileInput.addEventListener("change", function () {
+          clearFieldError(dropZone);
+        });
+
+        // ── Form submission ─────────────────────────────────────
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          if (!validateRequired()) {
+            var firstError = form.querySelector(".rf-field-error");
+            if (firstError) 
+              firstError.scrollIntoView({behavior: "smooth", block: "center"});
+            return;
+          }
+
+          var overLimit = Array
+            .from(document.querySelectorAll("textarea[data-word-limit]"))
+            .find(function (ta) {
+              return countWords(ta.value) > parseInt(ta.dataset.wordLimit, 10);
+            });
+          if (overLimit) {
+            overLimit.scrollIntoView({behavior: "smooth", block: "center"});
+            var overCounter = overLimit
+              .closest(".rf-group")
+              .querySelector(".rf-word-count");
+            if (overCounter) 
+              overCounter
+                .classList
+                .add("rf-word-count--over");
+            statusEl.textContent = "One or more fields exceed the word limit. Please shorten your response.";
+            statusEl.className = "rf-status rf-error";
+            return;
+          }
+
+          // File size check (10MB)
+          if (fileInput.files.length > 0 && fileInput.files[0].size > 10 * 1024 * 1024) {
+            statusEl.textContent = "File size must be under 10 MB.";
+            statusEl.className = "rf-status rf-error";
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Submitting\u2026';
+          statusEl.textContent = "";
+          statusEl.className = "rf-status";
+
+          try {
+            var payload = {};
+
+            // Section 1: Basic Information
+            payload.name = form.name.value;
+            payload.age = form.age.value;
+            payload.city = form.city.value;
+            payload.danceForm = form.danceForm.value;
+            payload.yearsOfTraining = form.yearsOfTraining.value;
+            payload.currentOccupation = form.currentOccupation.value;
+            payload.email = form.email.value;
+            var countryCode = document
+              .getElementById('rf-countryCode')
+              .value
+              .replace('-CA', '');
+            payload.phone = form.phone.value
+              ? countryCode + ' ' + form.phone.value
+              : '';
+
+            // Section 2: Practice
+            payload.relationship = form.relationship.value;
+            payload.applyReason = form.applyReason.value;
+            payload.timeuse = form.timeuse.value;
+
+            // Section 3: Self-Directed
+            payload.selfDirected = form.selfDirected.value;
+            payload.supports = form.supports.value;
+
+            // Section 4: Background
+            payload.artisteBio = form.artisteBio.value;
+            payload.workSamples = form.workSamples.value;
+
+            // Section 5: Practical Details
+            var accRadio = form.querySelector('input[name="accommodation"]:checked');
+            payload.accommodation = accRadio
+              ? accRadio.value
+              : "";
+            var availRadio = form.querySelector('input[name="availability"]:checked');
+            payload.availability = availRadio
+              ? availRadio.value
+              : "";
+
+            // Section 6: Closing
+            payload.extraInfo = form.extraInfo.value;
+
+            // File as base64
+            if (fileInput.files.length > 0) {
+              var base64 = await readFileAsBase64(fileInput.files[0]);
+              payload.fileData = base64;
+              payload.fileName = fileInput
+                .files[0]
+                .name;
+              payload.fileMimeType = fileInput
+                .files[0]
+                .type;
+            }
+
+            await fetch(SCRIPT_URL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: new URLSearchParams(payload).toString()
+            });
+
+            statusEl.innerHTML = "Thank you! Your application has been submitted successfully. " + "We will review it and get back to you at the email address you provided.";
+            statusEl.className = "rf-status rf-success";
+            form.reset();
+            fileChosen.style.display = "none";
+            dropZone
+              .querySelector(".rf-file-upload-content")
+              .style
+              .display = "";
+
+          } catch (error) {
+            statusEl.textContent = "Something went wrong. Please try again or email us at programmes@nrityagram.org";
+            statusEl.className = "rf-status rf-error";
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'SUBMIT';
+          }
+        });
+
+        function readFileAsBase64(file) {
+          return new Promise(function (resolve, reject) {
+            var reader = new FileReader();
+            reader.onload = function () {
+              resolve(reader.result.split(",")[1]);
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+          });
+        }
+      })();
+    </script>
+  </div>
+</div>

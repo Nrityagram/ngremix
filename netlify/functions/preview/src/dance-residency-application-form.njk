@@ -227,6 +227,11 @@ nobanner: true
             </div>
           </div>
 
+          <!-- Turnstile bot protection -->
+          <div class="rf-group" style="margin-top: 1.5rem">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADFHC9dr0CojQF0O" data-theme="light"></div>
+          </div>
+
           <!-- Submit -->
           <div class="rf-group rf-submit-row" style="margin-top: 1rem">
             <button type="submit" id="rfSubmitBtn" class="rf-submit-btn">
@@ -244,6 +249,8 @@ nobanner: true
       </div>
     </section>
 
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
     <!-- ═══════════════════════════════════════════════════════════
      JAVASCRIPT — Form Submission Handler
      ═══════════════════════════════════════════════════════════ -->
@@ -255,8 +262,7 @@ nobanner: true
           return;
         form.dataset.listenerAttached = 'true';
 
-        // ⚠️ REPLACE THIS with your deployed Google Apps Script URL
-        var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_xL1OEo4i34Ma76Yjfp5ah7vQvFwD0VAkgAfKMlMUWiKCGe4uMFr-4RqTFNVOfTslxw/exec";
+        var WORKER_URL = "https://nrityagram-form-proxy.amrita-08a.workers.dev";
 
         var submitBtn = document.getElementById("rfSubmitBtn");
         var statusEl = document.getElementById("rfFormStatus");
@@ -468,8 +474,15 @@ nobanner: true
 
           if (!validateRequired()) {
             var firstError = form.querySelector(".rf-field-error");
-            if (firstError) 
+            if (firstError)
               firstError.scrollIntoView({behavior: "smooth", block: "center"});
+            return;
+          }
+
+          var turnstileInput = form.querySelector('[name="cf-turnstile-response"]');
+          if (!turnstileInput || !turnstileInput.value) {
+            statusEl.textContent = "Security check not yet complete. Please wait a moment and try again.";
+            statusEl.className = "rf-status rf-error";
             return;
           }
 
@@ -546,6 +559,9 @@ nobanner: true
             // Section 6: Closing
             payload.extraInfo = form.extraInfo.value;
 
+            // Turnstile token
+            payload['cf-turnstile-response'] = form.querySelector('[name="cf-turnstile-response"]').value;
+
             // File as base64
             if (fileInput.files.length > 0) {
               var base64 = await readFileAsBase64(fileInput.files[0]);
@@ -558,14 +574,18 @@ nobanner: true
                 .type;
             }
 
-            await fetch(SCRIPT_URL, {
+            var response = await fetch(WORKER_URL, {
               method: "POST",
-              mode: "no-cors",
               headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
               },
               body: new URLSearchParams(payload).toString()
             });
+
+            if (!response.ok) {
+              var errData = await response.json().catch(function () { return {}; });
+              throw new Error(errData.error || "Submission failed. Please try again.");
+            }
 
             statusEl.innerHTML = "Thank you! Your application has been submitted successfully. " + "We will review it and get back to you at the email address you provided.";
             statusEl.className = "rf-status rf-success";

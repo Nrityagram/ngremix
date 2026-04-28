@@ -1,0 +1,8 @@
+name = "nrityagram-form-proxy"
+main = "form-proxy.js"
+compatibility_date = "2024-11-01"
+
+# Secrets — set via CLI (do NOT put values here):
+#   wrangler secret put TURNSTILE_SECRET_KEY
+#   wrangler secret put GAS_SECRET
+#   wrangler secret put GAS_URL

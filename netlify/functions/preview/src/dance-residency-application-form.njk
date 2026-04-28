@@ -262,7 +262,8 @@ nobanner: true
       (function () {
         // Guard against double-registration (BrowserSync re-injects script without full reload)
         var form = document.getElementById("residencyForm");
-        if (!form || form.dataset.listenerAttached) return;
+        if (!form || form.dataset.listenerAttached) 
+          return;
         form.dataset.listenerAttached = 'true';
 
         // ⚠️ REPLACE THIS with your deployed Google Apps Script URL

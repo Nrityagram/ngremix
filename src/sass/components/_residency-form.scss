@@ -496,9 +496,28 @@ $transition-base: 0.2s ease;
 	}
 }
 
-// ── Submit Button ───────────────────────────────────────────
+// ── Submit Row ───────────────────────────────────────────────
 .rf-submit-row {
 	margin-top: 2rem;
+}
+
+// ── Back link + Turnstile grid ───────────────────────────────
+.rf-submit-grid {
+	margin-top: 0.4rem;
+	margin-bottom: 1.6rem;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+}
+
+.rf-back-link {
+	margin: 0;
+}
+
+.rf-turnstile-wrap {
+	justify-self: end;
+	transform: scale(0.72);
+	transform-origin: center right;
 }
 
 .rf-submit-btn {
@@ -641,6 +660,7 @@ $transition-base: 0.2s ease;
 		width: 100%;
 		justify-content: center;
 	}
+
 }
 
 // ── FAQ Accordion ────────────────────────────────────────────

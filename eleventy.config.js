@@ -19,6 +19,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('./src/css');
 	// Copy the `fonts` folder to the output
 	eleventyConfig.addPassthroughCopy('./src/fonts');
+	// Copy Netlify _redirects file to the output
+	eleventyConfig.addPassthroughCopy('_redirects');
 
 	// Watch CSS files for changes
 	// Refresh the browser when your CSS changes,

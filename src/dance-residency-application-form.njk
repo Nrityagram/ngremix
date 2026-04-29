@@ -227,13 +227,8 @@ nobanner: true
             </div>
           </div>
 
-          <!-- Turnstile bot protection -->
-          <div class="rf-group" style="margin-top: 1.5rem">
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAADFHC9dr0CojQF0O" data-theme="light"></div>
-          </div>
-
           <!-- Submit -->
-          <div class="rf-group rf-submit-row" style="margin-top: 1rem">
+          <div class="rf-group rf-submit-row">
             <button type="submit" id="rfSubmitBtn" class="rf-submit-btn">
                 SUBMIT
               </button>
@@ -241,14 +236,28 @@ nobanner: true
             <div id="rfFormStatus" class="rf-status" aria-live="polite"></div>
           </div>
 
-          <p class="small-text">
-            <a href="/dance-residency" class="bodylink">Back to Dance Residency</a>
-          </p>
+          <!-- Back link + Turnstile grid -->
+          <div class="rf-submit-grid">
+            <p class="small-text rf-back-link">
+              <a href="/dance-residency" class="bodylink">Back to Dance Residency</a>
+            </p>
+            <div class="rf-turnstile-wrap">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAADFHC9dr0CojQF0O" data-theme="light" data-size="normal"></div>
+            </div>
+          </div>
 
         </form>
       </div>
     </section>
 
+    <script>
+      (function () {
+        var ts = document.querySelector('.cf-turnstile');
+        if (ts && window.innerWidth < 600) {
+          ts.setAttribute('data-size', 'compact');
+        }
+      })();
+    </script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <!-- ═══════════════════════════════════════════════════════════

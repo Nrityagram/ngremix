@@ -294,7 +294,27 @@ var vanillaSlideshow = (function () {
         _createIndicators();
       }
       if (defaults.slideshow) {
-        _startSlideshow();
+        var allImgs = Array.from(slideshow.querySelectorAll('.vanilla-slide img'));
+        if (allImgs.length === 0) {
+          _startSlideshow();
+        } else {
+          var loadedCount = 0;
+          function _onImgSettled() {
+            loadedCount++;
+            if (loadedCount >= allImgs.length) {
+              slideshow.classList.add('slideshow-ready');
+              _startSlideshow();
+            }
+          }
+          allImgs.forEach(function (img) {
+            if (img.complete) {
+              _onImgSettled();
+            } else {
+              img.addEventListener('load', _onImgSettled);
+              img.addEventListener('error', _onImgSettled);
+            }
+          });
+        }
       }
     }
   };

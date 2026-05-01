@@ -23,9 +23,27 @@
 // opacity: 1;
 // }
 
+#vanilla-slideshow .vanilla-slide .picture-wrap,
 #vanilla-slideshow .vanilla-slide picture {
     width: 100%;
     height: 100%;
+}
+
+#vanilla-slideshow .vanilla-slide .picture-wrap {
+    background-color: transparent;
+}
+
+#vanilla-slideshow .vanilla-slide:not(:first-child) .picture-wrap::before {
+    display: none;
+}
+
+// Keep first slide's LQIP visible until slideshow is fully ready
+#vanilla-slideshow .vanilla-slide:first-child .picture-wrap.loaded::before {
+    opacity: 1;
+}
+
+#vanilla-slideshow.slideshow-ready .vanilla-slide:first-child .picture-wrap.loaded::before {
+    opacity: 0;
 }
 
 #vanilla-slideshow .vanilla-slide picture img {

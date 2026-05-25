@@ -1,3 +1,5 @@
+const APPLICATIONS_CLOSED = true;
+
 const ALLOWED_ORIGINS = [
   "https://nrityagram.org",
   "https://www.nrityagram.org",
@@ -31,6 +33,16 @@ export default {
         JSON.stringify({ success: false, error: "Method not allowed" }),
         {
           status: 405,
+          headers: { "Content-Type": "application/json", ...corsHeaders(allowedOrigin) },
+        }
+      );
+    }
+
+    if (APPLICATIONS_CLOSED) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Applications are currently closed." }),
+        {
+          status: 403,
           headers: { "Content-Type": "application/json", ...corsHeaders(allowedOrigin) },
         }
       );

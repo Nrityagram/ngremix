@@ -3,6 +3,7 @@ layout: layouts/page.njk
 date: Last Modified
 eleventyExcludeFromCollections: true
 title: "Dance Residency Application Form"
+applicationClosed: true
 description: "Apply for Nrityagram's Dance Residency which is a fully funded month-long residency for Indian classical dancers."
 nobanner: true
 ---
@@ -231,8 +232,8 @@ nobanner: true
 
           <!-- Submit -->
           <div class="rf-group rf-submit-row">
-            <button type="submit" id="rfSubmitBtn" class="rf-submit-btn">
-                SUBMIT
+            <button type="submit" id="rfSubmitBtn" class="rf-submit-btn"{% if applicationClosed %} disabled{% endif %}>
+                SUBMIT{% if applicationClosed %} [CLOSED]{% endif %}
               </button>
             <span id="rfSubmitHint" class="rf-submit-hint" style="display:none;" aria-live="polite">Please check responses that exceed the word limit.</span>
             <div id="rfFormStatus" class="rf-status" aria-live="polite"></div>

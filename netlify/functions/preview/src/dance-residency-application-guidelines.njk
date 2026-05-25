@@ -3,6 +3,7 @@ layout: layouts/page.njk
 date: Last Modified
 eleventyExcludeFromCollections: true
 title: "Dance Residency Application Guidelines"
+applicationClosed: true
 description: "Apply for Nrityagram's Dance Residency which is a fully funded month-long residency for Indian classical dancers."
 nobanner: true
 ---
@@ -111,9 +112,9 @@ nobanner: true
       We invite you to approach this application in the same spirit.
     </p>
     <br />
-    <div class="button red-plastic center" onclick="location.href='/dance-residency-application-form';">
+    <div class="button red-plastic{{ ' red-plastic--inactive' if applicationClosed }} center"{% if not applicationClosed %} onclick="location.href='/dance-residency-application-form';"{% endif %}>
       <div class="glare"></div>
-        Begin Application
+        Begin Application{% if applicationClosed %} [CLOSED]{% endif %}
     </div>
   </div>
 </div>

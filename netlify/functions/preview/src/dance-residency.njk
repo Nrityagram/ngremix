@@ -7,6 +7,7 @@ tags: page
 date: Last Modified
 parentMenuItem: "Community"
 title: "Vihāra: Dance Residency"
+applicationClosed: true
 scrollToTop: true
 description: "Nrityagram's Dance Residency is a fully funded month-long residency for Indian classical dancers at India's only gurukula where dance is a way of life."
 OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1777365093/dance-residency-ogimage_swjxvh.png"
@@ -350,9 +351,9 @@ OGImage: "https://res.cloudinary.com/nrityagram/image/upload/v1777365093/dance-r
       <a href="mailto:programmes@nrityagram.org" class="bodylink">programmes@nrityagram.org</a>
     </p>
     <br />
-    <div class="button red-plastic center" onclick="location.href='/dance-residency-application-guidelines';">
+    <div class="button red-plastic {{ ' red-plastic--inactive' if applicationClosed }} center"{% if not applicationClosed %} onclick="location.href='/dance-residency-application-guidelines';"{% endif %}>
       <div class="glare"></div>
-        Apply Now
+        Apply Now{% if applicationClosed %} [CLOSED]{% endif %}
     </div>
     <p class="center">
       If this feels like the right time, you are welcome.

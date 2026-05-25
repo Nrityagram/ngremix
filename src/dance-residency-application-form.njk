@@ -232,7 +232,7 @@ nobanner: true
 
           <!-- Submit -->
           <div class="rf-group rf-submit-row">
-            <button type="submit" id="rfSubmitBtn" class="rf-submit-btn"{% if applicationClosed %} disabled{% endif %}>
+            <button type="submit" id="rfSubmitBtn" class="rf-submit-btn"{% if applicationClosed %} disabled data-closed="true"{% endif %}>
                 SUBMIT{% if applicationClosed %} [CLOSED]{% endif %}
               </button>
             <span id="rfSubmitHint" class="rf-submit-hint" style="display:none;" aria-live="polite">Please check responses that exceed the word limit.</span>
@@ -301,6 +301,7 @@ nobanner: true
         var submitHint = document.getElementById("rfSubmitHint");
 
         function updateSubmitBtn() {
+          if (submitBtn.dataset.closed) return;
           var over = anyFieldOverLimit();
           submitBtn.disabled = over;
           submitHint.style.display = over

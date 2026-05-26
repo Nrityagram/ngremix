@@ -1,72 +1,101 @@
 <div class="cta-mobile-container">
-    <div class="cta-mobile-progress"></div>
 
     <!-- <div class="cta-mobile"
              onclick="location.href='/summer-workshop';">
+        <button class="cta-nav-prev" aria-label="Previous announcement">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
         <div class="cta-line-lrg">
             <span class="whitetext">Summer Workshop</span>
         </div>
         <div class="cta-line-sml">30 June - 11 July 2026 • Application Deadline: May 3</div>
-        <div class="cta-arrow"><img src="/img/cta-arrow-circle-right.svg" alt=""></div>
+        <button class="cta-nav-next" aria-label="Next announcement">
+            <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg>
+        </button>
+        <div class="cta-progress">
+            <div class="cta-progress-fill"></div>
+        </div>
     </div> -->
 
     <!-- <div class="cta-mobile"
              onclick="location.href='/summer-fun-for-kids';">
+        <button class="cta-nav-prev" aria-label="Previous announcement">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
         <div class="cta-line-lrg">
             <span class="whitetext">Summer Fun for Kids</span>
         </div>
         <div class="cta-line-sml">28 April - 3 May 2026 • Registrations Open</div>
-        <div class="cta-arrow"><img src="/img/cta-arrow-circle-right.svg" alt=""></div>
+        <button class="cta-nav-next" aria-label="Next announcement">
+            <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg>
+        </button>
+        <div class="cta-progress">
+            <div class="cta-progress-fill"></div>
+        </div>
     </div> -->
 
-    <!--
-    <div class="cta-mobile"
+    <!-- <div class="cta-mobile"
              onclick="location.href='/dance-residency';">
+        <button class="cta-nav-prev" aria-label="Previous announcement">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
         <div class="cta-line-lrg">
             <span class="whitetext">Vihāra: Dance Residency</span>
         </div>
         <div class="cta-line-sml">Deadline: 24 May 2026 • Applications Open</div>
-        <div class="cta-arrow"><img src="/img/cta-arrow-circle-right.svg" alt=""></div>
+        <button class="cta-nav-next" aria-label="Next announcement">
+            <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg>
+        </button>
+        <div class="cta-progress">
+            <div class="cta-progress-fill"></div>
+        </div>
     </div> -->
 
     {# To add more CTAs: copy a cta-mobile div above and update content and href #}
-    <div class="cta-mobile-dots"></div>
 </div>
 
 <script>
     (function () {
         var container = document.currentScript.previousElementSibling;
         var items = Array.from(container.querySelectorAll('.cta-mobile'));
-        if (items.length <= 1) {
-            if (items.length === 1) {
-                var progressEl = container.querySelector('.cta-mobile-progress');
-                progressEl.style.display = 'none';
-            }
+
+        if (items.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
+
+        if (items.length === 1) {
+            container
+                .querySelectorAll('.cta-nav-prev, .cta-nav-next')
+                .forEach(function (btn) {
+                    btn.style.display = 'none';
+                });
             return;
         }
 
         var current = 0;
         var displayDuration = 7500;
+        var advanceTimer = null;
 
-        // Build dots
-        var dotsEl = container.querySelector('.cta-mobile-dots');
-        items.forEach(function (_, i) {
-            var dot = document.createElement('button');
-            dot.className = 'cta-mobile-dot' + (
-                i === 0
-                ? ' cta-mobile-dot--active'
-                : '');
-            dot.setAttribute('aria-label', 'Go to announcement ' + (
-            i + 1));
-            (function (idx) {
-                dot.addEventListener('click', function (e) {
+        // Wire up prev/next chevrons
+        container
+            .querySelectorAll('.cta-nav-prev')
+            .forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
                     e.stopPropagation();
-                    show(idx);
-                    resetProgress();
+                    show((current - 1 + items.length) % items.length);
+                    scheduleAdvance();
                 });
-            })(i);
-            dotsEl.appendChild(dot);
-        });
+            });
+        container
+            .querySelectorAll('.cta-nav-next')
+            .forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    show((current + 1) % items.length);
+                    scheduleAdvance();
+                });
+            });
 
         // Show only the first CTA; hide the rest
         items.forEach(function (el, i) {
@@ -75,12 +104,13 @@
             }
         );
 
-        var progressEl = container.querySelector('.cta-mobile-progress');
-
-        function resetProgress() {
-            progressEl.style.animation = 'none';
-            progressEl.offsetWidth; // force reflow
-            progressEl.style.animation = '';
+        function startProgress(index) {
+            var fill = items[index].querySelector('.cta-progress-fill');
+            if (!fill) 
+                return;
+            fill.style.animation = 'none';
+            fill.offsetHeight; // force reflow to restart animation
+            fill.style.animation = 'cta-progress ' + displayDuration + 'ms linear forwards';
         }
 
         function show(index) {
@@ -89,21 +119,19 @@
                     ? 'grid'
                     : 'none';
             });
-            var dots = dotsEl.querySelectorAll('.cta-mobile-dot');
-            dots.forEach(function (dot, i) {
-                dot
-                    .classList
-                    .toggle('cta-mobile-dot--active', i === index);
-            });
             current = index;
-            resetProgress();
+            startProgress(index);
         }
 
-        function advance() {
-            show((current + 1) % items.length);
-            setTimeout(advance, displayDuration);
+        function scheduleAdvance() {
+            clearTimeout(advanceTimer);
+            advanceTimer = setTimeout(function () {
+                show((current + 1) % items.length);
+                scheduleAdvance();
+            }, displayDuration);
         }
 
-        setTimeout(advance, displayDuration);
+        startProgress(0);
+        scheduleAdvance();
     })();
 </script>

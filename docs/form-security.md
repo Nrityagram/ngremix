@@ -10,6 +10,25 @@ submissions, quota exhaustion, and direct abuse of the GAS endpoint.
 Browser → Cloudflare Worker → Google Apps Script → Google Sheet + Email
 ```
 
+```mermaid
+sequenceDiagram
+  participant Browser
+  participant Worker as Cloudflare Worker
+  participant GAS as Google Apps Script
+
+  Browser->>Worker: POST form + Turnstile token
+  alt APPLICATIONS_CLOSED true
+    Worker-->>Browser: 403 "Applications are currently closed."
+  else APPLICATIONS_CLOSED false
+    Worker->>Worker: Verify Turnstile token
+    Worker->>Worker: Inject _gasSecret into payload
+    Worker->>GAS: Forward request
+    GAS->>GAS: Validate _gasSecret
+    GAS->>GAS: Sanitize inputs & check MIME
+    GAS-->>Browser: Success or error
+  end
+```
+
 ---
 
 ## Components
